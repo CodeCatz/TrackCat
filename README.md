@@ -20,3 +20,8 @@ Create the database (only first time)
 Run the server
 
 	./manage.py runserver
+	
+Mockup
+======
+
+https://moqups.com/superbibi101/uxDjnbyA
