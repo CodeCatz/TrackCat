@@ -17,6 +17,8 @@ def project_list(request):
     return render(request, 'TrackCat/task_list.html', {'projects': projects})
 
 def task_list(request):
+    members = Member.objects.all()
+    projects = Project.objects.all()
     tasks = Task.objects.all()
-    return render(request, 'TrackCat/task_list.html', {'tasks': tasks})
+    return render(request, 'TrackCat/task_list.html', {'members': members}, {'projects': projects}, {'tasks': tasks})
     
