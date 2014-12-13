@@ -87,4 +87,9 @@ try:
     from .settings_local import *
 except ImportError as e:
     pass
-    
+
+import os.path
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
+)    
