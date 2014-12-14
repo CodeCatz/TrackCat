@@ -11,11 +11,11 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 # Build paths inside the project like this: os.path.join(BASE_DIR, ...)
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
-SETTINGS_DIR = os.path.dirname(__file__) #store absolute path to directoru settings
-PROJECT_PATH = os.path.join(SETTINGS_DIR, os.pardir)
-PROJECT_PATH = os.path.abspath(PROJECT_PATH)
-TEMPLATE_PATH = os.path.join(PROJECT_PATH, 'templates')
 
+from os.path import join
+TEMPLATE_DIRS = (
+    join(BASE_DIR,  'templates/TrackCat'),
+)
 
 
 # Quick-start development settings - unsuitable for production
@@ -31,10 +31,6 @@ TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
 
-TEMPLATE_DIRS = (
-    #'/Users/petra/aacoding/TrackCat/templates/' #this is a hard code patteren, bad practice in group work
-    TEMPLATE_PATH,
-)
 
 
 # Application definition
@@ -100,4 +96,13 @@ try:
     from .settings_local import *
 except ImportError as e:
     pass
+
+import os.path
+
+TEMPLATE_DIRS = (
+    os.path.join(os.path.dirname(__file__), 'templates/TrackCat').replace('\\','/'),
+) 
+
+
+
     
