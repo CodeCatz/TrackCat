@@ -12,11 +12,10 @@ https://docs.djangoproject.com/en/1.7/ref/settings/
 import os
 BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
-import os.path
-
+from os.path import join
 TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates').replace('\\','/'),
-)    
+    join(BASE_DIR,  'templates'),
+)
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
