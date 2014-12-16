@@ -5,4 +5,4 @@ def index(request):
     return render_to_response('index.html')
 
 def projects(request):
-	return  render (request , 'projects.html',{})
+	return render(request, 'projects.html',{})
