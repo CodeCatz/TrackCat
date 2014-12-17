@@ -6,3 +6,6 @@ def index(request):
 
 def projects(request):
 	return render(request, 'projects.html',{})
+
+def login(request):
+	return render(request, 'login.html',{})
