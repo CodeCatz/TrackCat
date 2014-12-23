@@ -1,9 +1,6 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-#from TrackCat.views import index
-from TrackCat.views import about #dodala Petra
-#from TrackCat import views
-
+from TrackCat.views import index, about #dodala Petra
 
 urlpatterns = patterns('',
     # Examples:
@@ -11,9 +8,8 @@ urlpatterns = patterns('',
     # url(r'^blog/', include('blog.urls')),
 
     url(r'^admin/', include(admin.site.urls)),
-    #surl(r'', index),
-    url(r'^about/$', about), #dodala Petra 
-    #url(r'^about/$', TrackCat.views.about), #dodala Petra 
+    url(r'^$', index),
+    url(r'^about/$', about),
 )
 
 

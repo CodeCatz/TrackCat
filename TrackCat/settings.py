@@ -42,7 +42,6 @@ INSTALLED_APPS = (
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'TrackCat',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -97,11 +96,6 @@ try:
 except ImportError as e:
     pass
 
-import os.path
-
-TEMPLATE_DIRS = (
-    os.path.join(os.path.dirname(__file__), 'templates/TrackCat').replace('\\','/'),
-) 
 
 
 
