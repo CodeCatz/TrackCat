@@ -14,9 +14,14 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 from os.path import join
 TEMPLATE_DIRS = (
+<<<<<<< HEAD
     join(BASE_DIR,  'templates/TrackCat'),
 )
 
+=======
+    join(BASE_DIR,  'templates'),
+)
+>>>>>>> upstream/master
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -90,13 +95,20 @@ USE_TZ = True
 
 STATIC_URL = '/static/'
 
+STATICFILES_DIRS = (
+    os.path.join(BASE_DIR, "static"),
+)
+
 
 try:
     from .settings_local import *
 except ImportError as e:
     pass
 
+<<<<<<< HEAD
 
 
 
     
+=======
+>>>>>>> upstream/master
