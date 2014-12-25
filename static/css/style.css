@@ -1,7 +1,30 @@
+body {
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 15px;
+    padding-bottom: 15px;
+    background-color: #EBF5FF ;
+}
+
 h1 a {
     color: red;
+    font-size: 40px;
 }
 
 h2 a { 
     color: green;
+    font-size: 30px;
+}
+
+p {
+	font-size: 14px;
+}
+
+h1, h2, h3, h4 {
+    font-family: 'Lobster';
+}
+
+img {
+	width:150px;
+	height:150px;
 }
