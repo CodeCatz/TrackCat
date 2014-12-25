@@ -1,9 +1,7 @@
 """
 Django settings for TrackCat project.
-
 For more information on this file, see
 https://docs.djangoproject.com/en/1.7/topics/settings/
-
 For the full list of settings and their values, see
 https://docs.djangoproject.com/en/1.7/ref/settings/
 """
@@ -14,14 +12,8 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 from os.path import join
 TEMPLATE_DIRS = (
-<<<<<<< HEAD
-    join(BASE_DIR,  'templates/TrackCat'),
-)
-
-=======
     join(BASE_DIR,  'templates'),
 )
->>>>>>> upstream/master
 
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
@@ -35,7 +27,6 @@ DEBUG = True
 TEMPLATE_DEBUG = True
 
 ALLOWED_HOSTS = []
-
 
 
 # Application definition
@@ -91,8 +82,6 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/1.7/howto/static-files/
 
-
-
 STATIC_URL = '/static/'
 
 STATICFILES_DIRS = (
@@ -104,11 +93,3 @@ try:
     from .settings_local import *
 except ImportError as e:
     pass
-
-<<<<<<< HEAD
-
-
-
-    
-=======
->>>>>>> upstream/master
