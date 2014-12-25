@@ -4,14 +4,12 @@ from TrackCat.views import index, about, projects
 
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'TrackCat.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+	# Examples:
+	# url(r'^$', 'TrackCat.views.home', name='home'),
+	# url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', index),
-    url(r'^about/$', about),
-    url(r'^projects/$', projects),
+	url(r'^admin/', include(admin.site.urls)),
+	url(r'^$', index),
+	url(r'^about/$', about),
+	url(r'^projects/$', projects),
 )
-
-
