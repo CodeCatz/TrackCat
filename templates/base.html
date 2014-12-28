@@ -13,7 +13,7 @@
 		<div class="container">
 			<nav class="navbar navbar-default">
 				<div class="container-fluid">
-                
+
 				<!-- Brand and toggle get grouped for better mobile display -->
 				<div class="navbar-header">
 					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
@@ -44,15 +44,17 @@
 				</div><!-- /.navbar-collapse -->
 				</div><!-- /.container-fluid -->
 			</nav>
-			</div><!-- /.container -->
-		<div>
+			</div><!-- /.container for navigation -->
+
+		<div class="container">
 			{% block content %}{% endblock content %}
-		</div>
+		</div><!-- /.container for main content -->
 
-
-		<div>
-			<p> Jaz sem pa FOOTER</p>
-		</div>
+		<footer class="footer">
+				<div class="container">
+					<p class="text-muted">Waiting to become sticky FOOTER.</p>
+				</div>
+		</footer>
 
 
 	</body>
