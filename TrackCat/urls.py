@@ -1,15 +1,15 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from . import views
+from TrackCat.views import index, about, projects
+
 
 urlpatterns = patterns('',
-    # Examples:
-    # url(r'^$', 'TrackCat.views.home', name='home'),
-    # url(r'^blog/', include('blog.urls')),
+	# Examples:
+	# url(r'^$', 'TrackCat.views.home', name='home'),
+	# url(r'^blog/', include('blog.urls')),
 
-    url(r'^admin/', include(admin.site.urls)),
-    url(r'^$', views.index),
-    url(r'^members$', views.member_list),
-    url(r'^projects$', views.project_list),
-    url(r'^tasks$', views.tasks_list),
+	url(r'^admin/', include(admin.site.urls)),
+	url(r'^$', index),
+	url(r'^about/$', about),
+	url(r'^projects/$', projects),
 )
