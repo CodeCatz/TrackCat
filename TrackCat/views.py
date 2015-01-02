@@ -1,29 +1,11 @@
-from django.shortcuts import render
-
-from .models import Member
-from .models import Project
-from .models import Task 
+from django.template import RequestContext 
+from django.shortcuts import render_to_response, render 
 
 def index(request):
-    members = Member.objects.all()
-    #completed_projects = Project.objects.filter(published_date__isnull=False).order_by('published_date')
-    completed_projects = Project.objects.all()
-    active_members = Member.objects.all()
-    return render(request, 'TrackCat/index.html', {'completed_projects': completed_projects}) 
-    return render(request, 'TrackCat/index.html', {'active_members': active_members})  
-    #return render(request, 'TrackCat/index.html', {})   
+	return render_to_response('pages/index.html',{})
 
-def member_list(request):
-    members = Member.objects.all()
-    return render(request, 'TrackCat/members.html', {'members': members})
+def projects(request):
+	return render(request, 'pages/projects.html',{})
 
-def project_list(request):
-    projects = Project.objects.all()
-    return render(request, 'TrackCat/projects.html', {'projects': projects})
-
-def tasks_list(request):
-    tasks = Task.objects.all()
-    return render(request, 'TrackCat/tasks.html', {'tasks': tasks})
-
-
-    
+def about(request):
+	return render(request, 'pages/about.html',{})
