@@ -1,7 +1,13 @@
-h1 a {
-	color: red;
-}
+/* Custom page CSS
+			-------------------------------------------------- */
 
-h2 a { 
-	color: green;
-}
+			#wrap > .container {
+				padding-top: 60px;
+			}
+			.container .credit {
+				margin: 20px 0;
+			}
+
+			code {
+				font-size: 80%;
+			}
