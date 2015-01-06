@@ -4,7 +4,7 @@
 html,
 body {
 	height: 100%;
-/* The html and body elements cannot have any padding or margin. */
+	/* The html and body elements cannot have any padding or margin. */
 }
 
 /* Wrapper for page content to push down footer */
@@ -14,7 +14,7 @@ body {
 	height: 100%;
 	/* Negative indent footer by it's height */
 	margin: 0 auto -60px;
-			}
+}
 
 /* Set the fixed height of the footer here */
 #push,
@@ -38,6 +38,7 @@ body {
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
+
 #wrap > .container {
 	padding-top: 60px;
 }
@@ -47,4 +48,11 @@ body {
 
 code {
 	font-size: 80%;
+}
+/* Fit CodeCatz image in navbar-brand. */
+.navbar-brand{
+	padding: 0px;
+}
+.navbar-brand img{
+	height: 100%;
 }
