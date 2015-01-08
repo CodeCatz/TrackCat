@@ -6,7 +6,6 @@
 		<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<script src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 	</head>
@@ -28,7 +27,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="#">
-						<img alt="CodeCatz" src="{% static 'CodeCatz.jpg' %}">
+						<img alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
 					</a>
 
 				</div>
@@ -43,6 +42,7 @@
 						<li><a href="/events">Events</a></li>
 						<li><a href="/gallery">Gallery</a></li>
 						<li><a href="/login">Login</a></li>
+						<li><a href="/links">Links</a></li>
 					</ul>
 					<form class="navbar-form navbar-left" role="search">
 						<div class="form-group">
@@ -60,18 +60,16 @@
 		</div><!-- /.container for main content -->
 
 		<div id="push"></div>
-		</div></!-- /.wrap for all content -->
+		</div>
 
 		<footer>
 			<div class="container">
-				<div class="col-md-4">	
-					<span class="fa-stack fa-lg">
-						<i class="fa fa-square-o fa-stack-2x"></i>
-						<i class="fa fa-twitter fa-stack-1x"></i>
-					</span>
-					fa-twitter on fa-square-o<br>
-				</div>
+				<a href="https://github.com/CodeCatz">
+					<img alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
+					<p>GITHUB CodeCatz: Kittens learning to code like Catz</p>
+				</a>
 			</div>
 		</footer>
+		<script  type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
 </html>
