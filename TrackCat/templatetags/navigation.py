@@ -22,3 +22,4 @@ def current_url_equals(context, url_name, **kwargs):
             if not resolved_kwarg or kwarg != resolved_kwarg:
                 return False
     return matches
+    
