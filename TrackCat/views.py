@@ -20,4 +20,7 @@ def gallery(request):
 	return render(request, 'pages/gallery.html',{})
 
 def login(request):
-	return render(request, 'pages/login.html',{})				
+	return render(request, 'pages/login.html',{})
+
+def links(request):
+	return render(request, 'pages/links.html',{})
