@@ -39,8 +39,31 @@ body {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
+.login {
+	padding: 10px 0px 5px 45px; 
+}
+.h1 {
+	border: solid;
+	width: 350px;
+	text-align: center;
+	position: relative; 
+	margin:-100px 0 0 -150px;
+	top: 100px;
+	left: 50%;
+	font-family: 'Carter One', cursive;
+}
+.h2 {
+	color: #707070; 
+	text-align: center;
+	position: relative; 
+	top: 120px; 
+}
+.jumbotron {
+	text-align:center; 
+	height: 300px;
+}
 .container {
-	padding-top: 60px;
+	padding-top: 0px;
 }
 .container .credit {
 	margin: 20px 0;
@@ -55,4 +78,10 @@ code {
 }
 .navbar-brand img{
 	height: 100%;
+}
+
+.naslov {
+font-size: 20px; 
+padding-top: 100px;
+padding-bottom: 30px;
 }
