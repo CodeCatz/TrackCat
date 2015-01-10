@@ -1,13 +1,13 @@
 from django import template
 from django.core import urlresolvers
- 
+
 register = template.Library()
- 
+
 @register.simple_tag(takes_context=True)
 def current(context, url_name, return_value=' active', **kwargs):
     matches = current_url_equals(context, url_name, **kwargs)
     return return_value if matches else ''
- 
+
 def current_url_equals(context, url_name, **kwargs):
     resolved = False
     try:
@@ -22,4 +22,3 @@ def current_url_equals(context, url_name, **kwargs):
             if not resolved_kwarg or kwarg != resolved_kwarg:
                 return False
     return matches
-    
