@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+<html>
+	<head>
+		<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	</head>
+	<body>
+
+<!-- Wrap all page content here -->
+		<div id="wrap">
+
+		<div class="container">
+			<nav class="navbar navbar-default">
+				<div class="container-fluid">
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="#">
+						<img alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
+					</a>
+
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li><a href="/">Home</a></li>						
+						<li><a href="/about">About us</a></li>
+						<li><a href="/projects">Projects</a></li>
+						<li><a href="/members">Members</a></li>
+						<li><a href="/events">Events</a></li>
+						<li><a href="/gallery">Gallery</a></li>
+						<li><a href="/login">Login</a></li>
+						<li><a href="/links">Links</a></li>
+					</ul>
+					<form class="navbar-form navbar-left" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			</div><!-- /.container for navigation -->
+
+		<div class="container">
+			{% block content %}{% endblock content %}
+		</div><!-- /.container for main content -->
+
+		<div id="push"></div>
+		</div>
+
+		<footer class="footer">
+			<div class="container">
+				<a href="https://github.com/CodeCatz">
+					<img alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
+					<p>GITHUB CodeCatz: Kittens learning to code like Catz</p>
+				</a>
+			</div>
+		</footer>
+		<script  type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	</body>
+</html>

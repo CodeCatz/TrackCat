@@ -20,6 +20,11 @@ Create the database (only first time)
 Run the server
 
 	./manage.py runserver
+
+Coding Style
+============
+
+On this project we use tabs for indentation. Please make sure your editor is properly set up for this.
 	
 Mockup
 ======
