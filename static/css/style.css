@@ -31,7 +31,7 @@ body {
 		margin-left: -20px;
 		margin-right: -20px;
 		padding-left: 20px;
-	padding-right: 20px;
+		padding-right: 20px;
 	}
 }
 
@@ -40,13 +40,13 @@ body {
 /* Not required for template or sticky footer method. */
 
 .container {
-padding-top: 60px;
+	padding-top: 60px;
 }
 .container .credit {
-margin: 20px 0;
+	margin: 20px 0;
 }
 code {
-font-size: 80%;
+	font-size: 80%;
 }
 
 /* Fit CodeCatz image in navbar-brand. */
