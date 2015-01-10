@@ -4,12 +4,15 @@
 <html>
 	<head>
 		<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
+        <link href='http://fonts.googleapis.com/css?family=Carter+One' rel='stylesheet' type='text/css'>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	</head>
 	<body>
-
+        <div class="login">
+            <button type="submit" class="btn btn-default"><a href="/login"><b>LOGIN</b></a></button>
+        </div>
 <!-- Wrap all page content here -->
 		<div id="wrap">
 
@@ -34,16 +37,15 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li><a href="/">Home</a></li>						
+						<li><a href="/">Home</a></li>				
 						<li><a href="/about">About us</a></li>
 						<li><a href="/projects">Projects</a></li>
 						<li><a href="/members">Members</a></li>
 						<li><a href="/events">Events</a></li>
 						<li><a href="/gallery">Gallery</a></li>
-						<li><a href="/login">Login</a></li>
 						<li><a href="/links">Links</a></li>
 					</ul>
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search">
 						</div>
