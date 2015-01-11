@@ -68,7 +68,7 @@ img{
 	padding: 0;
 	list-style-type: none;
 	font-size: 20px;
-	color:#5C5C5C;
+	color: #5C5C5C;
 }
 /* to hide title in the second column of Members*/
 .transparent{
@@ -77,15 +77,15 @@ img{
 /* paragraph*/
 .intro{
 	text-align: justify;
-	color:#5C5C5C;
+	color: #5C5C5C;
 	font-size: 20px;
 }
 strong{
-	color:#5C5C5C;
+	color: #5C5C5C;
 }
 /* headding */
 .about{
-	color:#5C5C5C;
+	color: #5C5C5C;
 	font-size: 40px;
 }
 .jumbotron{
