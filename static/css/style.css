@@ -59,30 +59,37 @@ code {
 
 /* about page*/
 img{
-	width: 60px;
-	height: 60px;
+	width: 100px;
+	height: 100px;
 	margin: 10px;
 }
 .about_list{
 	margin: 0;
 	padding: 0;
 	list-style-type: none;
+	font-size: 20px;
+	color:#5C5C5C;
 }
+/* to hide title in the second column of Members*/
 .transparent{
 	color: transparent;
 }
+/* paragraph*/
 .intro{
 	text-align: justify;
 	color:#5C5C5C;
+	font-size: 20px;
 }
 strong{
 	color:#5C5C5C;
 }
+/* headding */
 .about{
 	color:#5C5C5C;
+	font-size: 40px;
 }
 .jumbotron{
-	padding-top: 5px;
-	padding-bottom: 5px;
-	margin: 5px;
+	padding: 5px 5px 20px 5px;
+	margin: auto;
 }
+/* end of about page */
