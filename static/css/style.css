@@ -17,12 +17,22 @@ body {
 }
 
 /* Set the fixed height of the footer here */
-#push,
-#footer {
-	height: 60px;
+#footrow{
+	margin: 20px -5px 10px 0;
+	padding-top: 15px;
+	font-size: 18px;
+	border-top: 1px solid #CCCCCC;
+	display: block;
 }
-#footer {
-	background-color: #f5f5f5;
+.ulfooter{
+	list-style-type: none;
+	padding: 0px;
+	margin: 0px;
+}
+.lifooter{
+	list-style-type: none;
+	margin-right: 200px;
+	text-align: auto;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */

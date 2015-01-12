@@ -65,11 +65,25 @@
 
 		<footer class="footer">
 			<div class="container">
-				<a href="https://github.com/CodeCatz">
-					<img alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
-					<p>GITHUB CodeCatz: Kittens learning to code like Catz</p>
-				</a>
-			</div>
+				<div id="footrow">
+					<div class="col-md-4">
+						<ul class="ulfooter">
+							<li class="lifooter"><a href="{% url 'pages-about' %}">Sponsors</a></li>
+							<li class="lifooter"><a href="{% url 'pages-about' %}">Privacy</a></li>
+							<li class="lifooter"><a href="{% url 'pages-about' %}">Support</a></li>
+						</ul>
+					</div> <!-- end col-md-5 -->
+					<div class="col-md-4">
+						<a href="{% url 'pages-index' %}"><img src="{% static "img/CodeCatz.jpg" %}"/></a>
+					</div> <!-- end col-md-2 -->
+					<div class="col-md-4">
+  						<p><strong>CodeCatz</strong><br>
+  							RAMPA Laboratorij<br>
+  							Kersnikova ulica 4, Ljubljana<br>
+						</p>
+					</div> <!-- end col-md-5 -->
+				</div> <!-- end footrow -->			
+			</div><!-- end container -->
 		</footer>
 		<script  type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
