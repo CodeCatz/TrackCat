@@ -29,7 +29,7 @@
 						<span class="icon-bar"></span>
 					</button>
 					<a class="navbar-brand" href="{% url 'pages-index' %}">
-						<img alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
+						<img class="CClogo" alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
 					</a>
 
 				</div>
@@ -37,7 +37,7 @@
 				<!-- Collect the nav links, forms, and other content for toggling -->
 				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
 					<ul class="nav navbar-nav">
-						<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About Us</a></li>
+						<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
 						<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
 						<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
 						<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
