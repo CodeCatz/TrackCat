@@ -64,13 +64,6 @@ h3 {
 	text-align: center;
 	padding-bottom: 30px; 
 }
-.jumbotron {
-	text-align:center; 
-	height: 300px;
-}
-.container {
-	padding-top: 0px;
-}
 .container .credit {
 	margin: 20px 0;
 }
@@ -85,6 +78,39 @@ code {
 .navbar-brand img{
 	height: 100%;
 }
-.linki {
+
+/* Links page*/
+.links {
 	text-align: center;
+}
+/* about page*/
+img{
+	width: 60px;
+	height: 60px;
+	margin: 10px;
+}
+.about_list{
+	margin: 0;
+	padding: 0;
+	list-style-type: none;
+}
+.transparent{
+	color: transparent;
+}
+.intro{
+	text-align: justify;
+	color:#5C5C5C;
+}
+strong{
+	color:#5C5C5C;
+}
+.about{
+	color:#5C5C5C;
+}
+.jumbotron{
+	padding-top: 5px;
+	padding-bottom: 5px;
+	margin: 5px;
+    text-align:center; 
+	height: 300px;
 }
