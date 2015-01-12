@@ -45,16 +45,17 @@ body {
 .container .credit {
 	margin: 20px 0;
 }
-
 code {
 	font-size: 80%;
 }
+
 /* Fit CodeCatz image in navbar-brand. */
 .navbar-brand{
 	padding: 0px;
 }
 .navbar-brand img{
 	height: 100%;
+	margin:0px;
 }
 
 /* about page*/
