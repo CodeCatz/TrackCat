@@ -37,10 +37,8 @@ body {
 .CClogo{
 	height: 40px;
 	width: 40px;
-	position: relative;
-	margin: 0px;
-	margin-right: 30px;
-	margin-left: 10px;
+	position: relativ;
+	margin: 0 30px 0 10px;
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
