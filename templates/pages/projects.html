@@ -5,12 +5,15 @@
 {% block content%}
 	<header class="row">
 		<div class="col-lg-6 col-sm-7">
-			<h1>All CodeCatz Projects</h1>
+			<h2>All CodeCatz Projects</h2>
 		</div>
 		<div class="col-lg-6 col-sm-5">
 			<p>This page will show all our projects and who is working on what.</p>
 		</div>
 	</header>
+	<div class="row">
+		<p><a href="{% url 'pages-loggeduser' %}" class="btn btn-warning btn-lg ">Go to page to simulate a logged in user</a></p>
+	</div>
 	<div class="row">
 		<div class="col-md-3 col-xs-6">
 			<p><img src="http://placekitten.com/g/350/350" alt="" class="img-responsive"></p>
