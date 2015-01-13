@@ -25,5 +25,5 @@ def login(request):
 def links(request):
 	return render(request, 'pages/links.html',{})
 
-def links(request):
-	return render(request, 'pages/user.html',{})
+def loggeduser(request):
+	return render(request, 'pages/loggeduser.html',{})
