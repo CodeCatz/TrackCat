@@ -47,8 +47,31 @@ body {
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
-.container {
-	padding-top: 60px;
+.login {
+	padding: 10px 0px 5px 990px; 
+}
+h1 {
+	border: solid;
+	width: 350px;
+	text-align: center;
+	position: relative; 
+	margin:-100px 0 0 -150px;
+	top: 120px;
+	left: 50%;
+	font-family: 'Carter One', cursive;
+}
+h2 {
+	color: #707070; 
+	text-align: center;
+	position: relative; 
+	top: 10px; 
+    bottom: 10px;
+	font-size: 20px;
+	font-family: Arial;
+}
+h3 {
+	text-align: center;
+	padding-bottom: 30px; 
 }
 .container .credit {
 	margin: 20px 0;
@@ -59,13 +82,17 @@ code {
 
 /* Fit CodeCatz image in navbar-brand. */
 .navbar-brand{
-	padding: 0px;
+	padding: 6px;
 }
 .navbar-brand img{
 	height: 100%;
 	margin:0px;
 }
 
+/* Links page*/
+.links {
+	text-align: center;
+}
 /* about page*/
 img{
 	width: 100px;
@@ -73,8 +100,6 @@ img{
 	margin: 10px;
 }
 .about_list{
-	margin: 0;
-	padding: 0;
 	list-style-type: none;
 	font-size: 20px;
 	color: #5C5C5C;
@@ -96,9 +121,22 @@ strong{
 .about{
 	color: #5C5C5C;
 	font-size: 40px;
+    padding-top: 30px;
 }
 .jumbotron{
+    text-align:center; 
+}
+
+#frontpage{
+	height: 300px;
 	padding: 5px 5px 20px 5px;
+}
+.jumbotron{
+    text-align:center; 
 	margin: auto;
+}
+
+#front_subtitle {
+	top: 140px;
 }
 /* end of about page */

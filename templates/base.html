@@ -6,13 +6,18 @@
 <html>
 	<head>
 		<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
+        <link rel="stylesheet"
+href='http://fonts.googleapis.com/css?family=Carter+One' 
+type='text/css'>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
 	</head>
 	<body>
-
+        <div class="login">
+            <a href="/login"><b>LOGIN</b></a></button>
+        </div>
 <!-- Wrap all page content here -->
 		<div id="wrap">
 
@@ -45,7 +50,7 @@
 						<li class="{% current 'pages-login' %}"><a href="{% url 'pages-login' %}">Login</a></li>
 						<li class="{% current 'pages-links' %}"><a href="{% url 'pages-links' %}">Links</a></li>
 					</ul>
-					<form class="navbar-form navbar-left" role="search">
+					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
 							<input type="text" class="form-control" placeholder="Search">
 						</div>
