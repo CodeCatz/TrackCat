@@ -1,0 +1,305 @@
+{% extends 'base.html' %}
+
+{% block title %}All CodeCatz Projects{% endblock %}
+
+{% block content%}
+	
+ <nav class="navbar navbar-default" role="navigation" style="margin-bottom: 0">
+	<div class="navbar-header">
+				<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#sidebar-collapse">
+					<span class="sr-only">Toggle navigation</span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="#">TrackCat - menu for logged-in users</a>
+			</div>
+		 <ul class="nav navbar-nav navbar-right">					
+			<li>
+				<a href="#" ><i class="fa fa-paw fa-fw"></i> Profile</a>
+			</li>
+			<li>
+				<a href="#" ><i class="fa fa-male fa-fw"></i> Logout</a>
+			</li>
+		</ul>
+			 <div class="navbar-default sidebar" role="navigation">
+				<div class="sidebar-nav navbar-collapse" id ="sidebar-collapse">
+					<ul class="nav" id="side-menu">
+						<li class="sidebar-search">
+							<div class="input-group custom-search-form">
+								<input type="text" class="form-control" placeholder="Search...">
+								<span class="input-group-btn">
+								<button class="btn btn-default" type="button">
+									<i class="fa fa-search"></i>
+								</button>
+							</span>
+							</div>
+							<!-- /input-group -->
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-dashboard fa-fw"></i> Dashboard</a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-table fa-fw"></i> Calendar</a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-edit fa-fw"></i> Meetups</a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-wrench fa-fw"></i> Reports<span class="fa arrow"></span></a>
+						</li>
+						<li>
+							<a href="#"><i class="fa fa-files-o fa-fw"></i> Projects<span class="fa arrow"></span></a>
+						<li>
+							<a href="blank.html">Happy Cat project </a>
+						</li>
+						<li>
+							<a href="login.html">Coder Kitties project</a>
+						</li>
+						</li>
+					</ul>
+				</div>
+				<!-- /.sidebar-collapse -->
+			</div>
+			<!-- /.navbar-static-side -->
+  </nav>
+  <div id="page-wrapper">
+			<div class="row">
+				<div class="col-lg-12">
+					<p class="page-header huge">Dashboard</p>
+				</div>
+				<!-- /.col-lg-12 -->
+			</div>
+			<!-- /.row -->
+			<div class="row dashwidget">
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-primary">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-comments fa-3x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">26</div>
+									<div>New Comments!</div>
+								</div>
+							</div>
+						</div>
+						 <div class="panel-body">
+							<div class="list-group">
+								<a href="#" class="list-group-item">
+									Error with the installation...
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 20 min ago by Newbie</small></p>
+									</span>
+								</a>
+								 <a href="#" class="list-group-item">
+									Moved CodeCatz image...
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 1 hours ago by TiniCat</small></p>
+									</span>
+								</a>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left">View All</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-green">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-tasks fa-3x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">12</div>
+									<div>New Tasks!</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								<a href="#" class="list-group-item">
+									Create the login page
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 1 day ago by Superuser</small></p>
+									</span>
+								</a>
+								 <a href="#" class="list-group-item">
+									Adjust the css in the...
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 8 hours ago by iMentor</small></p>
+									</span>
+								</a>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left">View All</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-yellow">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-envelope fa-3x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">5</div>
+									<div>New Messages!</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								<a href="#" class="list-group-item">
+									Hi! Don't forget the karaoke night...
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 20 min ago by Newbie</small></p>
+									</span>
+								</a>
+								 <a href="#" class="list-group-item">
+									Livia, you were added to the BigCat Project...
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 1 hours ago by TiniCat</small></p>
+									</span>
+								</a>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left">View All</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+				<div class="col-lg-3 col-md-6">
+					<div class="panel panel-red">
+						<div class="panel-heading">
+							<div class="row">
+								<div class="col-xs-3">
+									<i class="fa fa-suitcase fa-3x"></i>
+								</div>
+								<div class="col-xs-9 text-right">
+									<div class="huge">13</div>
+									<div>New Projects!</div>
+								</div>
+							</div>
+						</div>
+						<div class="panel-body">
+							<div class="list-group">
+								<a href="#" class="list-group-item">
+									The BigCat project
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 20 min ago by Newbie</small></p>
+									</span>
+								</a>
+								 <a href="#" class="list-group-item">
+									Javascript ninja project
+									<p><span class="text-muted small"><small class="text-muted"><i class="fa fa-clock-o"></i> 1 hours ago by TiniCat</small></p>
+									</span>
+								</a>
+							</div>
+						</div>
+						<a href="#">
+							<div class="panel-footer">
+								<span class="pull-left">View All</span>
+								<span class="pull-right"><i class="fa fa-arrow-circle-right"></i></span>
+								<div class="clearfix"></div>
+							</div>
+						</a>
+					</div>
+				</div>
+			</div>
+			<!-- /.row -->
+			<div class="row dashwidget">
+                <div class="col-lg-12">
+                    <div class="panel panel-default">
+                        <div class="panel-heading">
+                            <i class="fa fa-bell fa-fw"></i> Notifications
+                        </div>
+                        <!-- /.panel-heading -->
+                        <div class="panel-body">
+                        	<div class="row">
+                        		<div class="col-md-6"
+		                            <div class="list-group">
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-child fa-fw"></i>  Members
+		                                    <span class="pull-right text-muted small"><span class="badge">1</span> new
+		                                    </span>
+		                                </a>
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-gears fa-fw"></i> This weeks Deadlines
+		                                    <span class="pull-right text-muted small"><span class="badge">7</span> new
+		                                    </span>
+		                                </a>
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-tasks fa-fw"></i> Forum
+		                                    <span class="pull-right text-muted small"><span class="badge">15</span> new
+		                                    </span>
+		                                </a>
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-group fa-fw"></i> Groups
+		                                    <span class="pull-right text-muted small"><span class="badge">2</span> new
+		                                    </span>
+		                                </a>
+                                </div>
+	                            <div class="col-md-6">
+	                                <div class="list-group">
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-paw fa-fw"></i> Meetups
+		                                    <span class="pull-right text-muted small"><span class="badge">2</span> new
+		                                    </span>
+		                                </a>
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-graduation-cap fa-fw"></i> Learning reasurces
+		                                    <span class="pull-right text-muted small"><span class="badge">3</span> new
+		                                    </span>
+		                                </a>
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-file-image-o fa-fw"></i> Gallery
+		                                    <span class="pull-right text-muted small"><span class="badge">5</span> new
+		                                    </span>
+		                                </a>
+		                                <a href="#" class="list-group-item">
+		                                    <i class="fa fa-lightbulb-o fa-fw"></i> Wish list / Ideas
+		                                    <span class="pull-right text-muted small"><span class="badge">21</span> new
+		                                    </span>
+		                                </a>
+		                             </div>
+	                             </div>
+		                            <!-- /.list-group -->
+		                    </div>
+                            <a href="#" class="btn btn-default btn-block">View All Notifications</a>
+                        </div>
+                        <!-- /.panel-body -->
+                    </div>
+                    <!-- /.panel -->
+                </div>
+                <!-- /.col-lg-12 -->
+            </div>  <!-- /.row -->
+			<div class="row">
+				<div class="col-lg-12">
+					  <div class="panel panel-default">
+							<div class="panel-heading">
+								<i class="fa fa-clock-o fa-fw"></i>Timeline (coming soon...)
+							</div>
+							<!-- /.panel-heading -->
+						
+						<!-- /.panel-body -->
+					</div>
+					<!-- /.panel -->
+				</div>
+				<!-- /.col-lg-8 -->
+			</div>
+			<!-- /.row -->
+		</div>
+		<!-- /#page-wrapper -->
+
+{% endblock content%}
