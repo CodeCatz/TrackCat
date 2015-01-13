@@ -17,4 +17,5 @@ urlpatterns = patterns('',
 	url(r'^gallery/$', gallery, name='pages-gallery'),
 	url(r'^login/$', login, name='pages-login'),
 	url(r'^links/$', links, name='pages-links'),
+	url(r'^user/$', links, name='pages-user'),
 )
