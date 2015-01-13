@@ -16,13 +16,14 @@ urlpatterns = patterns('',
 
 
 	url(r'^admin/', include(admin.site.urls)),
-	url(r'^$', index),
-	url(r'^about/$', about),
-	url(r'^projects/$', projects),
-	url(r'^members/$', members),
-	url(r'^events/$', events),	
-	url(r'^gallery/$', gallery),
-	url(r'^login/$', login),
-	url(r'^links/$', links),
+
+	url(r'^$', index, name='pages-index'),
+	url(r'^about/$', about, name='pages-about'),
+	url(r'^projects/$', projects, name='pages-projects'),
+	url(r'^members/$', members, name='pages-members'),
+	url(r'^events/$', events, name='pages-events'),
+	url(r'^gallery/$', gallery, name='pages-gallery'),
+	url(r'^login/$', login, name='pages-login'),
+	url(r'^links/$', links, name='pages-links'),
  upstream/master
 )
