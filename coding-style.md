@@ -13,19 +13,27 @@ Examples of other _good_ coding styles and best practices:
 - We use _tabs_ to indent code. Indent by one tab at the time.
 
 **Capitalization**
-- Use lowercase.
+- Use lowercase, e.g. <table>, #cccccc for colors in css
 
 **Trailing whitespace**
-- Remove trailing white space. You can read
-[why trailing space is such a big issue.](http://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal)
+- Remove trailing white space (even when on an empty line).
+[Why is trailing space such a big issue](http://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal) anyway?
+
+**Naming**
 
 ## HTML
 
 - Always close tags.
-- Don’t use tables for layout.
-
+- Tables shouldn't be used for page layout.
+- Always use quotes around attributes in a tag.
+```
+<p class=“headline” data-attribute="106">This is my paragraph of special text.</p>
+```
 
 ## CSS
 - Indent CSS code.
 - Don’t use inline css.
- 
+- Never edit framework css files (e.g. bootstrap). Override styles in your custom css file.
+
+## JavaScript
+ - Always use semicolons.
