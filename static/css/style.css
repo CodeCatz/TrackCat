@@ -54,13 +54,17 @@ footer {
 	padding: 10px 0px 5px 990px; 
 }
 h1 {
-	border: solid;
 	width: 350px;
 	text-align: center;
 	position: relative; 
 	margin:-100px 0 0 -150px;
+	padding: 10px;
 	top: 120px;
 	left: 50%;
+}
+
+#frontpage_title {
+	border: solid;
 	font-family: 'Carter One', cursive;
 }
 h2 {
@@ -68,7 +72,7 @@ h2 {
 	text-align: center;
 	position: relative; 
 	top: 10px; 
-    bottom: 10px;
+	bottom: 10px;
 	font-size: 20px;
 	font-family: Arial;
 }
@@ -124,10 +128,7 @@ strong{
 .about{
 	color: #5C5C5C;
 	font-size: 40px;
-    padding-top: 30px;
-}
-.jumbotron{
-    text-align:center; 
+	padding-top: 30px;
 }
 
 #frontpage{
@@ -135,11 +136,12 @@ strong{
 	padding: 5px 5px 20px 5px;
 }
 .jumbotron{
-    text-align:center; 
+	text-align:center; 
 	margin: auto;
 }
 
 #front_subtitle {
 	top: 140px;
 }
+
 /* end of about page */
