@@ -16,8 +16,8 @@ Examples of other _good_ coding styles and best practices:
 - Use lowercase.
 
 **Trailing whitespace**
-Remove trailing white space. 
-[Why is trailing space such a big issue?](http://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal)
+- Remove trailing white space. You can read
+[why trailing space is such a big issue.](http://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal)
 
 ## HTML
 
