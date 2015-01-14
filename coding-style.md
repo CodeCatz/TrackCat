@@ -13,7 +13,7 @@ Examples of other _good_ coding styles and best practices:
 - We use _tabs_ to indent code. Indent by one tab at the time.
 
 **Capitalization**
-- Use lowercase, e.g. <table>, #cccccc for colors in css
+- Use lowercase, e.g. `<table>` in HTML, `#cccccc` for colors in css
 
 **Trailing whitespace**
 - Remove trailing white space (even when on an empty line).
@@ -27,7 +27,7 @@ Examples of other _good_ coding styles and best practices:
 - Tables shouldn't be used for page layout.
 - Always use quotes around attributes in a tag.
 ```
-<p class=“headline” data-attribute="106">This is my paragraph of special text.</p>
+<p class="headline" data-attribute="106">This is my paragraph of special text.</p>
 ```
 
 ## CSS
