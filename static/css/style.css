@@ -51,14 +51,18 @@ body {
 	padding: 10px 0px 5px 990px; 
 }
 h1 {
-	border: solid;
 	width: 350px;
 	text-align: center;
 	position: relative; 
 	margin:-100px 0 0 -150px;
+    padding: 10px;
 	top: 120px;
 	left: 50%;
-	font-family: 'Carter One', cursive;
+}
+
+#frontpage_title {
+    border: solid;
+    font-family: 'Carter One', cursive;
 }
 h2 {
 	color: #707070; 
@@ -123,9 +127,6 @@ strong{
 	font-size: 40px;
     padding-top: 30px;
 }
-.jumbotron{
-    text-align:center; 
-}
 
 #frontpage{
 	height: 300px;
@@ -139,4 +140,5 @@ strong{
 #front_subtitle {
 	top: 140px;
 }
+
 /* end of about page */
