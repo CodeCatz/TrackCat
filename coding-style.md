@@ -4,13 +4,16 @@ First read [why coding style matters](http://www.smashingmagazine.com/2012/10/25
 
 Examples of other _good_ coding styles and best practices:
 - [Front-end Code Standards & Best Practices](http://isobar-idev.github.io/code-standards/)
-- [Google HTML/CSS style](guide http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
+- [Google HTML/CSS style guide](http://google-styleguide.googlecode.com/svn/trunk/htmlcssguide.xml)
 
 
 ## General formatting rules
 
 **Indentation**
-We use _tabs_ to indent code. Indent by one tab at the time.
+- We use _tabs_ to indent code. Indent by one tab at the time.
+
+**Capitalization**
+- Use lowercase.
 
 **Trailing whitespace**
 Remove trailing white space. 
