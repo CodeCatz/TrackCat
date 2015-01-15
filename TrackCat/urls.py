@@ -1,12 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-<<<<<<< HEAD
-from TrackCat.views import index
-from TrackCat.views import projects
-from TrackCat.views import login
-=======
+
 from TrackCat.views import index, about, projects, members, events, gallery, login, links
->>>>>>> upstream/master
+ 
 
 
 urlpatterns = patterns('',
@@ -25,5 +21,5 @@ urlpatterns = patterns('',
 	url(r'^gallery/$', gallery, name='pages-gallery'),
 	url(r'^login/$', login, name='pages-login'),
 	url(r'^links/$', links, name='pages-links'),
- upstream/master
+
 )
