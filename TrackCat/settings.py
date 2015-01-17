@@ -14,7 +14,7 @@ BASE_DIR = os.path.dirname(os.path.dirname(__file__))
 
 from os.path import join
 TEMPLATE_DIRS = (
-	join(BASE_DIR, 'templates'),
+	join(BASE_DIR, 'web/templates'),
 )
 
 # Quick-start development settings - unsuitable for production
