@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from TrackCat.views import index, about, projects, members, events, gallery, login, links
+from TrackCat.views import index, about, projects, members, events, gallery, login, links, privacy
  
 
 
@@ -21,5 +21,6 @@ urlpatterns = patterns('',
 	url(r'^gallery/$', gallery, name='pages-gallery'),
 	url(r'^login/$', login, name='pages-login'),
 	url(r'^links/$', links, name='pages-links'),
+	url(r'^privacy/$', privacy, name='pages-privacy'),
 
 )
