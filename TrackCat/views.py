@@ -5,6 +5,7 @@ def index(request):
 	return render_to_response('pages/index.html',{})
 
 def projects(request):
+
 	return render(request, 'pages/projects.html',{})
 
 def about(request):
@@ -24,3 +25,7 @@ def login(request):
 
 def links(request):
 	return render(request, 'pages/links.html',{})
+
+def privacy(request):
+	return render(request, 'pages/privacy.html',{})
+ 

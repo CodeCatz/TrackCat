@@ -95,7 +95,9 @@ STATICFILES_DIRS = (
 	os.path.join(BASE_DIR, "static"),
 )
 
+
 try:
 	from .settings_local import *
 except ImportError as e:
+
 	pass

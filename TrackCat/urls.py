@@ -1,6 +1,8 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
-from TrackCat.views import index, about, projects, members, events, gallery, login, links
+
+from TrackCat.views import index, about, projects, members, events, gallery, login, links, privacy
+ 
 
 
 urlpatterns = patterns('',
@@ -8,7 +10,9 @@ urlpatterns = patterns('',
 	# url(r'^$', 'TrackCat.views.home', name='home'),
 	# url(r'^blog/', include('blog.urls')),
 
+
 	url(r'^admin/', include(admin.site.urls)),
+
 	url(r'^$', index, name='pages-index'),
 	url(r'^about/$', about, name='pages-about'),
 	url(r'^projects/$', projects, name='pages-projects'),
@@ -17,4 +21,6 @@ urlpatterns = patterns('',
 	url(r'^gallery/$', gallery, name='pages-gallery'),
 	url(r'^login/$', login, name='pages-login'),
 	url(r'^links/$', links, name='pages-links'),
+	url(r'^privacy/$', privacy, name='pages-privacy'),
+
 )
