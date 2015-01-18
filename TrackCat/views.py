@@ -25,4 +25,7 @@ def login(request):
 
 def links(request):
 	return render(request, 'pages/links.html',{})
+
+def privacy(request):
+	return render(request, 'pages/privacy.html',{})
  

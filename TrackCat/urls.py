@@ -1,7 +1,7 @@
 from django.conf.urls import patterns, include, url
 from django.contrib import admin
 
-from TrackCat.views import index, about, projects, members, events, gallery, login, links, privacy
+from TrackCat.views import index, about, projects, members, events, gallery, login, links, privacy,
  
 
 
