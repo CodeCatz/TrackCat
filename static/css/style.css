@@ -33,7 +33,22 @@ footer {
 	list-style-type: none;
 	margin-right: 200px;
 	text-align: auto;
+	font-size: 18px;
 }
+.h4-footer {
+	font-size: 20px;
+	border-bottom: 1px solid #CCCCCC;
+	border-left-width: 100px;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
+}
+#map-canvas {
+    width: 300px;
+    height: 250px;
+    background-color: #CCC;
+  }
+
+
 
 /* Lastly, apply responsive CSS fixes as necessary */
 
@@ -44,6 +59,8 @@ footer {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
+
+
 
 
 /* Custom page CSS
