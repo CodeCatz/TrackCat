@@ -4,6 +4,7 @@
 html,
 body {
 	height: 100%;
+	background-color: #D9C5AD;
 	/* The html and body elements cannot have any padding or margin. */
 }
 
@@ -20,9 +21,10 @@ body {
 footer {
 	margin: 20px -5px 10px 0;
 	padding-top: 15px;
-	font-size: 18px;
+	font-size: 12px;
 	border-top: 1px solid #CCCCCC;
 	display: block;
+	background-color: #402924; 
 }
 .footer-links {
 	list-style-type: none;
@@ -35,6 +37,18 @@ footer {
 	text-align: auto;
 }
 
+#address {
+	color: #FFFFFF
+}
+.container-fluid {
+	background-color: #734F43;
+}
+.navbar {
+	color: #FFFFFF;
+	position:fixed!important;
+	width: 100%;
+	z-index: 9999;
+}
 /* Lastly, apply responsive CSS fixes as necessary */
 
 .CClogo {
@@ -51,13 +65,13 @@ footer {
 /* Not required for template or sticky footer method. */
 
 .login {
-	padding: 10px 0px 5px 990px; 
+float:left;
+
 }
 h1 {
 	width: 350px;
-	text-align: center;
 	position: relative; 
-	margin:-100px 0 0 -150px;
+	margin: 45px 0px 105px -150px;
 	padding: 10px;
 	top: 120px;
 	left: 50%;
@@ -66,7 +80,13 @@ h1 {
 #frontpage_title {
 	border: solid;
 	font-family: 'Carter One', cursive;
+	font-size: 50px;
+	color: #FFFFFF;
+	position: fixed;
+	text-align: center;
+	margin-top: 15px;
 }
+
 h2 {
 	color: #707070; 
 	text-align: center;
@@ -93,12 +113,12 @@ code {
 }
 .navbar-brand img{
 	height: 100%;
-	margin:0px;
 }
 
 /* Links page*/
 .links {
 	text-align: center;
+	position: relative;
 }
 /* about page*/
 img{
@@ -132,16 +152,17 @@ strong{
 }
 
 #frontpage{
-	height: 300px;
+	height: 400px;
 	padding: 5px 5px 20px 5px;
+	background: url(groupmeet.jpg) no-repeat fixed;
+	
 }
+
 .jumbotron{
 	text-align:center; 
 	margin: auto;
+	background-color: #F2E8E4;
 }
 
-#front_subtitle {
-	top: 140px;
-}
 
 /* end of about page */
