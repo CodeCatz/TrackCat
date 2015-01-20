@@ -33,6 +33,14 @@ footer {
 	list-style-type: none;
 	margin-right: 200px;
 	text-align: auto;
+	font-size: 18px;
+}
+.h4-footer {
+	font-size: 20px;
+	border-bottom: 1px solid #CCCCCC;
+	border-left-width: 100px;
+	margin-bottom: 0.5em;
+	padding-bottom: 0.5em;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
@@ -44,7 +52,6 @@ footer {
 	padding-top: 5px;
 	padding-bottom: 5px;
 }
-
 
 /* Custom page CSS
 -------------------------------------------------- */
@@ -101,45 +108,43 @@ code {
 	text-align: center;
 }
 /* about page*/
-img{
+.img_about {
 	width: 100px;
 	height: 100px;
 	margin: 10px;
 }
-.about_list{
+.about_list {
 	list-style-type: none;
 	font-size: 20px;
 	color: #5C5C5C;
 }
 /* to hide title in the second column of Members*/
-.transparent{
+.transparent {
 	color: transparent;
 }
 /* paragraph*/
-.intro{
+.intro {
 	text-align: justify;
 	color: #5C5C5C;
 	font-size: 20px;
 }
-strong{
+strong {
 	color: #5C5C5C;
 }
 /* headding */
-.about{
+.about {
 	color: #5C5C5C;
 	font-size: 40px;
-	padding-top: 30px;
+	padding: 20px 0 10px 0;
+	text-align: left;
 }
-
-#frontpage{
+#frontpage {
 	height: 300px;
 	padding: 5px 5px 20px 5px;
 }
-.jumbotron{
-	text-align:center; 
-	margin: auto;
+.jumbotron_about { 
+	
 }
-
 #front_subtitle {
 	top: 140px;
 }

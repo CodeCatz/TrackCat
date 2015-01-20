@@ -13,6 +13,17 @@ type='text/css'>
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		<script>
+			function initialize() {
+  			var mapProp = {
+    			center:new google.maps.LatLng(51.508742,-0.120850),
+    			zoom:5,
+    			mapTypeId:google.maps.MapTypeId.ROADMAP
+  			};
+  			var map=new google.maps.Map(document.getElementById("googleMap"),mapProp);
+			}
+			google.maps.event.addDomListener(window, 'load', initialize);
+		</script>
 	</head>
 	<body>
         <div class="login">
@@ -70,23 +81,35 @@ type='text/css'>
 
 		<footer>
 			<div class="container">
-					<div class="col-md-4">
+					<div class="col-md-2">
+						<h4 class="h4-footer">SUPPORT</h4>
 						<ul class="footer-links">
-							<li><a href="{% url 'pages-about' %}">Sponsors</a></li>
+							<li><a href="{% url 'pages-sponsors' %}">Sponsors</a></li>
 							<li><a href="{% url 'pages-about' %}">Privacy</a></li>
-							<li><a href="{% url 'pages-about' %}">Support</a></li>
+							<li><a href="mailto:someone@example.com?Subject=TrackCat-Webmaster%20e-mail" target="_top">Webmaster</a>
 						</ul>
 					</div> <!-- end col-md-5 -->
-					<div class="col-md-4">
-						<a href="{% url 'pages-index' %}"><img src="{% static "img/CodeCatz.jpg" %}"/></a>
+					<div class="col-md-3">
+						<h4 class="h4-footer">FOLLOW CodeCatz</h4>
+						<a href="https://www.facebook.com/groups/codecats/"><i class="fa fa-facebook-square fa-3x"></i></a>
+						<a href="https://twitter.com/codecatz"><i class="fa fa-twitter-square fa-3x"></i></a>
+						<a href="https://github.com/CodeCatz"><i class="fa fa-github-square fa-3x"></i></a>
 					</div> <!-- end col-md-2 -->
 					<div class="col-md-4">
-  						<p><strong>CodeCatz</strong><br>
-  							RAMPA Laboratorij<br>
+  						<h4 class="h4-footer">WHERE WE MEET</h4>
+  						<p style="font-size: 18px">	RAMPA Laboratorij<br>
   							Kersnikova ulica 4, Ljubljana<br>
 						</p>
-					</div> 		
+						<h4 class="h4-footer">WHEN</h4>
+  						<p style="font-size: 18px">	Wednesdays at 17.30</p>
+					</div> 
+					<div class="col-md-3">
+  						<div id="googleMap" style="width:300px;height:250px;background-color: #CCC;"></div>
+					</div>	
 			</div><!-- end container -->
+			<div class="col-md-12">
+          		<p style="text-align:center; font-size: 12px;">Copyright ©  2014 CodeCatz.  All rights reserved.</p>
+        	</div>
 		</footer>
 		<script  type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 	</body>
