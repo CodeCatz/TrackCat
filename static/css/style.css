@@ -66,15 +66,16 @@ footer {
 
 .login {
 float:left;
-
 }
+
+
 
 #frontpage_title {
 	border: solid;
 	font-family: 'Carter One', cursive;
 	font-size: 50px;
 	color: #FFFFFF;
-	position: fixed;
+	position: fixed!important;
 	text-align: center;
 	margin-top: 15px;
 	width: 350px;
@@ -87,8 +88,13 @@ float:left;
 
 
 .container .credit {
-	margin: 20px 0;
+	margin: 20px;
 }
+
+.container {
+	margin-top: 60px;
+}
+
 code {
 	font-size: 80%;
 }
@@ -138,10 +144,9 @@ strong{
 }
 
 #frontpage{
-	height: 400px;
-	padding: 5px 5px 20px 5px;
+	height: 350px;
 	background: url(groupmeet.jpg) no-repeat fixed;
-	
+	float:top; 
 }
 
 .jumbotron{
