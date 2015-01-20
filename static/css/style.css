@@ -68,14 +68,6 @@ footer {
 float:left;
 
 }
-h1 {
-	width: 350px;
-	position: relative; 
-	margin: 45px 0px 105px -150px;
-	padding: 10px;
-	top: 120px;
-	left: 50%;
-}
 
 #frontpage_title {
 	border: solid;
@@ -85,21 +77,15 @@ h1 {
 	position: fixed;
 	text-align: center;
 	margin-top: 15px;
+	width: 350px;
+	position: relative; 
+	margin: 45px 0px 105px -150px;
+	padding: 10px;
+	top: 120px;
+	left: 50%;
 }
 
-h2 {
-	color: #707070; 
-	text-align: center;
-	position: relative; 
-	top: 10px; 
-	bottom: 10px;
-	font-size: 20px;
-	font-family: Arial;
-}
-h3 {
-	text-align: center;
-	padding-bottom: 30px; 
-}
+
 .container .credit {
 	margin: 20px 0;
 }
