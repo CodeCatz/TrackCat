@@ -43,12 +43,7 @@ footer {
 .container-fluid {
 	background-color: #734F43;
 }
-.navbar {
-	color: #FFFFFF;
-	position:fixed!important;
-	width: 100%;
-	z-index: 9999;
-}
+
 /* Lastly, apply responsive CSS fixes as necessary */
 
 .CClogo {
