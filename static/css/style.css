@@ -4,6 +4,7 @@
 html,
 body {
 	height: 100%;
+	background-color: #D9C5AD;
 	/* The html and body elements cannot have any padding or margin. */
 }
 
@@ -20,9 +21,10 @@ body {
 footer {
 	margin: 20px -5px 10px 0;
 	padding-top: 15px;
-	font-size: 18px;
+	font-size: 12px;
 	border-top: 1px solid #CCCCCC;
 	display: block;
+	background-color: #402924; 
 }
 .footer-links {
 	list-style-type: none;
@@ -43,6 +45,13 @@ footer {
 	padding-bottom: 0.5em;
 }
 
+#address {
+	color: #FFFFFF
+}
+.container-fluid {
+	background-color: #734F43;
+}
+
 /* Lastly, apply responsive CSS fixes as necessary */
 
 .CClogo {
@@ -58,38 +67,36 @@ footer {
 /* Not required for template or sticky footer method. */
 
 .login {
-	padding: 10px 0px 5px 990px; 
+float:left;
 }
-h1 {
-	width: 350px;
+
+
+
+#frontpage_title {
+	border: solid;
+	font-family: 'Carter One', cursive;
+	font-size: 50px;
+	color: #FFFFFF;
+	position: fixed!important;
 	text-align: center;
+	margin-top: 15px;
+	width: 350px;
 	position: relative; 
-	margin:-100px 0 0 -150px;
+	margin: 45px 0px 105px -150px;
 	padding: 10px;
 	top: 120px;
 	left: 50%;
 }
 
-#frontpage_title {
-	border: solid;
-	font-family: 'Carter One', cursive;
-}
-h2 {
-	color: #707070; 
-	text-align: center;
-	position: relative; 
-	top: 10px; 
-	bottom: 10px;
-	font-size: 20px;
-	font-family: Arial;
-}
-h3 {
-	text-align: center;
-	padding-bottom: 30px; 
-}
+
 .container .credit {
-	margin: 20px 0;
+	margin: 20px;
 }
+
+.container {
+	margin-top: 60px;
+}
+
 code {
 	font-size: 80%;
 }
@@ -100,12 +107,12 @@ code {
 }
 .navbar-brand img{
 	height: 100%;
-	margin:0px;
 }
 
 /* Links page*/
 .links {
 	text-align: center;
+	position: relative;
 }
 /* about page*/
 .img_about {
@@ -138,6 +145,7 @@ strong {
 	padding: 20px 0 10px 0;
 	text-align: left;
 }
+<<<<<<< HEAD
 #frontpage {
 	height: 300px;
 	padding: 5px 5px 20px 5px;
@@ -148,5 +156,20 @@ strong {
 #front_subtitle {
 	top: 140px;
 }
+=======
+
+#frontpage{
+	height: 350px;
+	background: url(groupmeet.jpg) no-repeat fixed;
+	float:top; 
+}
+
+.jumbotron{
+	text-align:center; 
+	margin: auto;
+	background-color: #F2E8E4;
+}
+
+>>>>>>> upstream/master
 
 /* end of about page */

@@ -4,11 +4,16 @@
 
 {% block content%}
 
-
-	<div>
-		<h1>All CodeCatz Login</h1>
+	<header class="row">
+		<h4>CodeCatz Login</h4>
 		<p>This page will show Login for our members.</p>
+	</header>
+	<div class="row">
+		<p> Already logged in?
+		<a href="{% url 'pages-edituser' %}" class="btn btn-default">Edit your profile</a>
+		</p>
 	</div>
+	
 
 {% endblock content%}
 
