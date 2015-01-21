@@ -24,3 +24,6 @@ def login(request):
 
 def links(request):
 	return render(request, 'pages/links.html',{})
+
+def edituser(request):
+	return render(request, 'pages/edituser.html',{})
