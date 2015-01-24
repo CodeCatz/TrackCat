@@ -13,7 +13,7 @@ class Projects(models.Model):
 	project_description = models.CharField(max_length=150, blank=True)
 	status_id = models.CharField(max_length=1, choices=PROJECT_STATUS, blank=True)
 	project_deadline = models.DateTimeField(blank=True)
-	repository_link = models.CharField(max_length=300, blank=True)
+	repository_link = models.URLField(max_length=200, blank=True)
 	website_prod = models.URLField(max_length=200, blank=True)
 	website_test = models.URLField(max_length=200, blank=True)
 #	project_owner = models.ForeignKey(Users)
