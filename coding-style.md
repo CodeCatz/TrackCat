@@ -19,6 +19,9 @@ Examples of other _good_ coding styles and best practices:
 - Remove trailing white space (even when on an empty line).
 [Why is trailing space such a big issue](http://programmers.stackexchange.com/questions/121555/why-is-trailing-whitespace-a-big-deal) anyway?
 
+**Newline at the end of a file**
+- Always add a newline at the end of any file you edit. [Why, you ask](http://robots.thoughtbot.com/no-newline-at-end-of-file)?
+
 **Naming**
 
 ## HTML

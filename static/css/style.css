@@ -24,13 +24,15 @@ footer {
 	font-size: 12px;
 	border-top: 1px solid #CCCCCC;
 	display: block;
-	background-color: #402924; 
+	background-color: #402924;
 }
+
 .footer-links {
 	list-style-type: none;
 	padding: 0px;
 	margin: 0px;
 }
+
 .footer-links li {
 	list-style-type: none;
 	margin-right: 200px;
@@ -40,12 +42,12 @@ footer {
 #address {
 	color: #FFFFFF
 }
+
 .container-fluid {
 	background-color: #734F43;
 }
 
 /* Lastly, apply responsive CSS fixes as necessary */
-
 .CClogo {
 	height: 40px;
 	width: 40px;
@@ -54,16 +56,13 @@ footer {
 	padding-bottom: 5px;
 }
 
-
 /* Custom page CSS
 -------------------------------------------------- */
 /* Not required for template or sticky footer method. */
 
 .login {
-float:left;
+	float:left;
 }
-
-
 
 #frontpage_title {
 	border: solid;
@@ -74,13 +73,12 @@ float:left;
 	text-align: center;
 	margin-top: 15px;
 	width: 350px;
-	position: relative; 
+	position: relative;
 	margin: 45px 0px 105px -150px;
 	padding: 10px;
 	top: 120px;
 	left: 50%;
 }
-
 
 .container .credit {
 	margin: 20px;
@@ -107,30 +105,36 @@ code {
 	text-align: center;
 	position: relative;
 }
+
 /* about page*/
 img{
 	width: 100px;
 	height: 100px;
 	margin: 10px;
 }
+
 .about_list{
 	list-style-type: none;
 	font-size: 20px;
 	color: #5C5C5C;
 }
+
 /* to hide title in the second column of Members*/
 .transparent{
 	color: transparent;
 }
+
 /* paragraph*/
 .intro{
 	text-align: justify;
 	color: #5C5C5C;
 	font-size: 20px;
 }
+
 strong{
 	color: #5C5C5C;
 }
+
 /* headding */
 .about{
 	color: #5C5C5C;
@@ -141,14 +145,13 @@ strong{
 #frontpage{
 	height: 350px;
 	background: url(groupmeet.jpg) no-repeat fixed;
-	float:top; 
+	float:top;
 }
 
 .jumbotron{
-	text-align:center; 
+	text-align:center;
 	margin: auto;
 	background-color: #F2E8E4;
 }
-
 
 /* end of about page */
