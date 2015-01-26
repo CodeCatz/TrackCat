@@ -23,6 +23,3 @@ class UserProfile(models.Model):
 	last_logged_in = models.DateTimeField(auto_now=True, blank=False)
 	date_created = models.DateTimeField(auto_now_add=True, blank=False)
 	date_updated = models.DateTimeField(auto_now_add=True)
-
-	def __unicode__(self):
-		return self.fullname
