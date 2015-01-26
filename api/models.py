@@ -24,9 +24,5 @@ class UserProfile(models.Model):
 	date_created = models.DateTimeField(auto_now_add=True, blank=False)
 	date_updated = models.DateTimeField(auto_now_add=True)
 
-	def publish(self):
-		self.date_created = timezone.now()
-		self.save()
-
 	def __unicode__(self):
 		return self.fullname
