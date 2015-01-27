@@ -5,10 +5,10 @@ from django.utils import timezone
 class Task (models.Model):
 
 	STATUS_CHOICES = (
-	('UNASSIGNED', 'Unassigned'),
-	('WORKINGON', 'Working On'),
-	   ('COMPLETED', 'Completed'),
-	)
+		('UNASSIGNED', 'Unassigned'),
+		('WORKINGON', 'Working On'),
+		('COMPLETED', 'Completed'),
+		)
 
 	title = models.CharField(max_length=255, default=None)
 	description = models.TextField(max_length=1000)
@@ -19,4 +19,3 @@ class Task (models.Model):
 	deadline = models.DateTimeField(blank=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now_add=True)
-	
