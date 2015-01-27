@@ -1,5 +1,4 @@
 from django.db import models
-# Create your models here.
 
 class Projects(models.Model):
 	PROJECT_STATUS = (
@@ -18,3 +17,4 @@ class Projects(models.Model):
 	# project_owner = models.ForeignKey(Users)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_modified = models.DateTimeField(auto_now=True)
+
