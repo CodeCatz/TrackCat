@@ -8,6 +8,7 @@ class Projects(models.Model):
 		('progress', 'In progress'),
 		('closed', 'Closed'),
 		)
+	project_id = models.AutoField(primary_key=True)
 	project_name = models.CharField(max_length=50)
 	project_description = models.CharField(max_length=150, blank=True)
 	status_id = models.CharField(max_length=8, choices=PROJECT_STATUS, default=open)
