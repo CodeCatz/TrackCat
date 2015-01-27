@@ -1,5 +1,4 @@
 from django.db import models
-from django.utils import timezone
 # Create your models here.
 
 class Projects(models.Model):
@@ -17,5 +16,5 @@ class Projects(models.Model):
 	website_production = models.URLField(max_length=300, blank=True)
 	website_test = models.URLField(max_length=300, blank=True)
 	# project_owner = models.ForeignKey(Users)
-	date_created = models.DateTimeField(auto_now_add=True, default=timezone.now)
+	date_created = models.DateTimeField(auto_now_add=True)
 	date_modified = models.DateTimeField(auto_now=True)
