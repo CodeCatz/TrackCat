@@ -1,7 +1,5 @@
 from django.db import models
 
-# Create your models here.
-
 class Task (models.Model):
 
 	STATUS_CHOICES = (
@@ -19,4 +17,3 @@ class Task (models.Model):
 	deadline = models.DateTimeField(blank=True, null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now=True)
-	
