@@ -4,6 +4,7 @@ class Task (models.Model):
 
 	STATUS_CHOICES = (
 		('UNASSIGNED', 'Unassigned'),
+		('ASSIGNED', 'Assigned'),
 		('WORKINGON', 'Working On'),
 		('COMPLETED', 'Completed'),
 		)
