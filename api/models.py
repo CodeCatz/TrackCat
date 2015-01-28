@@ -12,7 +12,7 @@ class Task (models.Model):
 	title = models.CharField(max_length=255)
 	description = models.TextField(max_length=1000, blank=True)
 	status = models.CharField(max_length=15, choices=STATUS_CHOICES, default='UNASSIGNED')
-	assigned_id = models.ForeignKey(User)
+	assigned_id = models.ForeignKey(User, blank=True, null=True)
 	owner_id = models.ForeignKey(User)
 	project_id models.ForeignKey(Project)
 	deadline = models.DateTimeField(blank=True, null=True)
