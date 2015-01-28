@@ -14,7 +14,8 @@ class Projects(models.Model):
 	repository_link = models.URLField(max_length=300)
 	website_production = models.URLField(max_length=300, blank=True)
 	website_test = models.URLField(max_length=300, blank=True)
-	# project_owner = models.ForeignKey(Users)
+	project_owner = models.ForeignKey(Users)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_modified = models.DateTimeField(auto_now=True)
+	user_project = models.ManyToMany(Userprofile)
 
