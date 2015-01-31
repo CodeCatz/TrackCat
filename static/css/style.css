@@ -25,6 +25,25 @@ footer {
 	border-top: 1px solid #CCCCCC;
 	display: block;
 	background-color: #402924;
+	color: #FFF;
+}
+footer img.codecatz-logo {
+	height: 38px;
+    width: 38px;
+    display: block;
+	border: 0px none;
+	margin: 0px;
+}
+
+footer img.cc-icons {
+	height: 45px;
+	width: 162px;
+}
+
+footer img.map {
+	height: 266px;
+	width: 512px;
+	margin: 0px;
 }
 
 .footer-links {
@@ -84,9 +103,9 @@ footer {
 	margin: 20px;
 }
 
-.container {
+/*.container {
 	margin-top: 60px;
-}
+}*/
 
 code {
 	font-size: 80%;
