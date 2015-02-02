@@ -27,13 +27,6 @@ footer {
 	background-color: #402924;
 	color: #FFF;
 }
-footer img.codecatz-logo {
-	height: 38px;
-    width: 38px;
-    display: block;
-	border: 0px none;
-	margin: 0px;
-}
 
 footer img.cc-icons {
 	height: 45px;
@@ -97,10 +90,6 @@ footer img.cc-icons {
 	margin: 20px;
 }
 
-/*.container {
-	margin-top: 60px;
-}*/
-
 code {
 	font-size: 80%;
 }
@@ -120,7 +109,7 @@ code {
 }
 
 /* about page*/
-img{
+.row img{
 	width: 100px;
 	height: 100px;
 	margin: 10px;
