@@ -25,6 +25,12 @@ footer {
 	border-top: 1px solid #CCCCCC;
 	display: block;
 	background-color: #402924;
+	color: #FFF;
+}
+
+footer img.cc-icons {
+	height: 45px;
+	width: 162px;
 }
 
 .footer-links {
@@ -84,10 +90,6 @@ footer {
 	margin: 20px;
 }
 
-.container {
-	margin-top: 60px;
-}
-
 code {
 	font-size: 80%;
 }
@@ -112,7 +114,7 @@ h1 {
 }
 
 /* about page*/
-img{
+.row img{
 	width: 100px;
 	height: 100px;
 	margin: 10px;
