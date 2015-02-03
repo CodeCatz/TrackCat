@@ -100,3 +100,24 @@ try:
 	from .settings_local import *
 except ImportError as e:
 	pass
+
+########## ATHENTICATION CONFIGURATION
+AUTHENTICATION_BACKENDS = (
+	'social.backends.github.GithubOAuth2',
+	'django.contrib.auth.backends.ModelBackend',
+)
+
+AUTH_PROFILE_MODULE = 'api.UserProfile'
+
+LOGIN_URL = '/login/'
+LOGIN_REDIRECT_URL = '/'
+LOGIN_ERROR_URL = '/login-error/'
+SOCIAL_AUTH_NEW_USER_REDIRECT_URL = '/'
+
+SOCIAL_AUTH_ENABLED_BACKENDS = ('github')
+SOCIAL_AUTH_DEFAULT_USERNAME = 'new_social_auth_user'
+
+SOCIAL_AUTH_GITHUB_KEY = ''
+SOCIAL_AUTH_GITHUB_SECRET = ''
+########## END ATHENTICATION CONFIGURATION
+
