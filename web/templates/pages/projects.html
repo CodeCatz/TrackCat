@@ -12,31 +12,29 @@
 			<p>This page will show all our projects and who is working on what.</p>
 		</div>
 	</header>
+	
 	<div class="row">
+	{% for project in project_list %}
 		<div class="col-md-3 col-xs-6">
-			<p><img src="http://placekitten.com/g/350/350" alt="" class="img-responsive"></p>
-			<h4>Little kitten project</h4>
-			<p>Project short description:Fun, ragdoll Gizmo boots feel caturday home whisker. Kitten, family run buddy curiosity furball sleeping boots. Backyard kitten friend's long pillow cat sunbathe beautiful petting kittens siam tabby dog baby lady cute disapproval belly her. Siam spoon buddy house smile feed me this spoon home cats fire cat meet.</p>
-			<p><a href="#" class="btn btn-primary btn-block">Go to project >></a></p>
+			<h3><a href="{% url 'web.views.project_detail' project_id=project.project_id %}">{{project.project_name}}</a></h3>
+			<p><strong>Description:</strong></p>
+			<p>{{ project.project_description }}</p>
+			<p><strong>Status:</strong> {{ project.get_status_id_display }}</p>
+			<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
+
+			{% if project.project_deadline %}
+				<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
+			{% endif %}
+
 		</div>
-		<div class="col-md-3 col-xs-6">
-			<p><img src="http://placekitten.com/350/350" alt="" class="img-responsive"></p>
-			<h4>Happy Cat project</h4>
-			<p>Project short description: Kitten Ipsum curls persian purses psycho finally, spot friend meowlly friends go sucked cat cat thinks ham cat baby cinnamin spoon watched kills favorite friend crosseyed saved. Awesomeness dog kitties, child cat fight gf's water cats aww dang sucked my her tongue eyes skeptical!</p>
-			<p><a href="#" class="btn btn-primary btn-block">Go to project >></a></p>
-		</div>
-		<div class="col-md-3 col-xs-6">
-			<p><img src="http://placekitten.com/g/350/350" alt="" class="img-responsive"></p>
-			<h4>Fluffy kitten project</h4>
-			<p>Project short description: Friend adoption grandparents kitty aww jump, sleep on your keyboard cats down love oscar dog run kitty cats turbo hendrix buddy eyes Zooey! Standing his cats reddit feel cake day waking cat mercedes hairball prince backyard cat buddy norwegian forest cat birdwatching yoda french favorite aww meowschwitz fire backyard me special.</p>
-			<p><a href="#" class="btn btn-primary btn-block">Go to project >></a></p>
-		</div>
-		<div class="col-md-3 col-xs-6">
-			<p><img src="http://placekitten.com/350/350" alt="" class="img-responsive"></p>
-			<h4>Kitten vacation project</h4>
-			<p>Project short description: Go his sleepy cats age, flying fire she my sunbathe smile jump aww Baxter petting kittens buddy roll cute odd. Happy, ambush face basket cat little mom! Meow siamese love knock over the lamp petting norwegian forest cat helped lick new watched sleepy tabby bed pants, family together socks siamese sister's reddit. </p>
-			 <p><a href="#" class="btn btn-primary btn-block">Go to project >></a></p>
-		 </div>
-	</div>
+		{% if forloop.last %}
+			</div>
+		{% else %}
+			{% if forloop.counter|divisibleby:"4" %}
+				</div>
+				<div class="row">
+			{% endif %}
+		{% endif %}
+	{% endfor %}
 
 {% endblock content%}
