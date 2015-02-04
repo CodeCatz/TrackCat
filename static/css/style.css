@@ -148,16 +148,15 @@ strong {
 	text-align:center;
 }
 
-#frontpage{
+#frontpage {
 	height: 350px;
 	background: url(groupmeet.jpg) no-repeat fixed;
 	float:top;
 }
 
-.jumbotron{
+.jumbotron p {
 	text-align:justify;
 	margin: 0 10px 10px;
-	background-color: #F2E8E4;
 	font-size: 12px;
 }
 
