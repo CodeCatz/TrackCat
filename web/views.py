@@ -1,5 +1,5 @@
 from django.template import RequestContext
-from django.shortcuts import render_to_response, render
+from django.shortcuts import render_to_response, render, get_object_or_404
 from api.models import Project
 
 def index(request):
@@ -29,3 +29,7 @@ def links(request):
 
 def edituser(request):
 	return render(request, 'pages/edituser.html',{})
+
+def project_detail(request,project_id):
+	project = get_object_or_404(Project, project_id=project_id)
+	return render(request, 'pages/project_detail.html', {'project': project})
