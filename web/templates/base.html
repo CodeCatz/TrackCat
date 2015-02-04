@@ -63,27 +63,8 @@
 		<div id="push"></div>
 		</div>
 
-		<footer>
-			<div class="container">
-					<div class="col-md-4">
-						<ul class="footer-links">
-							<li><a href="{% url 'pages-about' %}">Sponsors</a></li>
-							<li><a href="{% url 'pages-about' %}">Privacy</a></li>
-							<li><a href="{% url 'pages-about' %}">Support</a></li>
-						</ul>
-					</div> <!-- end col-md-5 -->
-					<div class="col-md-4">
-						<a href="{% url 'pages-index' %}"><img src="{% static "img/CodeCatz.jpg" %}"/></a>
-					</div> <!-- end col-md-2 -->
-					<div class="col-md-4" id="address">
-						<p><strong>CodeCatz</strong><br>
-							RAMPA Laboratorij<br>
-							Kersnikova ulica 4, Ljubljana<br>
-						</p>
-					</div>
-			</div><!-- end container -->
-		</footer>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		{% include 'layout/footer.html' %}
+
 	</body>
 </html>
+
