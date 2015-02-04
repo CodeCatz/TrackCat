@@ -111,14 +111,14 @@ h1 {
 	position: relative;
 }
 
-/* about page*/
+
 img{
 	width: 100px;
 	height: 100px;
 	margin: 10px;
 }
 
-.about_list{
+.about_list {
 	list-style-type: none;
 	font-size: 20px;
 	color: #5C5C5C;
@@ -127,28 +127,25 @@ img{
 	-moz-columns: 2;
 }
 
-/* to hide title in the second column of Members*/
-.transparent{
-	color: transparent;
-}
 
 /* paragraph*/
-.intro{
+.intro {
 	text-align: justify;
 	color: #5C5C5C;
-	font-size: 20px;
+	font-size: 12px;
 }
 
-strong{
+strong {
 	color: #5C5C5C;
 }
 
 /* headding */
-.about{
+.about {
 	color: #5C5C5C;
 	font-size: 40px;
-	padding-top: 30px;
+	padding-bottom: 20px;
 	clear: both;
+	text-align:center;
 }
 
 #frontpage{
@@ -157,10 +154,10 @@ strong{
 	float:top;
 }
 
-.jumbotron{
-	text-align:center;
-	margin: auto;
-	background-color: #F2E8E4;
+.jumbotron p {
+	text-align:justify;
+	margin: 0 10px 10px;
+	font-size: 12px;
 }
 
 /* end of about page */
