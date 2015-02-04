@@ -17,12 +17,13 @@
 	{% for project in project_list %}
 		<div class="col-md-3 col-xs-6">
 			<h3><a href="{% url 'web.views.project_detail' project_id=project.project_id %}">{{project.project_name}}</a></h3>
-			<p><strong>Description:</strong> </br>{{ project.project_description}}</p>
-			<p><strong>Status: </strong>{{project.get_status_id_display}}</p>
-			<p><strong>Project launch: </strong>{{project.date_created|date:"m. Y"}}</p>
+			<p><strong>Description:</strong></p>
+			<p>{{ project.project_description }}</p>
+			<p><strong>Status:</strong> {{ project.get_status_id_display }}</p>
+			<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
 
 			{% if project.project_deadline %}
-				<p><strong>Project deadline: </strong>{{project.project_deadline|date:"d.m.Y"}}</p>
+				<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
 			{% endif %}
 
 		</div>
