@@ -21,7 +21,7 @@
 			<p><strong>Status: </strong>{{project.get_status_id_display}}</p>
 			<p><strong>Project launch: </strong>{{project.date_created|date:"m. Y"}}</p>
 
-			{% if project.project_deadline != None %}
+			{% if project.project_deadline %}
 				<p><strong>Project deadline: </strong>{{project.project_deadline|date:"d.m.Y"}}</p>
 			{% endif %}
 

@@ -12,12 +12,16 @@
 		<div class="col-md-8 col-xs-6">
 			<p><strong>Project launch date: </strong>{{project.date_created|date:"d.m.Y"}}</p>
 			<p><strong>Current status: </strong>{{project.get_status_id_display}}</p>
-			{% if project.project_deadline != None %}
+			{% if project.project_deadline %}
 				<p><strong>Project deadline: </strong>{{project.project_deadline|date:"d.m.Y"}}</p>
 			{% endif %}
 			<p><strong>Repository: </strong>{{project.repository_link}}</p>
-			<p><strong>Production site: </strong>{{project.website_production}}</p>
-			<p><strong>Test site: </strong>{{project.website_test}}</p>
+			{% if project.website_production %}
+				<p><strong>Production site: </strong>{{project.website_production}}</p>
+			{% endif %}
+			{% if project.website_test %}
+				<p><strong>Test site: </strong>{{project.website_test}}</p>
+			{% endif %}
 		</div>
 	</div>	
 	<div class="row">
