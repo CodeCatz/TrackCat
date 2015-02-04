@@ -60,3 +60,6 @@ target/
 settings_local.py
 staticfiles/
 .DS_Store
+
+# Windows junk
+Thumbs.db
