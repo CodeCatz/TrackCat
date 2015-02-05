@@ -30,6 +30,9 @@ def links(request):
 def edituser(request):
 	return render(request, 'pages/edituser.html',{})
 
+def privacy(request):
+	return render(request, 'pages/privacy.html',{})
+
 def project_detail(request,project_id):
 	project = get_object_or_404(Project, project_id=project_id)
 	return render(request, 'pages/project_detail.html', {'project': project})
