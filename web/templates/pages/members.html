@@ -10,6 +10,11 @@
 			<h1>Who is who?</h1>
 	<div class="row">
 		<div>
+
+	{% for member in members_list %}
+			<h3>{{member.fullname}}</h3>
+	{% endfor %}
+
 			<h2 class="about">Mentors</h2>
 			<ul class="about_list">
 				<li><a href="https://www.facebook.com/ialja?ref=ts&fref=ts"><img src="{% static "img/Alja.png" %}">Alja Isaković</a><li>
