@@ -30,3 +30,15 @@ Mockup
 ======
 
 https://moqups.com/superbibi101/uxDjnbyA
+
+Configure Python social authentication
+======================================
+1. In Github go to Personal Settings/Applications -> Register new application
+Application name = TrackCatz
+Homepage URL = http://localhost:8000/
+Application Descrition = TrackCatz application
+Application callback URL = http://localhost:8000/
+2. In your local TrackCat directory create settings_local.py and add two lines:
+SOCIAL_AUTH_GITHUB_KEY = 'enter Client ID from your github registered app '
+SOCIAL_AUTH_GITHUB_SECRET = 'enter Client Secret from your github registered app'
+

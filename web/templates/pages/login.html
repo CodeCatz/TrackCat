@@ -4,14 +4,20 @@
 
 {% block content%}
 
-	<header class="row">
-		<h4>CodeCatz Login</h4>
-		<p>This page will show Login for our members.</p>
-	</header>
-	<div class="row">
-		<p> Already logged in?
-		<a href="{% url 'pages-edituser' %}" class="btn btn-default">Edit your profile</a>
+<div class="container">
+	<div class="text-center">
+		<h1>Login to TrackCatz with your Github account</h1>
+		<p>We make it easier so you don't have to remember yet another password
+			<i class="fa fa-smile-o"></i>
 		</p>
 	</div>
+	<div class="login-body">
+		<a href="{% url 'social:begin' 'github' %}"
+		class="btn btn-block btn-social btn-lg btn-github">
+		<i class="fa fa-github-square"></i> Sign in with Github
+		</a>
+	</div>
+</div>
 
 {% endblock content%}
+
