@@ -10,6 +10,11 @@
 			<h1>Who is who?</h1>
 	<div class="row">
 		<div>
+
+	{% for member in members_list %}
+			<h3>{{member.fullname}}</h3>
+	{% endfor %}
+
 			<h2 class="about">Mentors</h2>
 			<ul class="about_list">
 				<li><a href="https://www.facebook.com/ialja?ref=ts&fref=ts"><img src="{% static "img/Alja.png" %}">Alja Isaković</a><li>
@@ -30,7 +35,7 @@
 				<li><a href='https://www.facebook.com/asokica?fref=grp_mmbr_list'><img src="{% static "img/heidi.png" %}">Heidi Pungartnik</a></li>
 				<li><a href='https://www.facebook.com/petra.vidmar.14?fref=grp_mmbr_list'><img src="{% static "img/petra.png" %}">Petra Vidmar</a></li>
 				<li><a href='https://www.facebook.com/nina.ninchy2?fref=grp_mmbr_list'><img src="{% static "img/ninaninchy.png" %}">Nina Pristov</a></li>
-					<li><a href='https://www.facebook.com/mojca007?fref=grp_mmbr_list'><img src="{% static "img/mojca.png" %}">Mojca</a></li>
+				<li><a href='https://www.facebook.com/mojca007?fref=grp_mmbr_list'><img src="{% static "img/mojca.png" %}">Mojca Spazzapan</a></li>
 				<li><a href='https://www.facebook.com/dobai.livia.5?fref=grp_mmbr_list'><img src="{% static "img/liviadobai.png" %}">Livia Dobai</a></li>
 				<li><a href='https://www.facebook.com/masa.c.logar?fref=grp_mmbr_list'><img src="{% static "img/masalogar.png" %}">Maša Černovšek Logar</a></li>
 				<li><a href='https://www.facebook.com/nina.malovrh.1?fref=grp_mmbr_list'><img src="{% static "img/ninamalovrh.png" %}">Nina Malovrh</a></li>
