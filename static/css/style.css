@@ -129,11 +129,10 @@ img{
 
 .about_list {
 	list-style-type: none;
+	float:left;
+	padding: 5px 10px;
 	font-size: 20px;
 	color: #5C5C5C;
-	columns: 2;
-	-webkit-columns: 2;
-	-moz-columns: 2;
 }
 
 
