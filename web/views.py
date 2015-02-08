@@ -1,6 +1,7 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404
 from api.models import Project
+from api.models import UserProfile
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -13,7 +14,8 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	return render(request, 'pages/members.html',{})
+	members_list = UserProfile.objects.filter(active=True).order_by('activity_status')
+	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def events(request):
 	return render(request, 'pages/events.html',{})

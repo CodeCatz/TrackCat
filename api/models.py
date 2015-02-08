@@ -5,10 +5,10 @@ from django.contrib.auth.models import User
 class UserProfile(models.Model):
 
 	ACTIVITY_LEVEL = (
-			("SC", "Sleepy_Cat"),
-			("LC", "Lazy_Cat"),
-			("AC", "Active_Cat"),
-			("MC", "Mentor_Cat"),
+			("04", "Sleepy_Cat"),
+			("03", "Lazy_Cat"),
+			("02", "Active_Cat"),
+			("01", "Mentor_Cat"),
 	)
 
 	user = models.OneToOneField(User) 
