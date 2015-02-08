@@ -14,7 +14,7 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	members_list = UserProfile.objects.filter(active=True).order_by('activity_status')
+	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def events(request):
