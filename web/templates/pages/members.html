@@ -7,25 +7,33 @@
 {% load staticfiles %}
 
 	<header class="row">
+		<div class="col-lg-6 col-sm-7">
 			<h1>Who is who?</h1>
+		</div>
+		<div class="col-lg-6 col-sm-5">
+			<p>This page will show all our active members.</p>
+		</div>
+	</header>
+
 	<div class="row">
 		<div>
-	<ul class="about_list">
-	{% for member in members_list %}
-	{% if member.activity_status == '01' %}
-		<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Mentor cat)<li>
-	{% endif %}
-	{% if member.activity_status == '02' %}
-		<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Active cat)<li>
-	{% endif %}
-	{% if member.activity_status == '03' %}
-		<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Lazy cat)<li>
-	{% endif %}	
-	{% if member.activity_status == '04' %}
-		<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Sleepy cat)<li>
-	{% endif %}	
-	{% endfor %}
-	</ul>			
+			<ul class="about_list">
+			{% for member in members_list %}
+				{% if member.activity_status == 'MC' %}
+					<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Mentor cat)<li>
+				{% endif %}
+				{% if member.activity_status == 'AC' %}
+					<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Active cat)<li>
+				{% endif %}
+				{% if member.activity_status == 'LC' %}
+					<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Lazy cat)<li>
+				{% endif %}	
+				{% if member.activity_status == 'SC' %}
+					<li><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Sleepy cat)<li>
+				{% endif %}	
+			{% endfor %}
+			</ul>
+		</div>			
 	</div>		
 
 {% endblock content%}
