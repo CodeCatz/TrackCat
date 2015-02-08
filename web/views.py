@@ -1,6 +1,7 @@
 from django.template import RequestContext
-from django.shortcuts import render_to_response, render, get_object_or_404
+from django.shortcuts import render_to_response, render, get_object_or_404, redirect
 from api.models import Project
+from django.contrib.auth import logout as auth_logout
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -36,3 +37,8 @@ def privacy(request):
 def project_detail(request,project_id):
 	project = get_object_or_404(Project, project_id=project_id)
 	return render(request, 'pages/project_detail.html', {'project': project})
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
+
