@@ -1,6 +1,5 @@
 from django.template import RequestContext
-from django.shortcuts import render_to_response, render, get_object_or_404
-from django.shortcuts import redirect
+from django.shortcuts import render_to_response, render, get_object_or_404, redirect
 from api.models import Project
 from .form import ProjectForm
 
@@ -48,7 +47,7 @@ def project_new(request):
 			return redirect('web.views.project_detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm()
-		return render(request, 'pages/project_edit.html', {'projectform': projectform})
+	return render(request, 'pages/project_edit.html', {'projectform': projectform})
 
 def project_edit(request, project_id):
 	project = get_object_or_404(Project, project_id=project_id)
@@ -59,4 +58,4 @@ def project_edit(request, project_id):
 			return redirect('web.views.project_detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm(instance=project)
-		return render(request, 'pages/project_edit.html', {'projectform': projectform})
+	return render(request, 'pages/project_edit.html', {'projectform': projectform})
