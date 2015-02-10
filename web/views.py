@@ -1,6 +1,9 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404
+from django.shortcuts import redirect
 from api.models import Project
+from .form import ProjectForm
+
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -36,3 +39,24 @@ def privacy(request):
 def project_detail(request,project_id):
 	project = get_object_or_404(Project, project_id=project_id)
 	return render(request, 'pages/project_detail.html', {'project': project})
+
+def project_new(request):
+	if request.method == "POST":
+		projectform = ProjectForm (request.POST)
+		if projectform.is_valid():
+			project = projectform.save()
+			return redirect('web.views.project_detail', project_id=project.project_id)
+	else:
+		projectform = ProjectForm()
+		return render(request, 'pages/project_edit.html', {'projectform': projectform})
+
+def project_edit(request, project_id):
+	project = get_object_or_404(Project, project_id=project_id)
+	if request.method == "POST":
+		projectform = ProjectForm(request.POST, instance=project)
+		if projectform.is_valid():
+			project = projectform.save()
+			return redirect('web.views.project_detail', project_id=project.project_id)
+	else:
+		projectform = ProjectForm(instance=project)
+		return render(request, 'pages/project_edit.html', {'projectform': projectform})

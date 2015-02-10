@@ -12,7 +12,9 @@
 			<p>This page will show all our projects and who is working on what.</p>
 		</div>
 	</header>
-	
+	<div class="row">
+		<a class="btn btn-default" href="{% url 'web.views.project_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	</div>
 	<div class="row">
 	{% for project in project_list %}
 		<div class="col-md-3 col-xs-6">
