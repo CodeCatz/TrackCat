@@ -47,6 +47,7 @@ def project_new(request):
 			return redirect('web.views.project_detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm()
+
 	return render(request, 'pages/project_edit.html', {'projectform': projectform})
 
 def project_edit(request, project_id):
@@ -58,4 +59,5 @@ def project_edit(request, project_id):
 			return redirect('web.views.project_detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm(instance=project)
+
 	return render(request, 'pages/project_edit.html', {'projectform': projectform})
