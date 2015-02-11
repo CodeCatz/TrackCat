@@ -1,14 +1,10 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
-<<<<<<< HEAD
 from api.models import Project
 from .form import ProjectForm
-
-=======
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
 from api.models import UserProfile
->>>>>>> master
 
 def index(request):
 	return render_to_response('pages/index.html',{})
