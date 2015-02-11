@@ -1,8 +1,14 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
+<<<<<<< HEAD
 from api.models import Project
 from .form import ProjectForm
 
+=======
+from django.contrib.auth import logout as auth_logout
+from api.models import Project
+from api.models import UserProfile
+>>>>>>> master
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -15,7 +21,8 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	return render(request, 'pages/members.html',{})
+	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
+	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def events(request):
 	return render(request, 'pages/events.html',{})
@@ -61,3 +68,7 @@ def project_edit(request, project_id):
 		projectform = ProjectForm(instance=project)
 
 	return render(request, 'pages/project_edit.html', {'projectform': projectform})
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
