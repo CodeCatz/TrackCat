@@ -1,6 +1,8 @@
 from django.template import RequestContext
-from django.shortcuts import render_to_response, render, get_object_or_404
+from django.shortcuts import render_to_response, render, get_object_or_404, redirect
+from django.contrib.auth import logout as auth_logout
 from api.models import Project
+from api.models import UserProfile
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -13,7 +15,8 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	return render(request, 'pages/members.html',{})
+	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
+	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def events(request):
 	return render(request, 'pages/events.html',{})
@@ -36,3 +39,8 @@ def privacy(request):
 def project_detail(request,project_id):
 	project = get_object_or_404(Project, project_id=project_id)
 	return render(request, 'pages/project_detail.html', {'project': project})
+
+def logout(request):
+    auth_logout(request)
+    return redirect('/')
+

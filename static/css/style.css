@@ -93,11 +93,20 @@ code {
 }
 
 /* Fit CodeCatz image in navbar-brand. */
+.navbar-header{
+	padding: 0;
+
+}
+
 .navbar-brand{
 	padding: 6px;
+	width: 80px;
+	height: 40px;
 }
 .navbar-brand img{
-	height: 100%;
+	padding: 0;
+	width: 40px;
+	height: 40px;
 }
 
 /* Links page*/
@@ -157,6 +166,26 @@ strong {
 .jumbotron p {
 	text-align:justify;
 	margin: 0 10px 10px;
+	font-size: 12px;
+}
+
+/* end of about page */
+
+/* member */
+
+.sleepy_cat { 
+	font-size: 12px;
+}
+
+.lazy_cat { 
+	font-size: 12px;
+}
+
+.active_cat { 
+	font-size: 12px;
+}
+
+.mentor_cat { 
 	font-size: 12px;
 }
 

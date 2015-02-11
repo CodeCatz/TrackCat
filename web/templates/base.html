@@ -45,9 +45,8 @@
 						<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
 						<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
 						<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
-						<li class="{% current 'pages-gallery' %}"><a href="{% url 'pages-gallery' %}">Gallery</a></li>
-						<li class="{% current 'pages-login' %}"><a href="{% url 'pages-login' %}">Login/Profile</a></li>
-						<li class="{% current 'pages-links' %}"><a href="{% url 'pages-links' %}">Links</a></li>
+						<li class="{% current 'pages-login' %}"><a href="{% url 'pages-login' %}">Login</a></li>
+						<li class="{% current 'pages-links' %}"><a href="{% url 'pages-links' %}">Help</a></li>
 					</ul>
 					<form class="navbar-form navbar-right" role="search">
 						<div class="form-group">
@@ -61,6 +60,7 @@
 			</div><!-- /.container for navigation -->-->
 
 		<div class="container">
+			<div id="gbCountdown"></div>
 			{% block content %}{% endblock content %}
 		</div><!-- /.container for main content -->
 
@@ -89,5 +89,6 @@
 		</footer>
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
 	</body>
 </html>
