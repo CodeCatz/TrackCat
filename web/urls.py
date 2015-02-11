@@ -8,6 +8,7 @@ urlpatterns = patterns('',
 	url(r'^$', views.index, name='pages-index'),
 	url(r'^about/$', views.about, name='pages-about'),
 	url(r'^projects/$', views.projects, name='pages-projects'),
+	url(r'^tasks/$', views.tasks, name='pages-tasks'),
 	url(r'^members/$', views.members, name='pages-members'),
 	url(r'^events/$', views.events, name='pages-events'),
 	url(r'^gallery/$', views.gallery, name='pages-gallery'),
@@ -17,4 +18,5 @@ urlpatterns = patterns('',
 	url(r'^privacy/$', views.privacy, name='pages-privacy'),
 	url(r'^project/(?P<project_id>[0-9]+)/$', views.project_detail),
 	url(r'^logout/$', views.logout, name='logout'),
+	
 )

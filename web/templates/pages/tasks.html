@@ -1,0 +1,29 @@
+{% extends 'base.html' %}
+
+{% block title %}All CodeCatz Tasks{% endblock %}
+
+{% block content%}
+
+  <header class="row">
+    <div class="col-lg-6 col-sm-7">
+      <h1>All CodeCatz Tasks</h1>
+	    <div class="col-lg-6 col-sm-5">
+			<p>This page will show all tasks and who they are assigned to.</p>
+	    </div>
+  </header>
+	  
+	  <div class="row">
+	{% for task in task_list %}
+		<div class="col-md-3 col-xs-6">
+		<h3>{{ task.title }}</h3>
+		<p><strong>Status:</strong> {{ task.get_status_display }}</p>
+		<p><strong>Assigned to:</strong> {{ task.get_assigned_id_display }}</p>
+		{% if project.project_deadline %}
+		<p><strong>Deadline:</strong>
+		{{ task.deadline|date:"d.m.Y" }}</p>
+		{% endif %}
+			</p>	
+		</div>
+	  </div>
+{% endfor %}
+{% endblock content%}
