@@ -36,14 +36,6 @@
 			<p>{{ user.activity_status }}</p>
 			<p><strong>Biography:</strong></p>
 			<p>{{ user.bio }}</p>
-
-			<p><strong>Repository:</strong> <a href="{{ project.repository_link }}"> {{ project.repository_link }}</a></p>
-			{% if project.website_production %}
-				<p><strong>Production site:</strong> <a href="{{ project.website_production }}"> {{ project.website_production }}</a></p>
-			{% endif %}
-			{% if project.website_test %}
-				<p><strong>Test site:</strong> <a href="{{ project.website_test }}"> {{ project.website_test }}</a></p>
-			{% endif %}
 		</div>
 	</div>	
 
