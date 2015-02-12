@@ -44,3 +44,6 @@ def logout(request):
     auth_logout(request)
     return redirect('/')
 
+def member_page(request):
+	user = UserProfile.objects.get(githubuser="PettraV")
+	return render(request, 'pages/member_page.html',{'user': user})

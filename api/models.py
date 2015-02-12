@@ -12,7 +12,7 @@ class UserProfile(models.Model):
 	)
 
 	user = models.OneToOneField(User) 
-	#id = models.AutoField(primary_key=True) 
+	id = models.AutoField(primary_key=True) 
 	fullname = models.CharField(max_length=100, blank=False)
 	githubuser = models.CharField(max_length=100, null=False, blank=False)
 	email = models.EmailField(blank=False)

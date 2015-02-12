@@ -1,0 +1,50 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}TrackCat Member{% endblock %}
+
+{% block content%}
+
+	<div class="row">
+		<div class="memper_profile">
+				<div class="col-md-12">
+				<h2>{% if user.fullname %}
+							{{ user.fullname }} 
+					{% else %}
+							{{ user.username }}
+					{% endif %}'s profile</h2>
+					{% for field in form %}
+						{{ field.error }}
+					{% endfor %}
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-xs-6">
+			<img  src="{% static 'img/petra.png' %}"class="img-responsive" alt="Responsive image">
+			<p><strong>GitHub Name:</strong></p>
+			<p>{{ user.githubuser }}</p>
+			<p><strong>Emal:</strong></p>
+			<p>{{ user.email }}</p>
+			<p><strong>Web Site:</strong></p>
+			<p>{{ user.website }}</p>
+		</div>
+		<div class="col-md-8 col-xs-6">
+			<p><strong>Join date:</strong>{{ user.date_created|date:"d.m.Y" }}</p>
+			<p><strong>Member's Status:</strong></p>
+			<p>{{ user.activity_status }}</p>
+			<p><strong>Biography:</strong></p>
+			<p>{{ user.bio }}</p>
+
+			<p><strong>Repository:</strong> <a href="{{ project.repository_link }}"> {{ project.repository_link }}</a></p>
+			{% if project.website_production %}
+				<p><strong>Production site:</strong> <a href="{{ project.website_production }}"> {{ project.website_production }}</a></p>
+			{% endif %}
+			{% if project.website_test %}
+				<p><strong>Test site:</strong> <a href="{{ project.website_test }}"> {{ project.website_test }}</a></p>
+			{% endif %}
+		</div>
+	</div>	
+
+{% endblock content%}
