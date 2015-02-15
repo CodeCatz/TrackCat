@@ -1,11 +1,9 @@
 
-{%load static %}
-
 <nav class="navbar navbar-inverse">
 	<div class="container-fluid">
 	<div class="collapse navbar-collapse" id="myNavbar-top-right">
 		<ul class="nav navbar-nav navbar-left">
-			<li><a class="navbar-brand" href="#">TrackCat</a></li>
+			<li><a class="navbar-brand" href="{% url 'pages-index' %}">TrackCat</a></li>
 		</ul>  
 		<ul class="nav navbar-nav navbar-right">
 			<li><a href="{% url 'pages-about' %}">About</a></li>
@@ -16,7 +14,7 @@
 	<div class="collapse navbar-collapse" id="myNavbar">
 		<ul class="nav navbar-nav" role="menu">
 		<li>
-			<a href="{% url 'pages-index' %} id="index">
+			<a href="{% url 'pages-index' %}" id="indexpage">
 				<span class="fa-stack fa-lg">
 				<i class="fa fa-circle fa-stack-2x"></i>
 				<i class="fa fa-home fa-stack-1x fa-inverse"></i>
