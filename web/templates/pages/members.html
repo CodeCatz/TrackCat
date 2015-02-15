@@ -20,9 +20,9 @@
 			<ul class="about_list">
 			{% for member in members_list %}
 				{% if member.activity_status == 'MC' %}
-					<li class="mentor-cat"><a href="{% url 'web.views.tasks' member_id=task.project_id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Mentor cat)<li>
+					<li class="mentor-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Mentor cat)<li>
 				{% elif member.activity_status == 'AC' %}
-					<li class="active-cat"><a href="{% url 'web.views.tasks' member_id=task.project_id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Active cat)<li>
+					<li class="active-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Active cat)<li>
 				{% elif member.activity_status == 'LC' %}
 					<li class="lazy-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Lazy cat)<li>	
 				{% elif member.activity_status == 'SC' %}
