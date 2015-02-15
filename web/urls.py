@@ -18,4 +18,5 @@ urlpatterns = patterns('',
 	url(r'^project/(?P<project_id>[0-9]+)/$', views.project_detail),
 	url(r'^logout/$', views.logout, name='logout'),
 	url(r'^member_page/$', views.member_page, name='pages-member_page'),
+	url(r'^member_page/(?P<member_page>[a-z]+)/$', views.member_page),
 )
