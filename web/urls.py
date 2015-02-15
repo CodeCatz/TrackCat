@@ -17,6 +17,5 @@ urlpatterns = patterns('',
 	url(r'^privacy/$', views.privacy, name='pages-privacy'),
 	url(r'^project/(?P<project_id>[0-9]+)/$', views.project_detail),
 	url(r'^logout/$', views.logout, name='logout'),
-	url(r'^member_page/$', views.member_page, name='pages-member_page'),
-	#url(r'^member-page/(?P<member_page>[a-z]+)/$', views.member_page),
+	url(r'^member-page/(?P<user_id>[0-9]+)/$', views.member_page),
 )
