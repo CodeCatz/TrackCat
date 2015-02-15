@@ -26,7 +26,7 @@
 			<img src="../../static/img/{{user.profile_picture}}">
 			<p><strong>GitHub Name:</strong></p>
 			<p>{{ user.githubuser }}</p>
-			<p><strong>Emal:</strong></p>
+			<p><strong>Email:</strong></p>
 			<p>{{ user.email }}</p>
 			<p><strong>Web Site:</strong></p>
 			<p>{{ user.website }}</p>
@@ -39,7 +39,7 @@
 			<p>{{ user.bio }}</p>
 		</div>
 		<a href="{% url 'web.views.edituser' user_id=user.id %}">Update profile</a>
-		
+
 	</div>	
 
 {% endblock content%}
