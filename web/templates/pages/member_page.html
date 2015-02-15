@@ -2,7 +2,7 @@
 
 {% load staticfiles %}
 
-{% block title %}TrackCat Member{% endblock %}
+{% block title %}{{ user.fullname }}{% endblock %}
 
 {% block content%}
 
@@ -38,6 +38,8 @@
 			<p><strong>Biography:</strong></p>
 			<p>{{ user.bio }}</p>
 		</div>
+		<a href="{% url 'web.views.edituser' user_id=user.id %}">Update profile</a>
+		
 	</div>	
 
 {% endblock content%}
