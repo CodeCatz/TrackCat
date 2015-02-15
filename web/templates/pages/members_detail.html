@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block title %}{{member.githubuser}}{% endblock %}
+
+{% block content%}
+
+{% load staticfiles %}
+
+	<header class="row">
+		<div class="col-lg-6 col-sm-7">
+			<h1>{{member.fullname}}</h1>
+		</div>
+		<div class="col-lg-6 col-sm-5">
+			<p>This page will show all our active members.</p>
+		</div>
+	</header>
+
+	<div class="row">
+		<div>
+			<ul class="about_list">
+				{{member.fullname}}
+		</ul>
+		</div>			
+	</div>		
+
+{% endblock content%}

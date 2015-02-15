@@ -18,6 +18,10 @@ def members(request):
 	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
+def member_detail(request, user):
+	user = UserProfile.objects.filter(active=True).order_by('fullname')
+	return render(request, 'pages/members_detail.html', {'user': user})	
+
 def events(request):
 	return render(request, 'pages/events.html',{})
 
