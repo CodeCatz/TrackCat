@@ -18,9 +18,9 @@ def members(request):
 	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
-def member_detail(request, user):
-	user = UserProfile.objects.filter(active=True).order_by('fullname')
-	return render(request, 'pages/members_detail.html', {'user': user})	
+def member_page(request,user_id):
+	user = get_object_or_404(UserProfile, id=user_id)
+	return render(request, 'pages/member_page.html',{'user': user})
 
 def events(request):
 	return render(request, 'pages/events.html',{})
@@ -47,4 +47,3 @@ def project_detail(request,project_id):
 def logout(request):
     auth_logout(request)
     return redirect('/')
-
