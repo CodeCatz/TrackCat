@@ -4,7 +4,7 @@
 html,
 body {
 	height: 100%;
-	background-color: #D9C5AD;
+	background-color: #;
 	/* The html and body elements cannot have any padding or margin. */
 }
 
@@ -24,14 +24,13 @@ footer {
 	font-size: 12px;
 	border-top: 1px solid #CCCCCC;
 	display: block;
-	background-color: #402924;
+	background-color: #EBCF49;
 }
 
 .footer-links {
 	list-style-type: none;
-	padding: 0px;
-	margin: 0px;
 }
+
 
 .footer-links li {
 	list-style-type: none;
@@ -44,8 +43,9 @@ footer {
 }
 
 .container-fluid {
-	background-color: #734F43;
+	background-color: #57BF45;
 }
+
 
 /* Lastly, apply responsive CSS fixes as necessary */
 .CClogo {
@@ -173,19 +173,19 @@ strong {
 
 /* member */
 
-.sleepy_cat { 
+.sleepy_cat {
 	font-size: 12px;
 }
 
-.lazy_cat { 
+.lazy_cat {
 	font-size: 12px;
 }
 
-.active_cat { 
+.active_cat {
 	font-size: 12px;
 }
 
-.mentor_cat { 
+.mentor_cat {
 	font-size: 12px;
 }
 
