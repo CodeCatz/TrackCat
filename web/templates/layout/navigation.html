@@ -52,13 +52,16 @@
 			<li class="divider"></li>
 			<li>
 				<a href="{% url 'logout' %}?next={% firstof request.path '/' %}">
-				<i class="fa fa-sign-out"></i> Sign out</a>
+				<i class="fa fa-sign-out fa-stack-1x:wq
+ fa-inverse"></i> Sign out</a>
 			</li>
 			</ul>
 		{% else %}
 			<div class="login-body">
-					<a href="{% url 'pages-login' %}"
-					<i class="fa fa-sign-in"></i> Sign in</a>
+			<li>
+				<a href="{% url 'pages-login' %}"
+				<i class="fa fa-sign-in fa-stack-1x fa-inverse"></i> Sign in</a>
+			</li>
 			</div>
 		{% endif %}
 		</li>
