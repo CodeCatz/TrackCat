@@ -4,29 +4,29 @@
 
 {% block content%}
 
-from django import forms
-from .models import Task
-
 	<header class="row">
 		<div class="col-lg-6 col-sm-7">
 		      <h1>All CodeCatz Tasks</h1>
 		</div>
 		<div class="col-lg-6 col-sm-5">
-			<p>This page will show all tasks and who they are assigned to.</p>
+			<p>This page shows all tasks and which cats they are assigned to.</p>
 		</div>
 	</header>
 
 	<div class="row">
+		
+		{% if }
+		
 	{% for task in task_list %}
 		<div class="col-md-3 col-xs-6">
-			<h3>{{ task.title }}</h3>
-			<p><strong>Status:</strong> {{ task.status }}</p>
-			<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
-			<p><strong>Part of project:</strong>
-			{{ task.project_id }}</p>
-			<p><strong>Project owner:</strong> {{ task.owner_id }}</p>
-			<br></br>
-			<p><strong>Description:</strong> {{ task.description }} </p>
+			<h3><strong>Task title:</strong>{{ task.title }}</h3>
+				<p><strong>Status:</strong> {{ task.status }}</p>
+				<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
+				<p><strong>Part of project:</strong><a href= "{% url 'web.views.projects' %}"> 
+			{{ task.project_id.project_name }}</a></p>
+				<p><strong>Project owner:</strong> {{ task.owner_id.fullname }}</p>
+				<br></br>
+				<p><strong>Description:</strong> {{ task.description }} </p>
 
 		{% if task.project_deadline %}
 			<p><strong>Deadline:</strong>
@@ -41,6 +41,8 @@ from .models import Task
 			{% if forloop.counter|divisibleby:"4" %}
 		</div>
 		<div class="row">
+		<p>New task <a class="btn btn-default" href="{% url 'web.views.taskform' %}/a></p>
+		</div>
 			{% endif %}
 		{% endif %}
 	{% endfor %}
