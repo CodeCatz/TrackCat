@@ -1,0 +1,73 @@
+
+<nav class="navbar navbar-inverse">
+	<div class="container-fluid">
+	<div class="collapse navbar-collapse" id="myNavbar-top-right">
+		<ul class="nav navbar-nav navbar-left">
+			<li><a class="navbar-brand" href="{% url 'pages-index' %}">TrackCat</a></li>
+		</ul>  
+		<ul class="nav navbar-nav navbar-right">
+			<li><a href="{% url 'pages-about' %}">About</a></li>
+			<li><a href="{% url 'pages-events' %}">Events</a></li>
+			<li><a href="{% url 'pages-links' %}">Links</a></li>
+		</ul>
+	</div>
+	<div class="collapse navbar-collapse" id="myNavbar">
+		<ul class="nav navbar-nav" role="menu">
+		<li>
+			<a href="{% url 'pages-index' %}" id="indexpage">
+				<span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-home fa-stack-1x fa-inverse"></i>
+				</span>
+				Home
+			</a>
+		</li>
+		<li>
+			<a href="{% url 'pages-projects' %}" >
+				<span class="fa-stack fa-lg">
+				<i class="fa fa-circle fa-stack-2x"></i>
+				<i class="fa fa-tachometer fa-stack-1x fa-inverse"></i>
+				</span>
+				Projects
+			</a>
+		</li>
+		<li>
+		<a href="{% url 'pages-members' %}" >
+			<span class="fa-stack fa-lg">
+			<i class="fa fa-circle fa-stack-2x"></i>
+			<i class="fa fa-users fa-stack-1x fa-inverse"></i>
+			</span>
+			Members
+			</a>
+		</li>
+		</ul>
+		<ul class="nav navbar-nav navbar-right">
+		<li class="dropdown pull-right">
+		{% if user.is_authenticated %}
+			<a href="{% url 'pages-members' %}" class="dropdown-toggle avatar" data-toggle="dropdown">
+				Hi, {{ user.first_name }}
+				<b class="caret"></b>
+			</a>
+			<ul class="dropdown-menu" role="menu">
+			<li class="divider"></li>
+			<li>
+				<a href="{% url 'logout' %}?next={% firstof request.path '/' %}">
+				<i class="fa fa-sign-out fa-stack-1x:wq
+ fa-inverse"></i> Sign out</a>
+			</li>
+			</ul>
+		{% else %}
+			<div class="login-body">
+			<li>
+				<a href="{% url 'pages-login' %}"
+				<i class="fa fa-sign-in fa-stack-1x fa-inverse"></i> Sign in</a>
+			</li>
+			</div>
+		{% endif %}
+		</li>
+		</ul>
+		</ul>
+		</div>
+</div>
+</nav>
+

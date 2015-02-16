@@ -43,10 +43,6 @@ footer {
 	color: #FFFFFF
 }
 
-.container-fluid {
-	background-color: #734F43;
-}
-
 /* Lastly, apply responsive CSS fixes as necessary */
 .CClogo {
 	height: 40px;
@@ -90,23 +86,6 @@ footer {
 
 code {
 	font-size: 80%;
-}
-
-/* Fit CodeCatz image in navbar-brand. */
-.navbar-header{
-	padding: 0;
-
-}
-
-.navbar-brand{
-	padding: 6px;
-	width: 80px;
-	height: 40px;
-}
-.navbar-brand img{
-	padding: 0;
-	width: 40px;
-	height: 40px;
 }
 
 /* Links page*/
@@ -190,3 +169,10 @@ strong {
 }
 
 /* end of about page */
+
+/* Style navigation*/
+.navbar-inverse .navbar-nav > li > a:hover, .navbar-inverse .navbar-nav > li > a:focus {
+	color: #FFa500;
+	background-color: transparent;
+}
+
