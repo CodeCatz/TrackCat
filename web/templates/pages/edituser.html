@@ -1,78 +1,30 @@
 {% extends 'base.html' %}
 
-{% block title %}User Profile{% endblock %}
+{% load staticfiles %}
+
+{% block title %}{{ user.fullname }} Profile{% endblock %}
 
 {% block content%}
 
-	<header class="row">
-		<h4>My profile</h4>
-	</header>
-	<form class="form-horizontal">
-		<div class="form-group form-group-lg">
-			<div class="form-group">
-				<label class="col-sm-2 control-label"> Github Username</label>
-				<div class="col-sm-10">
-					<p class="form-control-static">githubuser</p>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="inputFullname">Full Name</label>
-				<div class="col-sm-10">
-					<input type="text" id="inputFullname" class="form-control" placeholder="Cats Fullname">
-				</div>
-			</div>
-			<div class="form-group">
-				<div class="col-sm-2 control-label"><strong>Change your profile picture</strong></div>
-				<div class="col-sm-2">
-					<p><img src="http://placekitten.com/350/350" alt="" class="img-responsive"></p>
-				</div>
-				<div class="col-sm-8">
-					<label for="profilePicture" class="sr-only">File input</label>
-					<input type="file" id="profilePicture">
-					<p clas="help-block">Select your profile picture and upload</p>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label"> Status</label>
-				<div class="col-sm-10">
-					<select class="form-control" readonly>
-						<option>Member</option>
-						<option>Mentor</option>
-					</select>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="inputWebsite">Website</label>
-				<div class="col-sm-10">
-					<div class="input-group">
-						<span class="input-group-addon">http:</span>
-						<input type="text" class="form-control" id="inputWebsite" placeholder="www.yourwebsite.com">
-					</div>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label" for="inputAboutme">About me</label>
-				<div class="col-sm-10">
-					<textarea type="text" rows="5" id="inputAboutme" class="form-control" placeholder="Enter something more about you..."></textarea>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label"> Join date</label>
-				<div class="col-sm-10">
-					<p class="form-control-static">01.01.2015</p>
-				</div>
-			</div>
-			<div class="form-group">
-				<label class="col-sm-2 control-label">Active user</label>
-				<div class="col-sm-10">
-					<input type="checkbox" value="yes" checked>
-				</div>
-			</div>
-		</div>
-	</form>
 	<div class="row">
-		<a href="#" class="btn btn-default btn-lg">Save your profile</a>
-		</p>
-	</div>
-
+		<div class="member_profile">
+			<div class="col-md-12">
+			<h2>{% if user.fullname %}
+			{{ user.fullname }} 
+			{% else %}
+			{{ user.username }}
+			{% endif %}'s profile Update</h2>
+			{% for field in form %}
+			{{ field.error }}
+			{% endfor %}
+			</div>	
+		</div>
+	</div>	
+	<form action="/members/" method="post">
+		 {% csrf_token %} 
+    	<label for="fullname">Your name: </label>
+    	<input id="fullname" type="text" name="fullname" value="{{ user.fullname }}">
+    	<input type="submit" name="fullname" value="OK">
+	</form>
+	
 {% endblock content%}

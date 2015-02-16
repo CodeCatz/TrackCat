@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}{{ user.fullname }}{% endblock %}
+
+{% block content%}
+
+	<div class="row">
+		<div class="member_profile">
+			<div class="col-md-12">
+				<h2>{{ user.fullname }}'s profile</h2>
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-xs-6">
+			<!--<img  src="{% static 'img/{{user.profile_picture}}' %}" class="img-responsive" alt="Responsive image">-->
+			<img src="../../static/img/{{user.profile_picture}}">
+			<p><strong>GitHub Name:</strong></p>
+			<p>{{ user.githubuser }}</p>
+			<p><strong>Email:</strong></p>
+			<p>{{ user.email }}</p>
+			<p><strong>Web Site:</strong></p>
+			<p>{{ user.website }}</p>
+		</div>
+		<div class="col-md-8 col-xs-6">
+			<p><strong>Join date:</strong>{{ user.date_created|date:"d.m.Y" }}</p>
+			<p><strong>Member's Status:</strong></p>
+			<p>{{ user.activity_status }}</p>
+			<p><strong>Biography:</strong></p>
+			<p>{{ user.bio }}</p>
+		</div>
+		<a href="{% url 'web.views.edituser' user_id=user.id %}">Update profile</a>
+	</div>	
+
+{% endblock content%}
