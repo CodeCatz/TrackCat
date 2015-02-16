@@ -38,9 +38,6 @@
 		{% else %}
 			{% if forloop.counter|divisibleby:"4" %}
 		</div>
-		<div class="row">
-		<p>New task <a class="btn btn-default" href="{% url 'web.views.taskform' %}/a></p>
-		</div>
 			{% endif %}
 		{% endif %}
 	{% endfor %}
