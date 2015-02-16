@@ -47,7 +47,7 @@ def project_new(request):
 		projectform = ProjectForm (request.POST)
 		if projectform.is_valid():
 			project = projectform.save()
-			return redirect('web.views.project_detail', project_id=project.project_id)
+			return redirect('project-detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm()
 
@@ -59,7 +59,7 @@ def project_edit(request, project_id):
 		projectform = ProjectForm(request.POST, instance=project)
 		if projectform.is_valid():
 			project = projectform.save()
-			return redirect('web.views.project_detail', project_id=project.project_id)
+			return redirect('project-detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm(instance=project)
 

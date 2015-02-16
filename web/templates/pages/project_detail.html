@@ -2,9 +2,9 @@
 
 {% block content%}
 	<div class="row">
-		<h3><a href="{% url 'web.views.project_detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
-		<a class="btn btn-default" href="{% url 'web.views.project_new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-		<a class="btn btn-default" href="{% url 'web.views.project_edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+		<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
+		<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+		<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-xs-6">
