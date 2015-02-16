@@ -21,11 +21,11 @@
 		<div class="col-md-4 col-xs-6">
 			<img src="../../static/img/{{user.profile_picture}}">
 			<p><strong>GitHub Name:</strong></p>
-			<p>{{ user.githubuser }}</p>
-			<p><strong>Emal:</strong></p>
+			<p><a href="{{ user.githubuser}}"> {{ user.githubuser }}</a></p>
+			<p><strong>Email:</strong></p>
 			<p>{{ user.email }}</p>
 			<p><strong>Web Site:</strong></p>
-			<p>{{ user.website }}</p>
+			<p><a href="{{ user.website}}"> {{ user.website }}</a></p>
 		</div>
 		<div class="col-md-8 col-xs-6">
 			<p><strong>Join date:</strong>{{ user.date_created|date:"d.m.Y" }}</p>

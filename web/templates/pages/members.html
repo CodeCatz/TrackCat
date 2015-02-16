@@ -19,14 +19,14 @@
 		<div>
 			<ul class="about_list">
 			{% for member in members_list %}
-				{% if member.activity_status == 'MC' %}
+				{% if member.activity_status == 'MENTORCAT' %}
 					<li class="mentor-cat"><a href="{% url 'web.views.member_page' user_id=member.id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Mentor cat)<li>
-				{% elif member.activity_status == 'AC' %}
+				{% elif member.activity_status == 'ACTIVECAT' %}
 					<li class="active-cat"><a href="{% url 'web.views.member_page' user_id=member.id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Active cat)<li>
-				{% elif member.activity_status == 'LC' %}
+				{% elif member.activity_status == 'LAZYCAT' %}
 					<li class="lazy-cat"><a href="{% url 'web.views.member_page' user_id=member.id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Lazy cat)<li>	
-				{% elif member.activity_status == 'SC' %}
-					<li class="sleepy-cat"><a href="{% url 'web.views.member_page' user_id=member.id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Sleepy cat)<li>
+				{% elif member.activity_status == 'SLEEPYCAT' %}
+					<li class="sleepy-cat"><a href="{% url 'web.views.member_page' user_id=member.id %}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Sleepy Cat)<li>
 				{% endif %}	
 			{% endfor %}
 			</ul>
