@@ -7,16 +7,13 @@
 {% block content%}
 
 	<div class="row">
-		<div class="member_profile">
+		<div class="member-profile">
 			<div class="col-md-12">
 			<h2>{% if user.fullname %}
-			{{ user.fullname }} 
-			{% else %}
-			{{ user.username }}
-			{% endif %}'s profile</h2>
-			{% for field in form %}
-			{{ field.error }}
-			{% endfor %}
+					{{ user.fullname }} 
+				{% else %}
+					{{ user.username }}
+				{% endif %}'s profile</h2>
 			</div>	
 		</div>
 	</div>
