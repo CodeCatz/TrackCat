@@ -16,6 +16,11 @@ class ProjectForm(forms.ModelForm):
 					label="Deadline date",
 					widget=forms.TextInput(attrs={"id": "id_datepicker", "class": "form-control",
 									 "autocomplete": "off","placeholder": "When is the project deadline?"}))
+	status_id = forms.ChoiceField(
+					label="Status",
+					widget= forms.Select(attrs={'class':'form-control'})
+				)
+
 	repository_link = forms.CharField( 
 					label="Repository",
 					widget=forms.TextInput(attrs={'class':'form-control','placeholder':'Where is your repository?'}))
