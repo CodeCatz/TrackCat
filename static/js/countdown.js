@@ -46,7 +46,9 @@
 
 	if (typeof(GBCountdown) === "undefined") {
 		window.GBCountdown = define_gbcountdown();
-	} 
+	} else {
+		console.log("GBCountdown already defined.");
+	}
 
 	GBCountdown.startUpdating();
 
