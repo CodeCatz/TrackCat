@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}TrackCat Member{% endblock %}
+
+{% block content%}
+
+	<div class="row">
+		<div class="member-profile">
+			<div class="col-md-12">
+			<h2>{% if user.fullname %}
+					{{ user.fullname }} 
+				{% else %}
+					{{ user.username }}
+				{% endif %}'s profile</h2>
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-xs-6">
+			<img src="../../static/img/{{user.profile_picture}}">
+			<p><strong>GitHub Name:</strong></p>
+			<p><a href="{{ user.githubuser}}"> {{ user.githubuser }}</a></p>
+			<p><strong>Email:</strong></p>
+			<p>{{ user.email }}</p>
+			<p><strong>Web Site:</strong></p>
+			<p><a href="{{ user.website}}"> {{ user.website }}</a></p>
+		</div>
+		<div class="col-md-8 col-xs-6">
+			<p><strong>Join date:</strong>{{ user.date_created|date:"d.m.Y" }}</p>
+			<p><strong>Member's Status:</strong></p>
+			<p>{{ user.activity_status }}</p>
+			<p><strong>Biography:</strong></p>
+			<p>{{ user.bio }}</p>
+		</div>
+	</div>	
+
+{% endblock content%}

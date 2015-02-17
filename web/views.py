@@ -44,3 +44,6 @@ def logout(request):
     auth_logout(request)
     return redirect('/')
 
+def member_page(request, user_id):
+	user = get_object_or_404(UserProfile, id=user_id)
+	return render(request, 'pages/member_page.html',{'user': user})
