@@ -19,15 +19,10 @@
 		}
 
 		GBCountdown.updateRemaining = function() {
-			console.log("updateRemaining");
 
 			var now = new Date();
 
-			console.log(now);
-
 			var distance = GBCountdown.end - now;
-
-			console.log(distance);
 
 			if (distance < 0) {
 				GBCountdown.stopUpdating();
@@ -40,7 +35,7 @@
 			var minutes = Math.floor((distance % GBCountdown._hour) / GBCountdown._minute);
 			var seconds = Math.floor((distance % GBCountdown._minute) / GBCountdown._second);
 
-			document.getElementById("gbCountdown").innerHTML = "deadline: " + days + "days ";
+			document.getElementById("gbCountdown").innerHTML = "Deadline: " + days + "days ";
 			document.getElementById("gbCountdown").innerHTML += hours + "hrs ";
 			document.getElementById("gbCountdown").innerHTML += minutes + "mins ";
 			document.getElementById("gbCountdown").innerHTML += seconds + "secs";
