@@ -11,6 +11,7 @@
 		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
 		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		{% block custom_css %}{% endblock %}
 	</head>
 	<body>
 <!-- Wrap all page content here -->
@@ -86,5 +87,6 @@
 		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
 		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
 		<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+		{% block custom_js %}{% endblock custom_js %}
 	</body>
 </html>

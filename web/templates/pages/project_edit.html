@@ -1,4 +1,9 @@
 {% extends 'base.html' %}
+{% load staticfiles %}
+
+{% block custom_css %}
+	<link rel="stylesheet" type="text/css" href="{% static 'css/jquery.datetimepicker.css' %}" >
+{% endblock %}
 
 {% block content %}
 	<h1>New project</h1>
@@ -6,4 +11,8 @@
 		{{ projectform.as_p }}
 		<button type="submit" class="save btn btn-default">Save</button>
 	</form>
-{% endblock %}
+{% endblock content %}
+
+{% block custom_js %}
+	<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
+{% endblock custom_js %}
