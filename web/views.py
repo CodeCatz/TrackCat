@@ -68,5 +68,5 @@ def project_edit(request, project_id):
 														'editing': True})
 
 def logout(request):
-    auth_logout(request)
-    return redirect('/')
+	auth_logout(request)
+	return redirect('/')
