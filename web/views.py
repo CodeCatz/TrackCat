@@ -5,6 +5,7 @@ from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
 from api.models import UserProfile
+from api.models import Task
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -12,6 +13,10 @@ def index(request):
 def projects(request):
 	project_list = Project.objects.all()
 	return render(request, 'pages/projects.html',{'project_list': project_list})
+
+def tasks(request):
+	task_list = Task.objects.all()
+	return render(request, 'pages/tasks.html',{'task_list': task_list})
 
 def about(request):
 	return render(request, 'pages/about.html',{})
