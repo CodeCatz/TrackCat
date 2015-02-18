@@ -64,3 +64,18 @@ class Task (models.Model):
 	deadline = models.DateTimeField(blank=True, null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now=True)
+
+class Event (models.Model):
+
+	EVENT_STATUS = (
+		('UPCOMING', 'Upcoming events'),
+		('CURRENT', 'Todays events'),
+		('PASSED', 'Passed events'),
+	)
+
+	title = models.CharField(max_length=255, default=None)
+	start_date = models.DateTimeField()
+	location = models.CharField(max_length=1000)
+	description = models.CharField(max_length=1000)
+	organizer = models.CharField(max_length=255, default=None)
+	
