@@ -12,11 +12,13 @@
 			<p>This page will show all our projects and who is working on what.</p>
 		</div>
 	</header>
-	
+	<div class="row">
+		<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	</div>
 	<div class="row">
 	{% for project in project_list %}
 		<div class="col-md-3 col-xs-6">
-			<h3><a href="{% url 'web.views.project_detail' project_id=project.project_id %}">{{project.project_name}}</a></h3>
+			<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{project.project_name}}</a></h3>
 			<p><strong>Description:</strong></p>
 			<p>{{ project.project_description }}</p>
 			<p><strong>Status:</strong> {{ project.get_status_id_display }}</p>
