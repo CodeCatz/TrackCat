@@ -64,7 +64,8 @@ def project_edit(request, project_id):
 	else:
 		projectform = ProjectForm(instance=project)
 
-	return render(request, 'pages/project_edit.html', {'projectform': projectform})
+	return render(request, 'pages/project_edit.html', {'projectform': projectform,
+														'editing': True})
 
 def logout(request):
     auth_logout(request)
