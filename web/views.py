@@ -3,7 +3,6 @@ from django.shortcuts import render_to_response, render, get_object_or_404, redi
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
 from api.models import UserProfile
-from api.models import Event
 
 def index(request):
 	return render_to_response('pages/index.html',{})
