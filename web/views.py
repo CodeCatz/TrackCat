@@ -38,7 +38,7 @@ def edituser(request):
 def privacy(request):
 	return render(request, 'pages/privacy.html',{})
 
-def project_detail(request,project_id):
+def project_detail(request, project_id):
 	project = get_object_or_404(Project, project_id=project_id)
 	return render(request, 'pages/project_detail.html', {'project': project})
 
@@ -55,6 +55,7 @@ def project_new(request):
 
 def project_edit(request, project_id):
 	project = get_object_or_404(Project, project_id=project_id)
+	
 	if request.method == "POST":
 		projectform = ProjectForm(request.POST, instance=project)
 		if projectform.is_valid():
