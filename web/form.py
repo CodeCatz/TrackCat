@@ -13,12 +13,12 @@ class ProjectForm(forms.ModelForm):
 					widget=forms.Textarea(attrs={'class':'form-control','rows':'6','placeholder':'Tell a bit more about the project.'}),
 					required=False)
 	
-	# project_deadline = forms.CharField(
-	# 				label="Deadline date",
-	# 				widget=forms.TextInput(attrs={"id": "id_datepicker", "class": "form-control",
-	# 								 "autocomplete": "off","placeholder": "When is the project deadline?"}),
-	# 				required=False
-	#					)
+	project_deadline = forms.CharField(
+					label="Deadline date",
+					widget=forms.TextInput(attrs={"id": "id_datepicker", "class": "form-control",
+									 "autocomplete": "off","placeholder": "When is the project deadline?"}),
+					required=False
+						)
 
 	status_id = forms.ChoiceField(
 					choices = PROJECT_STATUS_CHOICES,
