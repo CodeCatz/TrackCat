@@ -6,6 +6,7 @@
 {% endblock %}
 
 {% block content %}
+
 	{% if invalid_project_id %}
 		<p class="alert alert-warning">This project does not exists in your projects list.</p>
 		<p>Return to <a href="{% url 'pages-projects' %}">Projects</a></p>
@@ -16,15 +17,14 @@
 			<button type="submit" class="save btn btn-default">Save</button>
 		</form>
 	{% endif %}	
+
 {% endblock content %}
 
 {% block custom_js %}
 	<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
 	<script type="text/javascript">
-	jQuery(document).ready(function($){
-		$("#id_datepicker").datetimepicker({
-			format:'Y-m-d H:i'
+		jQuery(document).ready(function($){
+			$("#id_datepicker").datetimepicker({ format:'Y-m-d H:i'	});
 		});
-	});
 	</script>
 {% endblock custom_js %}
