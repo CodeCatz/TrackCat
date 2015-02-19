@@ -61,7 +61,7 @@ def project_edit(request, project_id):
 	if Project.objects.filter(pk=project_id).exists():
 		project = Project.objects.get(pk=project_id)
 	else:
-		project = None
+		return render(request, 'pages/project_edit.html', {'invalid_project_id': True})
 	
 	if request.method == "POST":
 		projectform = ProjectForm(request.POST, instance=project)
@@ -70,7 +70,7 @@ def project_edit(request, project_id):
 			return redirect('project-detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm(instance=project)
-
+	
 	return render(request, 'pages/project_edit.html', {'projectform': projectform,
 														'editing': True})
 

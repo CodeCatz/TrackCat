@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 
 {% block content%}
-	{% if not project %}
+	{% if project %}
 		<div class="row">
 			<div class="col-md-8">
 				<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
