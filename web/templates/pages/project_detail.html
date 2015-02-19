@@ -20,12 +20,12 @@
 				{% if project.project_deadline %}
 					<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
 				{% endif %}
-				<p><strong>Repository:</strong> <a href="{{ project.repository_link }}"> {{ project.repository_link }}</a></p>
+				<p><strong>Repository:</strong> <a href="{{ project.repository_link }}">{{ project.repository_link }}</a></p>
 				{% if project.website_production %}
-					<p><strong>Production site:</strong> <a href="{{ project.website_production }}"> {{ project.website_production }}</a></p>
+					<p><strong>Production site:</strong> <a href="{{ project.website_production }}">{{ project.website_production }}</a></p>
 				{% endif %}
 				{% if project.website_test %}
-					<p><strong>Test site:</strong> <a href="{{ project.website_test }}"> {{ project.website_test }}</a></p>
+					<p><strong>Test site:</strong> <a href="{{ project.website_test }}">{{ project.website_test }}</a></p>
 				{% endif %}
 			</div>
 		</div>	
