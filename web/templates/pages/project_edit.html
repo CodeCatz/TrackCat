@@ -6,11 +6,16 @@
 {% endblock %}
 
 {% block content %}
-	<h1 class="pull-left">{% if editing %}Edit{% else %}Add {% endif %} your project</h1>
-	<form method="POST">{% csrf_token %}
-		{{ projectform.as_p }}
-		<button type="submit" class="save btn btn-default">Save</button>
-	</form>
+	{% if invalid_project_id %}
+		<p class="alert alert-warning">This project does not exists in your projects list.</p>
+		<p>Return to <a href="{% url 'pages-projects' %}">Projects</a></p>
+	{%  else %}	
+		<h1 class="pull-left">{% if editing %}Edit{% else %}Add{% endif %} your project</h1>
+		<form method="POST">{% csrf_token %}
+			{{ projectform.as_p }}
+			<button type="submit" class="save btn btn-default">Save</button>
+		</form>
+	{% endif %}	
 {% endblock content %}
 
 {% block custom_js %}
