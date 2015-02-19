@@ -70,7 +70,7 @@ def project_edit(request, project_id):
 			return redirect('project-detail', project_id=project.project_id)
 	else:
 		projectform = ProjectForm(instance=project)
-	
+
 	return render(request, 'pages/project_edit.html', {'projectform': projectform,
 														'editing': True})
 
