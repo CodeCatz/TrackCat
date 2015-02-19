@@ -6,7 +6,7 @@
 {% endblock %}
 
 {% block content %}
-	<h1 class="pull-left">{% if editing %}Edit{% else %}Add {% endif %} your project</h1>
+	<h1 class="pull-left">{% if editing %}Edit{% else %}Add{% endif %} your project</h1>
 	<form method="POST">{% csrf_token %}
 		{{ projectform.as_p }}
 		<button type="submit" class="save btn btn-default">Save</button>
@@ -16,10 +16,8 @@
 {% block custom_js %}
 	<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
 	<script type="text/javascript">
-	jQuery(document).ready(function($){
-		$("#id_datepicker").datetimepicker({
-			format:'Y-m-d H:i'
+		jQuery(document).ready(function($){
+			$("#id_datepicker").datetimepicker({ format:'Y-m-d H:i'	});
 		});
-	});
 	</script>
 {% endblock custom_js %}

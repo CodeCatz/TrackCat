@@ -1,6 +1,6 @@
 {% extends 'base.html' %}
 
-{% block content%}
+{% block content %}
 	<div class="row">
 		<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
 		<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
@@ -33,4 +33,4 @@
 	<div class="row">	
 		<p><strong> For update the project you must be logged in. <a href="{% url 'pages-login' %}">Login</a></strong></p>
 	</div>
-{% endblock content%}
+{% endblock content %}
