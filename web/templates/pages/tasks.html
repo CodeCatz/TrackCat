@@ -17,24 +17,31 @@
 			{% for task in task_list %}
 
 				<div class="col-md-3 col-xs-6">
-					<h3><strong>Task title: </strong>{{ task.title }}</h3>
-					<p><strong>Assigned to: </strong> {{ task.assigned_id }}</p>
-					<p><strong>Part of project: </strong><a href= "{% url 'web.views.project_detail' project_id=task.project_id.project_id %}"> {{ task.project_id.project_name }} </a></p>
-					<br></br>
-					<p><strong>Description: </strong> {{ task.description }} </p>
-					{% if task.project_deadline %}
-						<p><strong>Deadline: </strong> {{ task.deadline|date:"d.m.Y" }} </p>
-					{% endif %}
+					<h3><strong>{{ task.title }}</strong></h3>
+					<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
+
+					<p><strong>Project status:<strong> {{ task.get_status_display }} </p>
+					<p><strong>Part of project:</strong><a href="{% url 'web.views.project_detail' project_id=task.project_id.project_id %}"> {{ task.project_id.project_name }}</a></p>
+					<br />
+					<p><strong>Description:</strong> {{ task.description }}</p>
+					<p class=deadline><strong>Deadline:</strong>
+							{% if task.deadline %}
+							{{ task.deadline|date:"d. M Y"|lower }}
+							{% else %}
+							none
+							{% endif %}
+							</p>
+
 				</div>
 
 			{% endfor %}
 
-	<div>
+		</div>
 	{% else %}
 		<div class="alert alert-info">
-			<p> There are currently no tasks in tasks list.</p>
+			<p>There are currently no tasks in tasks list.</p>
 		</div>
-	</div>
+
 	{% endif %}
 
 {% endblock content%}
