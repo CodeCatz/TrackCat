@@ -3,7 +3,7 @@
 {% block content%}
 	{% if project %}
 		<div class="row">
-			<div class="col-md-8">
+			<div class="col-md-8 col-xs-6">
 				<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
 				<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
 				<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"></span></a>
@@ -30,11 +30,15 @@
 			</div>
 		</div>	
 		<div class="row">
-			<p><strong>Description:</strong></p>
-			<p>{{ project.project_description }}</p>
+			<div class="col-md-8 col-xs-6">
+				<p><strong>Description:</strong></p>
+				<p>{{ project.project_description }}</p>
+			</div>
 		</div>
-		<div class="row">	
-			<p><strong> For update the project you must be logged in. <a href="{% url 'pages-login' %}">Login</a></strong></p>
+		<div class="row">
+			<div class="col-md-8 col-xs-6">	
+				<p><strong> For update the project you must be logged in. <a href="{% url 'pages-login' %}">Login</a></strong></p>
+			</div>
 		</div>
 	{% else %}
 		<p class="alert alert-warning">This project does not exists in your projects list.</p>
