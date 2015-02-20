@@ -68,10 +68,10 @@ class Task (models.Model):
 class Event(models.Model):
 
 	title = models.CharField(max_length=255, blank=False, null=False)
-	start_date = models.DateTimeField(blank=False, null=False)
-	end_date = models.DateTimeField()
-	start_time = models.DateTimeField(blank=False, null=False)
-	end_time = models.DateTimeField()
+	start_date = models.DateField(blank=False, null=False)
+	end_date = models.DateField()
+	start_time = models.TimeField(blank=False, null=False)
+	end_time = models.TimeField()
 	location = models.CharField(max_length=1000, blank=False)
 	description = models.CharField(max_length=1000)
 	organizer = models.CharField(max_length=255)
