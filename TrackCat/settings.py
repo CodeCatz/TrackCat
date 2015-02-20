@@ -69,6 +69,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.request',
 	'social.apps.django_app.context_processors.backends',
 	'social.apps.django_app.context_processors.login_redirect',
+	"TrackCat.content_processor.my_site_url"
 )
 
 AUTH_PROFILE_MODULE = 'api.UserProfile'
@@ -133,4 +134,7 @@ MEDIA_ROOT = normpath(join(BASE_DIR, 'media'))
 MEDIA_URL = '/media/'
 MEDIA_UPLOAD_FOLDER = 'profile_picture'
 ########## END MEDIA CONFIGURATION
+
+#URL for github root path
+SITE_URL = 'https://github.com/'
 

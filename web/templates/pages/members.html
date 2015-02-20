@@ -21,7 +21,7 @@
 				{% if member.activity_status == 'MC' %}
 					
 					<li class="mentor-cat">
-					<a href="{{ member.githubuser }}">
+					<a href="{{ SITE_URL }}{{ member.githubuser }}">
 					{% if member.profile_picture %}
 						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />
 					{% endif %}
@@ -30,7 +30,7 @@
 				{% elif member.activity_status == 'AC' %}
 					
 					<li class="active-cat">
-					<a href="{{ member.githubuser }}">
+					<a href="{{ SITE_URL }}{{ member.githubuser }}">
 					{% if member.profile_picture %}
 						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />
 					{% endif %}
@@ -39,7 +39,7 @@
 				{% elif member.activity_status == 'LC' %}
 					
 					<li class="lazy-cat">
-					<a href="{{ member.githubuser }}">
+					<a href="{{ SITE_URL }}{{ member.githubuser }}">
 					{% if member.profile_picture %}
 						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />
 					{% endif %}
@@ -47,7 +47,7 @@
 				
 				{% elif member.activity_status == 'SC' %}
 					<li class="sleepy-cat">
-					<a href="{{ member.githubuser }}">
+					<a href="{{ SITE_URL }}{{ member.githubuser }}">
 					{% if member.profile_picture %}
 						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />i
 					{% endif %}}
