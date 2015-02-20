@@ -1,10 +1,8 @@
 from django import forms
 
-from api.models import Project, PROJECT_STATUS_CHOICES
+from api.models import Project
 
 class ProjectForm(forms.ModelForm):
-
-
 
 	class Meta:
 		model = Project
