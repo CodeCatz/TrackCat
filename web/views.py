@@ -1,5 +1,7 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
+from api.models import Project
+from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
 from api.models import UserProfile
@@ -36,11 +38,42 @@ def edituser(request):
 def privacy(request):
 	return render(request, 'pages/privacy.html',{})
 
-def project_detail(request,project_id):
-	project = get_object_or_404(Project, project_id=project_id)
+def project_detail(request, project_id):
+	if Project.objects.filter(pk=project_id).exists():
+		project = Project.objects.get(pk=project_id)
+	else:
+		project = None
+
 	return render(request, 'pages/project_detail.html', {'project': project})
 
-def logout(request):
-    auth_logout(request)
-    return redirect('/')
+def project_new(request):
+	if request.method == "POST":
+		projectform = ProjectForm (request.POST)
+		if projectform.is_valid():
+			project = projectform.save()
+			return redirect('project-detail', project_id=project.project_id)
+	else:
+		projectform = ProjectForm()
 
+	return render(request, 'pages/project_edit.html', {'projectform': projectform})
+
+def project_edit(request, project_id):
+	if Project.objects.filter(pk=project_id).exists():
+		project = Project.objects.get(pk=project_id)
+	else:
+		return render(request, 'pages/project_edit.html', {'invalid_project_id': True})
+	
+	if request.method == "POST":
+		projectform = ProjectForm(request.POST, instance=project)
+		if projectform.is_valid():
+			project = projectform.save()
+			return redirect('project-detail', project_id=project.project_id)
+	else:
+		projectform = ProjectForm(instance=project)
+
+	return render(request, 'pages/project_edit.html', {'projectform': projectform,
+														'editing': True})
+
+def logout(request):
+	auth_logout(request)
+	return redirect('/')
