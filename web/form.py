@@ -17,7 +17,7 @@ class ProjectForm(forms.ModelForm):
 	
 	project_deadline = forms.CharField(
 					label="Deadline date",
-					widget=forms.TextInput(attrs={"id": "id_datepicker", "class": "form-control",
+					widget=forms.TextInput(attrs={"id": "id_datepicker", "class": "form-control datetime-widget",
 									 			"autocomplete": "off", "placeholder": "When is the project deadline?"}),
 					required=False
 						)
