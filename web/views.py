@@ -5,6 +5,7 @@ from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
 from api.models import UserProfile
+from api.models import Task
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -19,6 +20,10 @@ def about(request):
 def members(request):
 	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
 	return render(request, 'pages/members.html',{'members_list': members_list})
+
+def tasks(request):
+	task_list = Task.objects.all()
+	return render(request, 'pages/tasks.html', {'task_list': task_list})
 
 def events(request):
 	return render(request, 'pages/events.html',{})
@@ -62,7 +67,7 @@ def project_edit(request, project_id):
 		project = Project.objects.get(pk=project_id)
 	else:
 		return render(request, 'pages/project_edit.html', {'invalid_project_id': True})
-	
+
 	if request.method == "POST":
 		projectform = ProjectForm(request.POST, instance=project)
 		if projectform.is_valid():
