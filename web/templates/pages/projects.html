@@ -2,7 +2,7 @@
 
 {% block title %}All CodeCatz Projects{% endblock %}
 
-{% block content%}
+{% block content %}
 
 	<header class="row">
 		<div class="col-lg-6 col-sm-7">
@@ -13,33 +13,33 @@
 		</div>
 	</header>
 	<div class="row">
-		<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+		<div class="col-lg-6 col-sm-7">
+			<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+		</div>
 	</div>
-	{% if project_list %}
-		<div class="row">
-		{% for project in project_list %}
-			<div class="col-md-3 col-xs-6">
-				<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{project.project_name}}</a></h3>
-				<p><strong>Description:</strong></p>
-				<p>{{ project.project_description }}</p>
-				<p><strong>Status:</strong> {{ project.get_status_id_display }}</p>
-				<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
+	<div class="row">
+	{% for project in project_list %}
+		<div class="col-md-3 col-xs-6">
+			<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
+			<p><strong>Description:</strong></p>
+			<p>{{ project.project_description }}</p>
+			<p><strong>Status:</strong> {{ project.get_status_id_display }}</p>
+			<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
 
-				{% if project.project_deadline %}
-					<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
-				{% endif %}
-
-			</div>
-			{% if forloop.last %}
-				</div>
-			{% else %}
-				{% if forloop.counter|divisibleby:"4" %}
-					</div>
-					<div class="row">
-				{% endif %}
+			{% if project.project_deadline %}
+				<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
 			{% endif %}
-		{% endfor %}
-	{% else %}
+
+		</div>
+		{% if forloop.last %}
+			</div>
+		{% else %}
+			{% if forloop.counter|divisibleby:"4" %}
+				</div>
+				<div class="row">
+			{% endif %}
+		{% endif %}
+	{% empty %}
 		<p>There are currently no projects in your projects list.</p>
-	{% endif %}
-{% endblock content%}
+	{% endfor %}
+{% endblock content %}

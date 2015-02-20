@@ -25,13 +25,10 @@ Examples of other _good_ coding styles and best practices:
 **Naming**
 
 ## HTML
-
 - Always close tags.
 - Tables shouldn't be used for page layout.
-- Always use quotes around attributes in a tag.
-```
-<p class="headline" data-attribute="106">This is my paragraph of special text.</p>
-```
+- Always use quotes around attributes in a tag.  
+`<p class="headline" data-attribute="106">This is my paragraph of special text.</p>`
 
 ## CSS
 - Indent CSS code.
@@ -40,3 +37,8 @@ Examples of other _good_ coding styles and best practices:
 
 ## JavaScript
  - Always use semicolons.
+
+## Python
+- unless specifically mentioned otherwise, we basically follow the [Style Guide for Python Code](https://www.python.org/dev/peps/pep-0008)
+- when importing from the same module, it's ok to use the following syntax  
+`from module import class, another, many`
