@@ -2,8 +2,11 @@ from django.contrib import admin
 from .models import *
 
 class UserProfileAdmin(admin.ModelAdmin):
-	fields = (('user', 'fullname'), 'githubuser' )
-
+	fieldsets = [
+		(None,				{'fields': ['user', 'fullname', 'githubuser', 'email','website']}),
+        ('Biography',		{'fields': ['bio']}),
+        ('Activity',		{'fields': ['active','activity_status']}),
+    ]
 
 admin.site.register(Task)
 admin.site.register(UserProfile,UserProfileAdmin)
