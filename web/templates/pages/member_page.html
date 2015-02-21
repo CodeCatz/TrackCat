@@ -24,8 +24,9 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-xs-6">
-			<!--<img  src="{% static 'img/{{user.profile_picture}}' %}" class="img-responsive" alt="Responsive image">-->
-			<img src="../../static/img/{{user.profile_picture}}">
+			{% if member.profile_picture %}
+				<img src="{{ MEDIA_URL }}{{ user.profile_picture.url|default_if_none:"" }}" alt="{{ user.user.first_name }}" />
+			{% endif %}
 			<p><strong>GitHub Name:</strong></p>
 			<p>{{ user.user }}</p>
 			<p><strong>Web Site:</strong></p>

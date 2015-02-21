@@ -11,8 +11,7 @@ ACTIVITY_LEVEL_CHOICES = (
 )
 
 class UserProfile(models.Model):
- 
-	profile_picture = models.ImageField(blank=True)  
+	profile_picture = models.ImageField(upload_to=settings.MEDIA_UPLOAD_FOLDER, blank=True)  
 	website = models.URLField(blank=True)
 	bio = models.TextField(max_length=2000, blank=True)
 	activity_status = models.CharField(max_length=50, choices=ACTIVITY_LEVEL_CHOICES, default='ACTIVE')
