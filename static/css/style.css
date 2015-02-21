@@ -27,6 +27,10 @@ footer {
 	background-color: #402924;
 }
 
+.deadline {
+	color: #FF0000;
+}
+
 .footer-links {
 	list-style-type: none;
 	padding: 0px;
@@ -159,7 +163,7 @@ strong {
 
 #frontpage{
 	height: 350px;
-	background: url(groupmeet.jpg) no-repeat fixed;
+	background: url(../img/groupmeet.jpg) no-repeat fixed;
 	float:top;
 }
 
@@ -173,19 +177,19 @@ strong {
 
 /* member */
 
-.sleepy_cat { 
+.sleepy_cat {
 	font-size: 12px;
 }
 
-.lazy_cat { 
+.lazy_cat {
 	font-size: 12px;
 }
 
-.active_cat { 
+.active_cat {
 	font-size: 12px;
 }
 
-.mentor_cat { 
+.mentor_cat {
 	font-size: 12px;
 }
 

@@ -63,3 +63,6 @@ staticfiles/
 
 # Windows junk
 Thumbs.db
+
+# media directory
+media/
