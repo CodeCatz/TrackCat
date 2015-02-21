@@ -65,4 +65,6 @@ staticfiles/
 Thumbs.db
 
 # media directory
-media/
+media/*
+!media/.gitkeep
+
