@@ -24,7 +24,7 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-xs-6">
-			{% if member.profile_picture %}
+			{% if user.profile_picture %}
 				<img src="{{ MEDIA_URL }}{{ user.profile_picture.url|default_if_none:"" }}" alt="{{ user.user.first_name }}" />
 			{% endif %}
 			<p><strong>GitHub Name:</strong></p>
