@@ -47,7 +47,7 @@ def user_new(request, user_id):
 def user_edit(request, user_id):
 	user = get_object_or_404(UserProfile, id=user_id)
 	if request.method == "POST":
-		userprofileform = UserProfileForm(request.POST, instance=user)
+		userprofileform = UserProfileForm(request.POST, request.FILES, instance=user)
 		if userprofileform.is_valid():
 			user = userprofileform.save()
 			return redirect('pages-member-detail', user_id)

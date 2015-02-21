@@ -30,7 +30,7 @@
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 						{% endif %}
-						{{ member.user.first_name }}
+						{{ member.user.first_name }} {{ member.user.last_name }}
 					</a> 
 					(Mentor cat)
 					<li>
@@ -42,7 +42,7 @@
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 						{% endif %}
-						{{ member.user.first_name }}
+						{{ member.user.first_name }} {{ member.user.last_name }}
 					</a> 
 					(Active cat)
 					<li>
@@ -54,7 +54,7 @@
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 						{% endif %}
-						{{ member.user.first_name }}
+						{{ member.user.first_name }} {{ member.user.last_name }}
 					</a> 
 					(Lazy cat)
 					<li>	
@@ -65,7 +65,7 @@
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />i
 						{% endif %}}
-						{{ member.user.first_name }}
+						{{ member.user.first_name }} {{ member.user.last_name }}
 					</a> 
 					(Sleepy cat)
 					<li>
