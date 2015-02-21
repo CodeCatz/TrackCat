@@ -20,7 +20,7 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	members_list = UserProfile.objects.all()
+	members_list = UserProfile.objects.all().order_by('activity_status')
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def member_page(request,user_id):
