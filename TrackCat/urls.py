@@ -15,5 +15,3 @@ if settings.DEBUG:
 		}),
 	)
 
-print settings.SITE_URL
-
