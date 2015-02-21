@@ -1,0 +1,39 @@
+{% extends 'base.html' %}
+
+{% block title %}All CodeCatz Login{% endblock %}
+
+{% block content%}
+
+<div class="container">
+{% if not user.is_authenticated %}
+	<div class="text-center">
+		<h1>Login to TrackCatz with your Github account</h1>
+		<p>We make it easier so you don't have to remember yet another password
+			<i class="fa fa-smile-o"></i>
+		</p>
+	</div>
+	<div class="login-body">
+		<a href="{% url 'social:begin' 'github' %}"
+		class="btn btn-block btn-social btn-lg btn-github">
+		<i class="fa fa-github-square"></i> Sign in with Github
+		</a>
+	</div>
+</div>
+
+{% else %}
+	<div class="logged-in">
+	<div class="alert alert-info"><p>Looks like you already signed in!</p></div>
+	<h1 class="username">
+	{% if user.first_name or user.last_name %}
+		{{ user.first_name }} {{ user.last_name }}
+	{% else %}
+		{{ user.username }}
+	{% endif %}
+	</a>
+	</h1>
+	</div>
+	<p>I want to sign out pls!</p>
+	<a href="{% url 'logout' %}" <i class="btn btn-primary btn-directional fa fa-sign-out btn-lg"></i>Logout</a></p>
+{% endif %}
+{% endblock content%}
+

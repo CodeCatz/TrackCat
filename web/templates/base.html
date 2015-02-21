@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+
+{% load staticfiles %}
+{% load current from navigation %}
+
+<html>
+	<head>
+		<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
+		<link rel="stylesheet" href='http://fonts.googleapis.com/css?family=Carter+One' type='text/css'>
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+		<link rel="stylesheet" href="{% static 'css/style.css' %}">
+		{% block custom_css %}{% endblock %}
+	</head>
+	<body>
+<!-- Wrap all page content here -->
+		<div id="wrap">
+
+		<div class="container-fluid">
+			<nav class="navbar navbar-fixed-top">
+				<div class="container-fluid">
+
+				<!-- Brand and toggle get grouped for better mobile display -->
+				<div class="navbar-header">
+					<button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+						<span class="sr-only">Toggle navigation</span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+						<span class="icon-bar"></span>
+					</button>
+					<a class="navbar-brand" href="{% url 'pages-index' %}">
+						<img class="CClogo" alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}">
+					</a>
+
+				</div>
+
+				<!-- Collect the nav links, forms, and other content for toggling -->
+				<div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+					<ul class="nav navbar-nav">
+						<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
+						<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
+						<li class="{% current 'pages-tasks' %}"><a href="{% url 'pages-tasks' %}">Tasks</a></li>
+						<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
+						<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
+						<li class="{% current 'pages-login' %}"><a href="{% url 'pages-login' %}">Login</a></li>
+						<li class="{% current 'pages-links' %}"><a href="{% url 'pages-links' %}">Help</a></li>
+					</ul>
+					<form class="navbar-form navbar-right" role="search">
+						<div class="form-group">
+							<input type="text" class="form-control" placeholder="Search">
+						</div>
+						<button type="submit" class="btn btn-default">Submit</button>
+					</form>
+				</div><!-- /.navbar-collapse -->
+				</div><!-- /.container-fluid -->
+			</nav>
+			</div><!-- /.container for navigation -->
+
+		<div class="container">
+			<div id="gbCountdown">&nbsp;</div>
+			{% block content %}{% endblock content %}
+		</div><!-- /.container for main content -->
+
+		<div id="push"></div>
+		</div>
+
+		<footer>
+			<div class="container">
+					<div class="col-md-4">
+						<ul class="footer-links">
+							<li><a href="{% url 'pages-about' %}">Sponsors</a></li>
+							<li><a href="{% url 'pages-privacy' %}">Privacy</a></li>
+							<li><a href="{% url 'pages-about' %}">Support</a></li>
+						</ul>
+					</div> <!-- end col-md-5 -->
+					<div class="col-md-4">
+						<a href="{% url 'pages-index' %}"><img src="{% static "img/CodeCatz.jpg" %}"/></a>
+					</div> <!-- end col-md-2 -->
+					<div class="col-md-4" id="address">
+						<p><strong>CodeCatz</strong><br>
+							RAMPA Laboratorij<br>
+							Kersnikova ulica 4, Ljubljana<br>
+						</p>
+					</div>
+			</div><!-- end container -->
+		</footer>
+		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+		<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+		{% block custom_js %}{% endblock custom_js %}
+	</body>
+</html>

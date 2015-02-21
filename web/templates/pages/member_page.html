@@ -1,0 +1,46 @@
+{% extends 'base.html' %}
+
+{% load staticfiles %}
+
+{% block title %}TrackCat Member{% endblock %}
+
+{% block content%}
+
+	<div class="row">
+		<div class="member_profile">
+			<div class="col-md-12">
+			<h2>
+				{% if user.user.first_name %}
+					{{ user.user.first_name }} 
+				{% else %}
+					{{ user.username }}
+				{% endif %}'s profile
+			</h2>
+				{% for field in form %}
+					{{ field.error }}
+				{% endfor %}
+			</div>	
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-md-4 col-xs-6">
+			<!--<img  src="{% static 'img/{{user.profile_picture}}' %}" class="img-responsive" alt="Responsive image">-->
+			<img src="../../static/img/{{user.profile_picture}}">
+			<p><strong>GitHub Name:</strong></p>
+			<p>{{ user.user }}</p>
+			<p><strong>Emal:</strong></p>
+			<p>{{ user.email }}</p>
+			<p><strong>Web Site:</strong></p>
+			<p>{{ user.website }}</p>
+		</div>
+		<div class="col-md-8 col-xs-6">
+			<p><strong>Join date:</strong>{{ user.date_created|date:"d.m.Y" }}</p>
+			<p><strong>Member's Status:</strong></p>
+			<p>{{ user.get_activity_status_display }}</p>
+			<p><strong>Biography:</strong></p>
+			<p>{{ user.bio }}</p>
+		</div>
+		<a href="{% url 'pages-edit-user' user_id=user.id %}">Update profile</a>
+	</div>	
+
+{% endblock content%}

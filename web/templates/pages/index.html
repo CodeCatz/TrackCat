@@ -1,0 +1,38 @@
+{% extends 'base.html' %}
+
+{% block title %}TrackCat Home page{% endblock %}
+
+{% block content %}
+
+	<!-- Main jumbotron for a primary message -->
+	<div id="frontpage">
+		<div>
+		<h1 id="frontpage_title">TrackCat</h1>
+		</div>
+	</div>
+	<!--Row with three columns-->
+	<div class="row">
+		<div class="col-md-4">
+			<h2>Projects</h2>
+			<p>The CodeCatz girls work on creative and interesting projects using some awesome technolgy.</p>
+				<p>
+				<a class="btn btn-default" role="button" href="/projects">Read more >></a>
+				</p>
+		</div>
+		<div class="col-md-4">
+			<h2>Members</h2>
+			<p>We are a group of programming kittens mentored by a group of more experienced cats. More experienced cats help kittens learn how to code. You are in the right place if you want to meet us.</p>
+				<p>
+				<a class="btn btn-default" role="button" href="/members">Read more >></a>
+				</p>
+		</div>
+		<div class="col-md-4">
+			<h2>Events</h2>
+			<p>We meet every Wednesday sharp @17:30 at the RAMPA Laboratorij to code or learn about coding.</p>
+				<p>
+				<a class="btn btn-default" role="button" href="/events">Read more >></a>
+				</p>
+		</div>
+	</div>
+
+{% endblock content %}
