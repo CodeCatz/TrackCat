@@ -15,47 +15,22 @@
 		</div>
 	</header>
 
-<!--	<div class="row">
-		<a class="btn btn-default" href="{% url 'member-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-	</div>
--->
-
 	<div class="row">
 		<div>
 			<ul class="about_list">
 			{% for member in members_list %}
-				{% if member.activity_status == 'MENTOR' %}
-					<li class="mentor-cat">
-						<a href="{% url 'pages-member-detail' user_id=member.id %}">
-							<img src="../static/img/{{member.profile_picture}}">{{member.user.first_name}}
-						</a> 
-						(Mentor cat)
-					<li>
-				{% elif member.activity_status == 'ACTIVE' %}
-					<li class="active-cat">
-						<a href="{% url 'pages-member-detail' user_id=member.id %}">
-							<img src="../static/img/{{member.profile_picture}}">{{member.user.first_name}}
-						</a> 
-						(Active cat)
-					<li>
-				{% elif member.activity_status == 'LAZY' %}
-					<li class="lazy-cat">
-						<a href="{% url 'pages-member-detail' user_id=member.id %}">
-							<img src="../static/img/{{member.profile_picture}}">{{member.fullname}}
-						</a> 
-						(Lazy cat)
-					<li>	
-				{% elif member.activity_status == 'SLEEPY' %}
-					<li class="sleepy-cat">
-						<a href="{% url 'pages-member-detail' user_id=member.id %}">
-							<img src="../static/img/{{member.profile_picture}}">{{member.fullname}}
-						</a> 
-						(Sleepy cat)
-					<li>
+				{% if member.activity_status == 'MC' %}
+					<li class="mentor-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Mentor cat)<li>
+				{% elif member.activity_status == 'AC' %}
+					<li class="active-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Active cat)<li>
+				{% elif member.activity_status == 'LC' %}
+					<li class="lazy-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Lazy cat)<li>	
+				{% elif member.activity_status == 'SC' %}
+					<li class="sleepy-cat"><a href="{{member.githubuser}}"><img src="../static/img/{{member.profile_picture}}">{{member.fullname}}</a> (Sleepy cat)<li>
 				{% endif %}	
 			{% endfor %}
 			</ul>
 		</div>			
-	</div>
+	</div>		
 
 {% endblock content%}
