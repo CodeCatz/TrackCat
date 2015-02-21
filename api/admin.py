@@ -7,6 +7,8 @@ class UserProfileAdmin(admin.ModelAdmin):
         ('Biography',		{'fields': ['bio']}),
         ('Activity',		{'fields': ['active','activity_status']}),
     ]
+	list_display = ('user', 'fullname', 'githubuser', 'activity_status')
+	list_filter = ('activity_status',)
 
 admin.site.register(Task)
 admin.site.register(UserProfile,UserProfileAdmin)
