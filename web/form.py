@@ -1,6 +1,17 @@
 from django import forms
-
+from api.models import UserProfile
 from api.models import Project, PROJECT_STATUS_CHOICES
+
+class UserProfileForm(forms.ModelForm):
+
+	class Meta:
+		model = UserProfile
+		fields = (
+			'profile_picture',
+			'website',
+			'bio',
+			'activity_status',
+			)
 
 class ProjectForm(forms.ModelForm):
 
