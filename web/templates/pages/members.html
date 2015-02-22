@@ -10,51 +10,54 @@
 			<h1>Who is who?</h1>
 		</div>
 		<div class="col-lg-6 col-sm-5">
-			<p>This page shows all our active members.</p>
+			<p>This page will show all our active members.</p>
 		</div>
 	</header>
 
-<!--	<div class="row">
-		<a class="btn btn-default" href="{% url 'member-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
-	</div>
--->
 	<div class="row">
 		<div>
 			<ul class="about_list">
-
 			{% for member in members_list %}
-
-				{% if member.activity_status == 'MENTOR' %}
+				{% if member.activity_status == 'MC' %}
 					
 					<li class="mentor-cat">
-
-				{% elif member.activity_status == 'ACTIVE' %}
-
+					<a href="https://github.com/{{ member.githubuser }}">
+					{% if member.profile_picture %}
+						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />
+					{% endif %}
+					{{ member.fullname }}</a> (Mentor cat)<li>
+				     
+				{% elif member.activity_status == 'AC' %}
+					
 					<li class="active-cat">
-
-				{% elif member.activity_status == 'LAZY' %}
-
+					<a href="https://github.com/{{ member.githubuser }}">
+					{% if member.profile_picture %}
+						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />
+					{% endif %}
+					{{ member.fullname }}</a> (Active cat)<li>
+			
+				{% elif member.activity_status == 'LC' %}
+					
 					<li class="lazy-cat">
-
-				{% elif member.activity_status == 'SLEEPY' %}
+					<a href="https://github.com/{{ member.githubuser }}">
+					{% if member.profile_picture %}
+						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />
+					{% endif %}
+					{{ member.fullname }}</a> (Lazy cat)<li>	
 				
+				{% elif member.activity_status == 'SC' %}
 					<li class="sleepy-cat">
-
+					<a href="https://github.com/{{ member.githubuser }}">
+					{% if member.profile_picture %}
+						<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.fullname }}" />i
+					{% endif %}}
+					{{ member.fullname }}</a> (Sleepy cat)<li>
+				
 				{% endif %}	
-
-					<a href="{% url 'pages-member-detail' user_id=member.id %}">
-						{% if member.profile_picture %}
-							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
-						{% endif %}
-						{{ member.user.first_name }} {{ member.user.last_name }}
-					</a> 
-					{{ member.get_activity_status_display }}
-					<li>
-
 			{% endfor %}
-
 			</ul>
 		</div>			
-	</div>
+	</div>		
 
 {% endblock content%}
+
