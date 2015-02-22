@@ -47,10 +47,6 @@ footer {
 	color: #FFFFFF
 }
 
-.container-fluid {
-	background-color: #734F43;
-}
-
 /* Lastly, apply responsive CSS fixes as necessary */
 .CClogo {
 	height: 40px;
@@ -70,7 +66,8 @@ footer {
 
 #frontpage_title {
 	font-family: 'Open Sans', sans-serif;
-	font-size: 100px;
+	font-weight: 600;
+	font-size: 80px;
 	color: #000000;
 	text-align: left;
 	margin-top: 15px;
@@ -79,7 +76,7 @@ footer {
 	margin: 45px 0px 105px -150px;
 	padding: 10px;
 	top: 120px;
-	left: 20%;
+	left: 15%;
 }
 
 .container .credit {
@@ -162,7 +159,7 @@ strong {
 
 #frontpage{
 	height: 350px;
-	background: url(../img/groupmeet.jpg) no-repeat fixed;
+	background: url(../img/groupmeet.jpg) no-repeat;
 	background-size: 100% auto;
 	float:top;
 }
