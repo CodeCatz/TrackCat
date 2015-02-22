@@ -63,3 +63,8 @@ staticfiles/
 
 # Windows junk
 Thumbs.db
+
+# media directory
+media/*
+!media/.gitkeep
+

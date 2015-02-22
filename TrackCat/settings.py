@@ -17,6 +17,8 @@ TEMPLATE_DIRS = (
 	join(BASE_DIR, 'web/templates'),
 )
 
+from os.path import abspath, basename, dirname, join, normpath
+
 # Quick-start development settings - unsuitable for production
 # See https://docs.djangoproject.com/en/1.7/howto/deployment/checklist/
 
@@ -67,6 +69,7 @@ TEMPLATE_CONTEXT_PROCESSORS = (
 	'django.core.context_processors.request',
 	'social.apps.django_app.context_processors.backends',
 	'social.apps.django_app.context_processors.login_redirect',
+	'django.contrib.messages.context_processors.messages',
 )
 
 AUTH_PROFILE_MODULE = 'api.UserProfile'
@@ -123,4 +126,12 @@ try:
 	from .settings_local import *
 except ImportError as e:
 	pass
+
+########## MEDIA CONFIGURATION
+# Absolute filesystem path to the directory that will hold user-uploaded files.
+MEDIA_ROOT = normpath(join(BASE_DIR, 'media'))
+# URL that handles the media served from MEDIA_ROOT.
+MEDIA_URL = '/media/'
+MEDIA_UPLOAD_FOLDER = 'profile_picture'
+########## END MEDIA CONFIGURATION
 
