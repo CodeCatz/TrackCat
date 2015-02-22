@@ -4,7 +4,7 @@
 html,
 body {
 	height: 100%;
-	background-color: #D9C5AD;
+
 	/* The html and body elements cannot have any padding or margin. */
 }
 
@@ -22,9 +22,9 @@ footer {
 	margin: 20px -5px 10px 0;
 	padding-top: 15px;
 	font-size: 12px;
-	border-top: 1px solid #CCCCCC;
+	border-top: 10px solid #CCCCCC;
 	display: block;
-	background-color: #402924;
+	background-color: #101010;
 }
 
 .deadline {
@@ -69,19 +69,17 @@ footer {
 }
 
 #frontpage_title {
-	border: solid;
-	font-family: 'Carter One', cursive;
-	font-size: 50px;
-	color: #FFFFFF;
-	position: fixed!important;
-	text-align: center;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 100px;
+	color: #000000;
+	text-align: left;
 	margin-top: 15px;
 	width: 350px;
 	position: relative;
 	margin: 45px 0px 105px -150px;
 	padding: 10px;
 	top: 120px;
-	left: 50%;
+	left: 20%;
 }
 
 .container .credit {
@@ -120,6 +118,7 @@ code {
 }
 
 h1 {
+	font-family: 'Open Sans';
 	text-align: center;
 	position: relative;
 }
@@ -164,6 +163,7 @@ strong {
 #frontpage{
 	height: 350px;
 	background: url(../img/groupmeet.jpg) no-repeat fixed;
+	background-size: 100% auto;
 	float:top;
 }
 
