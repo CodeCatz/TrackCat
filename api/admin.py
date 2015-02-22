@@ -3,11 +3,11 @@ from .models import *
 
 class UserProfileAdmin(admin.ModelAdmin):
 	fieldsets = [
-		(None,				{'fields': ['user', 'fullname', 'githubuser', 'email','website']}),
+		(None,				{'fields': ['user','website']}),
 		('Biography',		{'fields': ['bio']}),
-		('Activity',		{'fields': ['active','activity_status']}),
+		('Activity',		{'fields': ['activity_status']}),
 		]
-	list_display = ('user', 'fullname', 'githubuser', 'activity_status')
+	list_display = ('user', 'activity_status')
 	list_filter = ('activity_status',)
 
 admin.site.register(Task)
