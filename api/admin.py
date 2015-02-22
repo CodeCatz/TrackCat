@@ -4,6 +4,7 @@ from .models import *
 class UserProfileAdmin(admin.ModelAdmin):
 	fieldsets = [
 		(None,				{'fields': ['user','website']}),
+		('Picture',			{'fields': ['profile_picture']}),
 		('Biography',		{'fields': ['bio']}),
 		('Activity',		{'fields': ['activity_status']}),
 		]
