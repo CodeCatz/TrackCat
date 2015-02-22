@@ -1,6 +1,9 @@
 from django.contrib import admin
 from .models import *
 
+class ProjectOwnerInline(admin.TabularInline):
+	model = Project.user_project.through
+
 class UserProfileAdmin(admin.ModelAdmin):
 	fieldsets = [
 		(None,				{'fields': ['user','website']}),
@@ -18,6 +21,7 @@ class ProjectAdmin(admin.ModelAdmin):
 		]
 	list_display = ('project_name', 'status_id', 'project_deadline',)
 	list_filter = ('status_id',)
+	inlines = [ ProjectOwnerInline, ]
 
 class TaskAdmin(admin.ModelAdmin):
 	fieldsets = [
