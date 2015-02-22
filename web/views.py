@@ -1,6 +1,8 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
+from api.models import UserProfile
 from api.models import Project
+from .form import UserProfileForm
 from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
@@ -18,8 +20,24 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	members_list = UserProfile.objects.filter(active=True).order_by('fullname')
+	members_list = UserProfile.objects.all().order_by('activity_status')
 	return render(request, 'pages/members.html',{'members_list': members_list})
+
+def member_page(request,user_id):
+	user = get_object_or_404(UserProfile, id=user_id)
+	return render(request, 'pages/member_page.html',{'user': user})
+
+def user_edit(request, user_id):
+	user = get_object_or_404(UserProfile, id=user_id)
+	if request.method == "POST":
+		userprofileform = UserProfileForm(request.POST, request.FILES, instance=user)
+		if userprofileform.is_valid():
+			user = userprofileform.save()
+			return redirect('pages-member-detail', user_id)
+	else:
+		userprofileform = UserProfileForm(instance=user)
+
+	return render(request, 'pages/edituser.html', {'userprofileform': userprofileform})	
 
 def tasks(request):
 	task_list = Task.objects.all()
