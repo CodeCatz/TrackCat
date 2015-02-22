@@ -27,6 +27,10 @@ footer {
 	background-color: #101010;
 }
 
+.row {
+	padding-top: 25px;
+
+}
 .deadline {
 	color: #FF0000;
 }
@@ -115,9 +119,14 @@ code {
 }
 
 h1 {
-	font-family: 'Open Sans';
 	text-align: center;
 	position: relative;
+}
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Open Sans';
 }
 
 
@@ -158,7 +167,7 @@ strong {
 }
 
 #frontpage{
-	height: 350px;
+	height: 250px;
 	background: url(../img/groupmeet.jpg) no-repeat;
 	background-size: 100% auto;
 	float:top;
