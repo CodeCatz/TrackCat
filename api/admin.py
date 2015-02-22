@@ -1,9 +1,6 @@
 from django.contrib import admin
 from .models import *
 
-class ProjectInline(admin.TabularInline):
-	model = Project
-
 class UserProfileAdmin(admin.ModelAdmin):
 	fieldsets = [
 		(None,				{'fields': ['user','website']}),
@@ -12,9 +9,6 @@ class UserProfileAdmin(admin.ModelAdmin):
 		]
 	list_display = ('user', 'activity_status')
 	list_filter = ('activity_status',)
-	inlines = [
-		ProjectInline,
-		]
 
 class ProjectAdmin(admin.ModelAdmin):
 	fieldsets = [
