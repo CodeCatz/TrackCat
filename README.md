@@ -55,4 +55,3 @@ Perform steps 1., 2. in 3. in your virtual environment.
 5. In your local TrackCat directory create settings_local.py and add two lines:
 ```SOCIAL_AUTH_GITHUB_KEY = 'enter Client ID from your github registered app'```  
 ```SOCIAL_AUTH_GITHUB_SECRET = 'enter Client Secret from your github registered app'```
-
