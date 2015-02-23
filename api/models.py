@@ -22,7 +22,7 @@ class UserProfile(models.Model):
 	#Relations
 	user = models.OneToOneField(User) 
 	def __unicode__(self):
-		return u'%s' % (self.user.username)	
+		return self.user.username	
 
 
 PROJECT_STATUS_CHOICES = (
@@ -45,7 +45,7 @@ class Project(models.Model):
 	date_modified = models.DateTimeField(auto_now=True)
 	user_project = models.ManyToManyField(UserProfile, related_name='user_project')
 	def __unicode__(self):
-		return u'%s' % (self.project_name)
+		return self.project_name
 
 
 STATUS_CHOICES = (
@@ -65,4 +65,15 @@ class Task (models.Model):
 	deadline = models.DateTimeField(blank=True, null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now=True)
- 
+
+class Event(models.Model):
+
+	title = models.CharField(max_length=255, blank=False, null=False)
+	start_date = models.DateTimeField(blank=False, null=False)
+	end_date = models.DateTimeField()
+	location = models.TextField(max_length=1000, blank=False)
+	description = models.TextField(max_length=1000)
+	organizer = models.CharField(max_length=255)
+	date_created = models.DateTimeField(auto_now_add=True)
+	date_updated = models.DateTimeField(auto_now=True)
+

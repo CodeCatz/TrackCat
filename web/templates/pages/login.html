@@ -23,14 +23,14 @@
 {% else %}
 	<div class="logged-in">
 	<div class="alert alert-info"><p>Looks like you already signed in!</p></div>
-	<h1 class="username">
+	<h2 class="username">
 	{% if user.first_name or user.last_name %}
 		{{ user.first_name }} {{ user.last_name }}
 	{% else %}
 		{{ user.username }}
 	{% endif %}
 	</a>
-	</h1>
+	</h2>
 	</div>
 	<p>I want to sign out pls!</p>
 	<a href="{% url 'logout' %}" <i class="btn btn-primary btn-directional fa fa-sign-out btn-lg"></i>Logout</a></p>

@@ -27,7 +27,15 @@ class TaskAdmin(admin.ModelAdmin):
 	list_display = ('title', 'status', 'assigned_id','owner_id','project_id')
 	list_filter = ('assigned_id',)
 
+class EventAdmin(admin.ModelAdmin):
+	fieldsets = [
+		(None,				{'fields': ['title', 'description', 'organizer']}),
+		('Time and place',	{'fields': ['start_date', 'end_date', 'location' ]}),
+		]
+	list_display = ('title', 'start_date', 'end_date','location')
+
 admin.site.register(Task, TaskAdmin)
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Project, ProjectAdmin)
+admin.site.register(Event, EventAdmin)
 
