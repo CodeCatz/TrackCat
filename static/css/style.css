@@ -27,10 +27,6 @@ footer {
 	background-color: #101010;
 }
 
-.row {
-	
-}
-
 .deadline {
 	color: #FF0000;
 }
@@ -76,15 +72,11 @@ footer {
 #frontpage_title {
 	font-family: 'Open Sans', sans-serif;
 	font-size: 80px;
-	color: #000000 !important;
+	color: #000000;
 	text-align: left;
-	margin-top: 15px;
 	width: 350px;
-	position: relative;
-	margin: 45px 0px 105px -150px;
-	padding: 10px;
-	top: 120px;
-	left: 15%;
+	position: absolute;
+	top: 40px;
 }
 
 .container .credit {
@@ -104,10 +96,6 @@ code {
 }
 
 /* Fit CodeCatz image in navbar-brand. */
-.navbar-header{
-	padding: 0;
-
-}
 
 .navbar-brand{
 	padding: 6px;
@@ -131,7 +119,7 @@ h1 {
 }
 
 #about {
-text-align: center;
+	text-align: center;
 }
 
 p,
@@ -166,10 +154,6 @@ img{
 	font-size: 12px;
 }
 
-strong {
-	color: #5C5C5C;
-}
-
 /* headding */
 
 #frontpage{
@@ -178,6 +162,7 @@ strong {
 	background: url(../img/groupmeet.jpg) no-repeat;
 	background-size: 100% auto;
 	float:top;
+	position: relative;
 }
 
 .jumbotron p {
