@@ -178,6 +178,7 @@ strong {
 
 #frontpage{
 	height: 250px;
+	margin-top: 80px;
 	background: url(../img/groupmeet.jpg) no-repeat;
 	background-size: 100% auto;
 	float:top;
