@@ -4,7 +4,7 @@
 html,
 body {
 	height: 100%;
-	background-color: #D9C5AD;
+
 	/* The html and body elements cannot have any padding or margin. */
 }
 
@@ -22,9 +22,9 @@ footer {
 	margin: 20px -5px 10px 0;
 	padding-top: 15px;
 	font-size: 12px;
-	border-top: 1px solid #CCCCCC;
+	border-top: 10px solid #CCCCCC;
 	display: block;
-	background-color: #402924;
+	background-color: #101010;
 }
 
 .deadline {
@@ -47,10 +47,6 @@ footer {
 	color: #FFFFFF
 }
 
-.container-fluid {
-	background-color: #734F43;
-}
-
 /* Lastly, apply responsive CSS fixes as necessary */
 .CClogo {
 	height: 40px;
@@ -68,20 +64,19 @@ footer {
 	float:left;
 }
 
+.logged-in {
+	padding-top: 50px;
+}
+
+
 #frontpage_title {
-	border: solid;
-	font-family: 'Carter One', cursive;
-	font-size: 50px;
-	color: #FFFFFF;
-	position: fixed!important;
-	text-align: center;
-	margin-top: 15px;
+	font-family: 'Open Sans', sans-serif;
+	font-size: 80px;
+	color: #000000;
+	text-align: left;
 	width: 350px;
-	position: relative;
-	margin: 45px 0px 105px -150px;
-	padding: 10px;
-	top: 120px;
-	left: 50%;
+	position: absolute;
+	top: 40px;
 }
 
 .container .credit {
@@ -89,7 +84,11 @@ footer {
 }
 
 .container {
-	margin-top: 60px;
+	margin-top: 30px;
+}
+
+#gbCountdown {
+	color: #FFFFFF;
 }
 
 code {
@@ -97,10 +96,6 @@ code {
 }
 
 /* Fit CodeCatz image in navbar-brand. */
-.navbar-header{
-	padding: 0;
-
-}
 
 .navbar-brand{
 	padding: 6px;
@@ -115,13 +110,24 @@ code {
 
 /* Links page*/
 .links {
-	text-align: center;
 	position: relative;
 }
 
 h1 {
-	text-align: center;
 	position: relative;
+	margin: 105px 0px 15px 0px;
+}
+
+#about {
+	text-align: center;
+}
+
+p,
+h1,
+h2,
+h3,
+h4 {
+	font-family: 'Open Sans';
 }
 
 
@@ -148,23 +154,15 @@ img{
 	font-size: 12px;
 }
 
-strong {
-	color: #5C5C5C;
-}
-
 /* headding */
-.about {
-	color: #5C5C5C;
-	font-size: 40px;
-	padding-bottom: 20px;
-	clear: both;
-	text-align:center;
-}
 
 #frontpage{
-	height: 350px;
-	background: url(../img/groupmeet.jpg) no-repeat fixed;
+	height: 250px;
+	margin-top: 80px;
+	background: url(../img/groupmeet.jpg) no-repeat;
+	background-size: 100% auto;
 	float:top;
+	position: relative;
 }
 
 .jumbotron p {
