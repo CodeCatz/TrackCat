@@ -1,6 +1,7 @@
 from django.contrib import admin
 from .models import *
 
+
 class ProjectInline(admin.TabularInline):
 	model = Project
 
@@ -35,4 +36,5 @@ class TaskAdmin(admin.ModelAdmin):
 admin.site.register(Task, TaskAdmin)
 admin.site.register(UserProfile, UserProfileAdmin)
 admin.site.register(Project, ProjectAdmin)
+
 
