@@ -28,9 +28,9 @@ footer {
 }
 
 .row {
-	padding-top: 25px;
-
+	padding-top: 75px;
 }
+
 .deadline {
 	color: #FF0000;
 }
@@ -68,6 +68,11 @@ footer {
 	float:left;
 }
 
+.logged-in {
+	padding-top: 50px;
+}
+
+
 #frontpage_title {
 	font-family: 'Open Sans', sans-serif;
 	font-weight: 600;
@@ -89,6 +94,10 @@ footer {
 
 .container {
 	margin-top: 60px;
+}
+
+#gbCountdown {
+	color: #FFFFFF;
 }
 
 code {

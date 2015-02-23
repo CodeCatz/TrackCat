@@ -26,8 +26,9 @@
 				<a class="navbar-brand" href="{% url 'pages-index' %}"><img class="CClogo" alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}" alt="Expose" height="17px" /></a>
 			</div>
 			<div class="navbar-collapse collapse">
+				<div id="gbCountdown">&nbsp;</div>
 				<ul class="nav navbar-nav">
-					<li class="active"><a href="{% url 'pages-index' %}">Home</a></li>
+					<li><a href="{% url 'pages-index' %}">Home</a></li>
 					<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
 					<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
 					<li class="{% current 'pages-tasks' %}"><a href="{% url 'pages-tasks' %}">Tasks</a></li>
@@ -40,8 +41,8 @@
         <!--/.navbar-collapse -->
 		</div>
 	</div>
-		<div class="container">
-			<div id="gbCountdown">&nbsp;</div>
+		<div class="container countdown">
+			
 			{% block content %}{% endblock content %}
 		</div><!-- /.container for main content -->
 
