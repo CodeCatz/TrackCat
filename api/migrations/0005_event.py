@@ -7,7 +7,7 @@ from django.db import models, migrations
 class Migration(migrations.Migration):
 
     dependencies = [
-        ('api', '0002_auto_20150217_0824'),
+        ('api', '0004_auto_20150222_0831'),
     ]
 
     operations = [
@@ -18,11 +18,11 @@ class Migration(migrations.Migration):
                 ('title', models.CharField(max_length=255)),
                 ('start_date', models.DateTimeField()),
                 ('end_date', models.DateTimeField()),
-                ('location', models.CharField(max_length=1000)),
-                ('description', models.CharField(max_length=1000)),
+                ('location', models.TextField(max_length=1000)),
+                ('description', models.TextField(max_length=1000)),
                 ('organizer', models.CharField(max_length=255)),
                 ('date_created', models.DateTimeField(auto_now_add=True)),
-                ('date_updated', models.DateTimeField(auto_now_add=True)),
+                ('date_updated', models.DateTimeField(auto_now=True)),
             ],
             options={
             },
