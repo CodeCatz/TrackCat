@@ -30,6 +30,9 @@
 								none
 							{% endif %}
 						</p>
+						<div class="col-lg-6 col-sm-7">
+			<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"></span></a>
+						</div>
 				</div>
 
 			{% endfor %}

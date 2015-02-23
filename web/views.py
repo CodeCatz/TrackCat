@@ -8,6 +8,7 @@ from django.contrib.auth import logout as auth_logout
 from api.models import Project
 from api.models import UserProfile
 from api.models import Task
+from .form import TaskForm
 
 def index(request):
 	return render_to_response('pages/index.html',{})
@@ -42,6 +43,24 @@ def user_edit(request, user_id):
 def tasks(request):
 	task_list = Task.objects.all()
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
+
+def task_edit(request, task_id):
+	if Task.objects.filter(pk=task_id).exists():
+		task = Task.objects.get(pk=task_id)
+	else:
+		return render(request, 'pages/task_edit.html', {'invalid_task_id': True})
+
+	if request.method == "POST":
+		taskform = TaskForm(request.POST, instance=task)
+		if taskform.is_valid():
+			task = taskform.save()
+			return redirect('pages-tasks')
+	else:
+		taskform = TaskForm(instance=task)
+
+	return render(request, 'pages/task_edit.html', {'taskform': taskform,
+									'editing': True})
+
 
 def events(request):
 	return render(request, 'pages/events.html',{})

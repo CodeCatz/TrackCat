@@ -1,6 +1,21 @@
 from django import forms
 from api.models import UserProfile
 from api.models import Project
+from api.models import Task
+
+
+class TaskForm(forms.ModelForm):
+	
+	class Meta:
+		model= Task
+		fields = (
+			'title',
+			'status',
+			'owner_id',
+			'project_id',
+			'description',
+			'deadline',
+			)
 
 class UserProfileForm(forms.ModelForm):
 
