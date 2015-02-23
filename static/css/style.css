@@ -28,7 +28,7 @@ footer {
 }
 
 .row {
-	padding-top: 75px;
+	
 }
 
 .deadline {
@@ -122,13 +122,16 @@ code {
 
 /* Links page*/
 .links {
-	text-align: center;
 	position: relative;
 }
 
 h1 {
-	text-align: center;
 	position: relative;
+	margin: 105px 0px 15px 0px;
+}
+
+#about {
+text-align: center;
 }
 
 p,
@@ -168,13 +171,6 @@ strong {
 }
 
 /* headding */
-.about {
-	color: #5C5C5C;
-	font-size: 40px;
-	padding-bottom: 20px;
-	clear: both;
-	text-align:center;
-}
 
 #frontpage{
 	height: 250px;
