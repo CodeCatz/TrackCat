@@ -59,3 +59,15 @@ class Task (models.Model):
 	deadline = models.DateTimeField(blank=True, null=True)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_updated = models.DateTimeField(auto_now=True)
+
+class Event(models.Model):
+
+	title = models.CharField(max_length=255, blank=False, null=False)
+	start_date = models.DateTimeField(blank=False, null=False)
+	end_date = models.DateTimeField()
+	location = models.TextField(max_length=1000, blank=False)
+	description = models.TextField(max_length=1000)
+	organizer = models.CharField(max_length=255)
+	date_created = models.DateTimeField(auto_now_add=True)
+	date_updated = models.DateTimeField(auto_now=True)
+
