@@ -21,6 +21,9 @@ class UserProfile(models.Model):
 
 	#Relations
 	user = models.OneToOneField(User) 
+	def __unicode__(self):
+		return self.user.username	
+
 
 PROJECT_STATUS_CHOICES = (
 	('OPENED', 'Opened'),
@@ -41,6 +44,9 @@ class Project(models.Model):
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_modified = models.DateTimeField(auto_now=True)
 	user_project = models.ManyToManyField(UserProfile, related_name='user_project')
+	def __unicode__(self):
+		return self.project_name
+
 
 STATUS_CHOICES = (
 	('UNASSIGNED', 'Unassigned'),
