@@ -12,8 +12,107 @@
 		<p>Return to <a href="{% url 'pages-projects' %}">Projects</a></p>
 	{%  else %}	
 		<h1 class="pull-left">{% if editing %}Edit{% else %}Add{% endif %} your project</h1>
-		<form method="POST">{% csrf_token %}
-			{{ projectform.as_p }}
+		<form enctype="multipart/form-data" method="post" id="project" role="form" class="form-horizontal clearfix">{% csrf_token %}
+			<div>
+				<div class="form-group {% if projectform.project_name.errors %}has-error{% endif %}">
+					<label for="{{ projectform.project_name.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.project_name.field.required %}*{% endif %}
+						{{ projectform.project_name.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.project_name }}
+					</div>
+					{% if projectform.project_name.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.project_name.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.project_description.errors %}has-error{% endif %}">
+					<label for="{{ projectform.project_description.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.project_description.field.required %}*{% endif %}
+						{{ projectform.project_description.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.project_description }}
+					</div>
+					{% if projectform.project_description.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.project_description.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.status_id.errors %}has-error{% endif %}">
+					<label for="{{ projectform.status_id.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.status_id.field.required %}*{% endif %}
+						{{ projectform.status_id.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.status_id }}
+					</div>
+					{% if projectform.status_id.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.status_id.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.project_deadline.errors %}has-error{% endif %}">
+					<label for="{{ projectform.project_deadline.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.project_deadline.field.required %}*{% endif %}
+						{{ projectform.project_deadline.label }}
+					</label>
+					<div class="col-sm-9 input-group">
+						<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
+						{{ projectform.project_deadline }}
+					</div>
+					{% if projectform.project_deadline.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.project_deadline.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.repository_link.errors %}has-error{% endif %}">
+					<label for="{{ projectform.repository_link.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.repository_link.field.required %}*{% endif %}
+						{{ projectform.repository_link.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.repository_link }}
+					</div>
+					{% if projectform.repository_link.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.repository_link.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.website_test.errors %}has-error{% endif %}">
+					<label for="{{ projectform.website_test.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.website_test.field.required %}*{% endif %}
+						{{ projectform.website_test.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.website_test }}
+					</div>
+					{% if projectform.website_test.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.website_test.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.website_production.errors %}has-error{% endif %}">
+					<label for="{{ projectform.website_production.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.website_production.field.required %}*{% endif %}
+						{{ projectform.website_production.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.website_production }}
+					</div>
+					{% if projectform.website_production.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.website_production.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if projectform.project_owner.errors %}has-error{% endif %}">
+					<label for="{{ projectform.project_owner.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.project_owner.field.required %}*{% endif %}
+						{{ projectform.project_owner.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.project_owner }}
+					</div>
+					{% if projectform.project_owner.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.project_owner.errors }}</span>
+					{% endif %}
+				</div>
+			</div>
+
 			<button type="submit" class="save btn btn-default">Save</button>
 		</form>
 	{% endif %}	
