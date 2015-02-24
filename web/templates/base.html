@@ -39,22 +39,20 @@
 					<ul class="nav navbar-nav navbar-right">
                     <li class="dropdown" id="menuLogin">
                         {% if user.is_authenticated %}
-                            <a href="{% url 'pages-edit-user' user_id=user.id %}" class="dropdown-toggle" data-toggle="dropdown">
+                            <a href="#" class="dropdown-toggle" data-toggle="dropdown">
                                 Hi, {{ user.first_name }}
                                 <b class="caret"></b>
                             </a>
                             <ul class="dropdown-menu">
-                                <li><a href="{% url 'pages-edit-user' user_id=user.id %}">Edit profile</a></li>
+                                <li><a href="#">Edit profile</a></li>
                                 <li><a href="#">Another action</a></li>
                                 <li><a href="#">Something else here</a></li>
                                 <li class="divider"></li>
-                                <li class="nav-header">Logout:</li>
                                 <li>
                                     <a href="{% url 'logout' %}?next={% firstof request.path '/' %}">
                                         <i class="fa fa-sign-out fa-stack-1x fa-inverse"></i> Sign out
                                     </a>
                                 </li>
-                                <li><a href="#">One more separated link</a></li>
                             </ul>
                         {% else %}
                             <div class="login-body">
