@@ -22,18 +22,19 @@ def members(request):
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def member_page(request,user_id):
-	user = get_object_or_404(UserProfile, id=user_id)
-	return render(request, 'pages/member_page.html',{'user': user})
+	userprofile = get_object_or_404(UserProfile, pk=user_id)
+	return render(request, 'pages/member_page.html', {'userprofile': userprofile})
 
-def user_edit(request, user_id):
-	user = get_object_or_404(UserProfile, id=user_id)
+@login_required
+def user_edit(request):
+	userprofile = UserProfile.objects.get(user=request.user)
 	if request.method == "POST":
-		userprofileform = UserProfileForm(request.POST, request.FILES, instance=user)
+		userprofileform = UserProfileForm(request.POST, request.FILES, instance=userprofile)
 		if userprofileform.is_valid():
-			user = userprofileform.save()
-			return redirect('pages-member-detail', user_id)
+			userprofile = userprofileform.save()
+			return redirect('pages-members')
 	else:
-		userprofileform = UserProfileForm(instance=user)
+		userprofileform = UserProfileForm(instance=userprofile)
 
 	return render(request, 'pages/edituser.html', {'userprofileform': userprofileform})	
 
@@ -69,9 +70,6 @@ def login(request):
 
 def links(request):
 	return render(request, 'pages/links.html',{})
-
-def edituser(request):
-	return render(request, 'pages/edituser.html',{})
 
 def privacy(request):
 	return render(request, 'pages/privacy.html',{})
