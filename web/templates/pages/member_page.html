@@ -10,10 +10,10 @@
 		<div class="member_profile">
 			<div class="col-md-12">
 			<h2>
-				{% if user.user.first_name %}
-					{{ user.user.first_name }} 
+				{% if userprofile.user.first_name %}
+					{{ userprofile.user.first_name }} 
 				{% else %}
-					{{ user.username }}
+					{{ userprofile.user.username }}
 				{% endif %}'s profile
 			</h2>
 				{% for field in form %}
@@ -24,22 +24,27 @@
 	</div>
 	<div class="row">
 		<div class="col-md-4 col-xs-6">
-			{% if user.profile_picture %}
-				<img src="{{ MEDIA_URL }}{{ user.profile_picture.url|default_if_none:"" }}" alt="{{ user.user.first_name }}" />
+			{% if userprofile.profile_picture %}
+				<img src="{{ MEDIA_URL }}{{ userprofile.profile_picture.url|default_if_none:"" }}" alt="{{ userprofile.user.first_name }}" />
 			{% endif %}
-			<p><strong>GitHub Name:</strong></p>
-			<p>{{ user.user }}</p>
-			<p><strong>Web Site:</strong></p>
-			<p>{{ user.website }}</p>
+			{% if userprofile.user.username %}
+				<p><strong>GitHub Link:</strong></p>
+				<p><a href="https://github.com/{{ userprofile.user.username }}">https://github.com/{{ userprofile.user.username }}</a></p>
+			{% endif %}
+			{% if userprofile.website %}
+				<p><strong>Web Site:</strong></p>
+				<p>{{ userprofile.website }}</p>
+			{% endif %}
 		</div>
 		<div class="col-md-8 col-xs-6">
-			<p><strong>Join date:</strong>{{ user.date_created|date:"d.m.Y" }}</p>
+			<p><strong>Join date:</strong>{{ userprofile.date_created|date:"d.m.Y" }}</p>
 			<p><strong>Member's Status:</strong></p>
-			<p>{{ user.get_activity_status_display }}</p>
-			<p><strong>Biography:</strong></p>
-			<p>{{ user.bio }}</p>
+			<p>{{ userprofile.get_activity_status_display }}</p>
+			{% if userprofile.bio %}
+				<p><strong>Biography:</strong></p>
+				<p>{{ userprofile.bio }}</p>
+			{% endif %}
 		</div>
-		<a href="{% url 'pages-edit-user' user_id=user.id %}">Update profile</a>
 	</div>	
 
 {% endblock content%}
