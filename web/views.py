@@ -10,7 +10,7 @@ from api.models import UserProfile
 from api.models import Task
 
 def index(request):
-	return render_to_response('pages/index.html',{})
+	return render_to_response('pages/index.html',{},context_instance=RequestContext(request))
 
 def projects(request):
 	project_list = Project.objects.all()
