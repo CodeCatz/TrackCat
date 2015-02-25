@@ -50,6 +50,7 @@ class ProjectForm(forms.ModelForm):
 				'repository_link': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Where is your repository?'}),
 				'website_production': forms.TextInput(attrs={'class':'form-control','placeholder':'Your test site'}),
 				'website_test': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your production site'}),
+				'project_owner': forms.Select(attrs={'class':'form-control'}),
 		}
 		
 		labels = {

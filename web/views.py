@@ -6,12 +6,12 @@ from .form import UserProfileForm
 from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
 from api.models import Project
-from api.models import UserProfile
 from api.models import Task
 from .form import TaskForm
+from django.contrib.auth.decorators import login_required
 
 def index(request):
-	return render_to_response('pages/index.html',{})
+	return render(request, 'pages/index.html',{})
 
 def projects(request):
 	project_list = Project.objects.all()
@@ -61,7 +61,6 @@ def task_edit(request, task_id):
 	return render(request, 'pages/task_edit.html', {'taskform': taskform,
 									'editing': True})
 
-
 def events(request):
 	return render(request, 'pages/events.html',{})
 
@@ -88,6 +87,7 @@ def project_detail(request, project_id):
 
 	return render(request, 'pages/project_detail.html', {'project': project})
 
+@login_required
 def project_new(request):
 	if request.method == "POST":
 		projectform = ProjectForm (request.POST)
@@ -99,6 +99,7 @@ def project_new(request):
 
 	return render(request, 'pages/project_edit.html', {'projectform': projectform})
 
+@login_required
 def project_edit(request, project_id):
 	if Project.objects.filter(pk=project_id).exists():
 		project = Project.objects.get(pk=project_id)
