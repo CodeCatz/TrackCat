@@ -23,8 +23,9 @@ def members(request):
 
 def member_page(request,user_id):
 	userprofile = get_object_or_404(UserProfile, pk=user_id)
-	return render(request, 'pages/member_page.html',{'userprofile': userprofile})
+	return render(request, 'pages/member_page.html', {'userprofile': userprofile})
 
+@login_required
 def user_edit(request):
 	userprofile = UserProfile.objects.get(user=request.user)
 	if request.method == "POST":
@@ -69,10 +70,6 @@ def login(request):
 
 def links(request):
 	return render(request, 'pages/links.html',{})
-
-@login_required
-def edituser(request):
-	return render(request, 'pages/edituser.html',{})
 
 def privacy(request):
 	return render(request, 'pages/privacy.html',{})
