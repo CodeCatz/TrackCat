@@ -37,7 +37,7 @@ def user_edit(request, user_id):
 
 	return render(request, 'pages/edituser.html', {'userprofileform': userprofileform})	
 
-@login_required
+
 def tasks(request):
 	task_list = Task.objects.all()
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
@@ -57,8 +57,19 @@ def task_edit(request, task_id):
 	else:
 		taskform = TaskForm(instance=task)
 
-	return render(request, 'pages/task_edit.html', {'taskform': taskform,
-									'editing': True})
+	return render(request, 'pages/task_edit.html', {'taskform': taskform, 'editing': True})
+
+@login_required
+def task_new(request):
+	if request.method == "POST":
+		taskform = TaskForm(request.POST)
+		if taskform.is_valid():
+			task = taskform.save()
+			return redirect('pages-tasks')
+	else:
+		taskform = TaskForm()
+
+	return render(request, 'pages/task_new.html', {'taskform': taskform})
 
 def events(request):
 	return render(request, 'pages/events.html',{})
