@@ -37,10 +37,12 @@ def user_edit(request, user_id):
 
 	return render(request, 'pages/edituser.html', {'userprofileform': userprofileform})	
 
+@login_required
 def tasks(request):
 	task_list = Task.objects.all()
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
 
+@login_required
 def task_edit(request, task_id):
 	if Task.objects.filter(pk=task_id).exists():
 		task = Task.objects.get(pk=task_id)

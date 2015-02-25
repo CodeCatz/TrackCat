@@ -10,6 +10,7 @@ body {
 
 #wrap {
 	margin-top:110px;
+	
 }
 
 /* Set the fixed height of the footer here */
@@ -17,7 +18,7 @@ footer {
 	margin: 20px -5px 10px 0;
 	padding-top: 15px;
 	font-size: 12px;
-	border-top: 10px solid #CCCCCC;
+	border-top: 10px solid #aecc52;
 	display: block;
 	background-color: #101010;
 }
