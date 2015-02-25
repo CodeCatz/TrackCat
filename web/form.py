@@ -38,7 +38,7 @@ class ProjectForm(forms.ModelForm):
 		model = Project
 		fields = ('project_name', 
 				'project_description',
-				'status_id',
+				'status',
 				'project_deadline',
 				'repository_link',
 				'website_production',
@@ -50,7 +50,7 @@ class ProjectForm(forms.ModelForm):
 				'project_description': forms.Textarea(attrs={'class':'form-control', 'rows':'6','placeholder':'Tell a bit more about the project.'}),
 				'project_deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget',
 							'autocomplete': 'off', 'placeholder': 'When is the project deadline?'}),
-				'status_id': forms.Select(attrs={'class':'form-control '}),
+				'status': forms.Select(attrs={'class':'form-control '}),
 				'repository_link': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Where is your repository?'}),
 				'website_production': forms.TextInput(attrs={'class':'form-control','placeholder':'Your test site'}),
 				'website_test': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your production site'}),
@@ -60,7 +60,7 @@ class ProjectForm(forms.ModelForm):
 		labels = {
 				'project_name': 'Name', 
 				'project_description': 'Description',
-				'status_id': 'Status',
+				'status': 'Status',
 				'project_deadline': 'Deadline date',
 				'repository_link' :'Repository',
 				'website_production': 'Production site',
@@ -80,7 +80,7 @@ class ProjectForm(forms.ModelForm):
 				'project_description': {
 					'invalid': u'Please check if this is a valid description',
 				},
-				'status_id': {
+				'status': {
 					'required': u'Please select a status for your project.',
 					'invalid': u'Please check if this is a valid status',
 				},
