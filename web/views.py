@@ -70,6 +70,7 @@ def login(request):
 def links(request):
 	return render(request, 'pages/links.html',{})
 
+@login_required
 def edituser(request):
 	return render(request, 'pages/edituser.html',{})
 
