@@ -22,7 +22,7 @@ def members(request):
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def member_page(request,user_id):
-	userprofile = get_object_or_404(UserProfile, id=user_id)
+	userprofile = get_object_or_404(UserProfile, pk=user_id)
 	return render(request, 'pages/member_page.html',{'userprofile': userprofile})
 
 def user_edit(request):
