@@ -11,7 +11,9 @@
 		<p class="alert alert-warning">This project does not exists in your projects list.</p>
 		<p>Return to <a href="{% url 'pages-projects' %}">Projects</a></p>
 	{%  else %}	
+	<div class="clearfix">
 		<h1 class="pull-left">{% if editing %}Edit{% else %}Add{% endif %} your project</h1>
+	</div>
 		<form enctype="multipart/form-data" method="post" id="project" role="form" class="form-horizontal clearfix">{% csrf_token %}
 			<div>
 				<div class="form-group {% if projectform.project_name.errors %}has-error{% endif %}">
