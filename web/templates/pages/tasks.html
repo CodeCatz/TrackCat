@@ -9,14 +9,15 @@
 			<h1>All CodeCatz Tasks</h1>
 		</div>
 	</header>
+	
+	{% if user.is_authenticated %}
+		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-pencil"> Add new</span></a>
+	{% endif %}	
 
 	{% if task_list %}
-
 		<div class="row">
-
-			{% for task in task_list %}
+			{% for task in task_list %}	
 				
-				<div class="row">
 					<div class="col-md-3 col-xs-6">
 						<h3><strong>{{ task.title }}</strong></h3>
 							<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
@@ -24,29 +25,37 @@
 							<p><strong>Part of project:</strong> <a href="{% url 'web.views.project_detail' project_id=task.project_id.project_id %}"> {{ task.project_id.project_name }}</a></p>
 							<br />
 							<p><strong>Description:</strong> {{ task.description }}</p>
-							<p class=deadline><strong>Deadline:</strong>
+							<p class="deadline"><strong>Deadline:</strong>
 								{% if task.deadline %}
 									{{ task.deadline|date:"d. M Y"|lower }}
 								{% else %}
 									none
 								{% endif %}
 							</p>
-							<div class="row">
-								<div class="col-lg-6 col-sm-7">
-									{% if user.is_authenticated %}
-										<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
-									{% else %}
-										<div><button type="button" class="btn btn-info"><a href="{% url 'pages-login'%}">Login to edit task.</a></button>
-										</div>
-									{% endif %}
+							{% if user.is_authenticated %}
+								<div>
+									<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}">Edit</a>
 								</div>
-							</div>
+							{% endif %}	
 					</div>
-				</div>
+					{% if forloop.last %}
+						  </div>
+					{% else %}
+						{% if forloop.counter|divisibleby:"4" %}
+			  				</div>
+							<div class="row">
+						{% endif %}
+			  		{% endif %}
+			  
+				
 			{% endfor %}
-
-		</div>
-
+			  
+		{% if not user.is_authenticated %}
+			<div class="row">
+				<p><a href="{% url 'pages-login' %}">Login </a>to edit tasks.</strong></p>
+			</div>
+		{% endif %}
+			  
 	{% else %}
 		<div class="alert alert-info">
 			<p>There are currently no tasks in tasks list.</p>

@@ -18,7 +18,14 @@ class TaskForm(forms.ModelForm):
 			)
 
 		widgets = {
-		'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget'}),
+			'title': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter the task name'}),
+			'status': forms.Select(attrs={'class':'form-control '}),
+			'owner_id': forms.Select(attrs={'class':'form-control'}),
+			'project_id': forms.Select(attrs={'class':'form-control'}),
+			'description': forms.Textarea(attrs={'class':'form-control', 'rows':'6','placeholder':'Tell a bit more about the task.'}),
+			'project_deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget',
+			'autocomplete': 'off', 'placeholder': 'When is the project deadline?'}),
+			'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget'}),
 		}
 
 class UserProfileForm(forms.ModelForm):
@@ -69,7 +76,7 @@ class ProjectForm(forms.ModelForm):
 		}
 
 		help_texts = {
-				'project_deadline': "Example: YYYY/MM/DD h:m"
+			'project_deadline': "Example: YYYY/MM/DD h:m"
 		}
 
 		error_messages = {
@@ -101,4 +108,18 @@ class ProjectForm(forms.ModelForm):
 					'required': u'Please select a project owner.',
 					'invalid': u'Please check if this is valid',
 				},
-		}
+				'repository_link': {
+					'required': u'Please enter a repository url for your project.',
+					'invalid': u'Please check if this is a valid url',
+				},
+				'website_production': {
+					'invalid': u'Please check if this is a valid url',
+				},
+				'website_test': {
+					'invalid': u'Please check if this is a valid url',
+				},
+				'project_owner': {
+					'required': u'Please select a project owner.',
+					'invalid': u'Please check if this is valid',
+				},
+			}
