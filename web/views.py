@@ -1,14 +1,11 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
-from api.models import UserProfile
-from api.models import Project
-from .form import UserProfileForm
-from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
-from api.models import Project
-from api.models import UserProfile
-from api.models import Task
 from django.contrib.auth.decorators import login_required
+
+from api.models import UserProfile, Project, Task
+
+from .form import UserProfileForm, ProjectForm, TaskForm
 
 def index(request):
 	return render(request, 'pages/index.html',{})
@@ -43,6 +40,23 @@ def user_edit(request, user_id):
 def tasks(request):
 	task_list = Task.objects.all()
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
+
+def task_edit(request, task_id):
+	if Task.objects.filter(pk=task_id).exists():
+		task = Task.objects.get(pk=task_id)
+	else:
+		return render(request, 'pages/task_edit.html', {'invalid_task_id': True})
+
+	if request.method == "POST":
+		taskform = TaskForm(request.POST, instance=task)
+		if taskform.is_valid():
+			task = taskform.save()
+			return redirect('pages-tasks')
+	else:
+		taskform = TaskForm(instance=task)
+
+	return render(request, 'pages/task_edit.html', {'taskform': taskform,
+									'editing': True})
 
 def events(request):
 	return render(request, 'pages/events.html',{})

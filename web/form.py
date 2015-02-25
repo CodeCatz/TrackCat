@@ -1,6 +1,25 @@
 from django import forms
 from api.models import UserProfile
 from api.models import Project
+from api.models import Task
+
+
+class TaskForm(forms.ModelForm):
+	
+	class Meta:
+		model= Task
+		fields = (
+			'title',
+			'status',
+			'owner_id',
+			'project_id',
+			'description',
+			'deadline',
+			)
+
+		widgets = {
+		'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget'}),
+		}
 
 class UserProfileForm(forms.ModelForm):
 
