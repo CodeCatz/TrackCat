@@ -8,13 +8,8 @@ body {
 	/* The html and body elements cannot have any padding or margin. */
 }
 
-/* Wrapper for page content to push down footer */
 #wrap {
-	min-height: 100%;
-	height: auto !important;
-	height: 100%;
-	/* Negative indent footer by it's height */
-	margin: 0 auto -60px;
+	margin-top:110px;
 }
 
 /* Set the fixed height of the footer here */
@@ -76,7 +71,7 @@ footer {
 	text-align: left;
 	width: 350px;
 	position: absolute;
-	top: 40px;
+	margin: 145px 0px 15px 0px;
 }
 
 .container .credit {
@@ -84,7 +79,7 @@ footer {
 }
 
 .container {
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 #gbCountdown {
@@ -111,11 +106,6 @@ code {
 /* Links page*/
 .links {
 	position: relative;
-}
-
-h1 {
-	position: relative;
-	margin: 105px 0px 15px 0px;
 }
 
 #about {
@@ -158,7 +148,6 @@ img{
 
 #frontpage{
 	height: 250px;
-	margin-top: 80px;
 	background: url(../img/groupmeet.jpg) no-repeat;
 	background-size: 100% auto;
 	float:top;
@@ -175,20 +164,11 @@ img{
 
 /* member */
 
-.sleepy_cat {
+.sleepy_cat,
+.lazy_cat,
+.active_cat,
+.mentor_cat{
 	font-size: 12px;
 }
 
-.lazy_cat {
-	font-size: 12px;
-}
-
-.active_cat {
-	font-size: 12px;
-}
-
-.mentor_cat {
-	font-size: 12px;
-}
-
-/* end of about page */
+/* end of member page */
