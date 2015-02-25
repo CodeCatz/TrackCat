@@ -1,14 +1,11 @@
 from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
-from api.models import UserProfile
-from api.models import Project
-from .form import UserProfileForm
-from .form import ProjectForm
 from django.contrib.auth import logout as auth_logout
-from api.models import Project
-from api.models import Task
-from .form import TaskForm
 from django.contrib.auth.decorators import login_required
+
+from api.models import UserProfile, Project, Task
+
+from .form import UserProfileForm, ProjectForm, TaskForm
 
 def index(request):
 	return render(request, 'pages/index.html',{})
