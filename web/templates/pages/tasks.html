@@ -36,14 +36,14 @@
 				</div>
 				{% if user.is_authenticated %}
 					<div>
-						<p><a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a></p>
+						<p><a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}">Edit</a></p>
 					</div>
 				{% endif %}	
 			{% endfor %}
 			  
 		{% if not user.is_authenticated %}
 			<div class="row">
-				<p><a href="{% url 'task-new' %}">Login </a>to edit tasks.</strong></p>
+				<p><a href="{% url 'pages-login' %}">Login </a>to edit tasks.</strong></p>
 			</div>
 		{% endif %}
 			  
