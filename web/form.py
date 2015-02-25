@@ -17,6 +17,10 @@ class TaskForm(forms.ModelForm):
 			'deadline',
 			)
 
+		widgets = {
+		'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget'}),
+		}
+
 class UserProfileForm(forms.ModelForm):
 
 	class Meta:

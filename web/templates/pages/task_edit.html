@@ -8,7 +8,7 @@
 {% block content %}
 
 	{% if invalid_project_id %}
-		<p class="alert alert-warning">This task does not exists in your projects list.</p>
+		<p class="alert alert-warning">This task does not exists in your projects.</p>
 		<p>Return to <a href="{% url 'pages-tasks' %}">Tasks</a></p>
 	{%  else %}	
 		<h1>{% if editing %}Edit{% else %}Add{% endif %} your task</h1>
@@ -22,7 +22,3 @@
 	{% endif %}	
 
 {% endblock content %}
-
-{% block custom_js %}
-	<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
-{% endblock custom_js %}
