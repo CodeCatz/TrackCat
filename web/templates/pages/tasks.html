@@ -36,7 +36,7 @@
 									{% if user.is_authenticated %}
 										<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
 									{% else %}
-										<div><button type="button" class="btn btn-info" href="{% url 'pages-login'%}">Login to edit task.</a></button>
+										<div><button type="button" class="btn btn-info"><a href="{% url 'pages-login'%}">Login to edit task.</a></button>
 										</div>
 									{% endif %}
 								</div>
