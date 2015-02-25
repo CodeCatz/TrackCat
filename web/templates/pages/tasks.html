@@ -15,7 +15,8 @@
 		<div class="row">
 
 			{% for task in task_list %}
-			<div class="row">
+				
+				<div class="row">
 					<div class="col-md-3 col-xs-6">
 						<h3><strong>{{ task.title }}</strong></h3>
 							<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
@@ -41,16 +42,16 @@
 								</div>
 							</div>
 					</div>
-			</div>
-				{% endfor %}
+				</div>
+			{% endfor %}
 
-			</div>
+		</div>
 
-		{% else %}
-			<div class="alert alert-info">
-				<p>There are currently no tasks in tasks list.</p>
-			</div>
+	{% else %}
+		<div class="alert alert-info">
+			<p>There are currently no tasks in tasks list.</p>
+		</div>
 
-		{% endif %}
+	{% endif %}
 
-	{% endblock content%}
+{% endblock content%}
