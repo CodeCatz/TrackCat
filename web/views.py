@@ -11,7 +11,7 @@ from api.models import Task
 from django.contrib.auth.decorators import login_required
 
 def index(request):
-	return render_to_response('pages/index.html',{},context_instance=RequestContext(request))
+	return render(request, 'pages/index.html',{})
 
 def projects(request):
 	project_list = Project.objects.all()
