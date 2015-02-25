@@ -11,7 +11,7 @@
 	</header>
 	
 	{% if user.is_authenticated %}
-		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-pencil"> Add new</span></a>
+		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add new</span></a>
 	{% endif %}	
 
 	{% if task_list %}
