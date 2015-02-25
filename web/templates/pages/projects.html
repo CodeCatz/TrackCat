@@ -12,11 +12,13 @@
 			<p>This page will show all our projects and who is working on what.</p>
 		</div>
 	</header>
-	<div class="row">
-		<div class="col-lg-6 col-sm-7">
-			<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"></span></a>
+	{% if user.is_authenticated %}
+		<div class="row">
+			<div class="col-lg-6 col-sm-7">
+				<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"> Add new</span></a>
+			</div>
 		</div>
-	</div>
+	{% endif %}
 	<div class="row">
 	{% for project in project_list %}
 		<div class="col-md-3 col-xs-6">
