@@ -1,50 +1,52 @@
 {% extends 'base.html' %}
 
-{% load staticfiles %}
-
 {% block title %}TrackCat Member{% endblock %}
 
 {% block content%}
-
-	<div class="row">
-		<div class="member_profile">
-			<div class="col-md-12">
-			<h2>
-				{% if userprofile.user.first_name %}
-					{{ userprofile.user.first_name }} 
-				{% else %}
-					{{ userprofile.user.username }}
-				{% endif %}'s profile
-			</h2>
-				{% for field in form %}
-					{{ field.error }}
-				{% endfor %}
-			</div>	
+	{% if userprofile %}
+		<div class="row">
+			<div class="member_profile">
+				<div class="col-md-12">
+				<h2>
+					{% if userprofile.user.first_name %}
+						{{ userprofile.user.first_name }} 
+					{% else %}
+						{{ userprofile.user.username }}
+					{% endif %}'s profile
+				</h2>
+					{% for field in form %}
+						{{ field.error }}
+					{% endfor %}
+				</div>	
+			</div>
 		</div>
-	</div>
-	<div class="row">
-		<div class="col-md-4 col-xs-6">
-			{% if userprofile.profile_picture %}
-				<img src="{{ MEDIA_URL }}{{ userprofile.profile_picture.url|default_if_none:"" }}" alt="{{ userprofile.user.first_name }}" />
-			{% endif %}
-			{% if userprofile.user.username %}
-				<p><strong>GitHub Link:</strong></p>
-				<p><a href="https://github.com/{{ userprofile.user.username }}">https://github.com/{{ userprofile.user.username }}</a></p>
-			{% endif %}
-			{% if userprofile.website %}
-				<p><strong>Web Site:</strong></p>
-				<p>{{ userprofile.website }}</p>
-			{% endif %}
-		</div>
-		<div class="col-md-8 col-xs-6">
-			<p><strong>Join date:</strong>{{ userprofile.date_created|date:"d.m.Y" }}</p>
-			<p><strong>Member's Status:</strong></p>
-			<p>{{ userprofile.get_activity_status_display }}</p>
-			{% if userprofile.bio %}
-				<p><strong>Biography:</strong></p>
-				<p>{{ userprofile.bio }}</p>
-			{% endif %}
-		</div>
-	</div>	
+		<div class="row">
+			<div class="col-md-4 col-xs-6">
+				{% if userprofile.profile_picture %}
+					<img src="{{ MEDIA_URL }}{{ userprofile.profile_picture.url|default_if_none:"" }}" alt="{{ userprofile.user.first_name }}" />
+				{% endif %}
+				{% if userprofile.user.username %}
+					<p><strong>GitHub Link:</strong></p>
+					<p><a href="https://github.com/{{ userprofile.user.username }}">https://github.com/{{ userprofile.user.username }}</a></p>
+				{% endif %}
+				{% if userprofile.website %}
+					<p><strong>Web Site:</strong></p>
+					<p>{{ userprofile.website }}</p>
+				{% endif %}
+			</div>
+			<div class="col-md-8 col-xs-6">
+				<p><strong>Join date:</strong>{{ userprofile.date_created|date:"d.m.Y" }}</p>
+				<p><strong>Member's Status:</strong></p>
+				<p>{{ userprofile.get_activity_status_display }}</p>
+				{% if userprofile.bio %}
+					<p><strong>Biography:</strong></p>
+					<p>{{ userprofile.bio }}</p>
+				{% endif %}
+			</div>
+		</div>	
+	{% else %}
+		<p class="alert alert-warning">This member does not exist.</p>
+		<p>Return to <a href="{% url 'pages-members' %}">Members</a></p>
+	{% endif %}
 
 {% endblock content%}
