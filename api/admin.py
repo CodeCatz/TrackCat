@@ -13,11 +13,11 @@ class UserProfileAdmin(admin.ModelAdmin):
 
 class ProjectAdmin(admin.ModelAdmin):
 	fieldsets = [
-		(None,				{'fields': ['project_name', 'status_id', 'project_owner']}),
+		(None,				{'fields': ['project_name', 'status', 'project_owner']}),
 		('Project details',	{'fields': ['project_description', 'project_deadline', 'repository_link', 'website_production', 'website_test', ]}),
 		]
-	list_display = ('project_name', 'status_id', 'project_deadline','project_owner',)
-	list_filter = ('status_id',)
+	list_display = ('project_name', 'status', 'project_deadline','project_owner',)
+	list_filter = ('status',)
 
 class TaskAdmin(admin.ModelAdmin):
 	fieldsets = [
