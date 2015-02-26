@@ -10,6 +10,7 @@ body {
 
 #wrap {
 	margin-top:110px;
+	height: 100%;
 }
 
 /* Set the fixed height of the footer here */
@@ -106,10 +107,6 @@ code {
 /* Links page*/
 .links {
 	position: relative;
-}
-
-#about {
-	text-align: center;
 }
 
 p,
