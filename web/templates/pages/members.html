@@ -42,7 +42,14 @@
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 						{% endif %}
-						{{ member.user.first_name }} {{ member.user.last_name }}
+						{% if member.user.first_name %}
+							{{ member.user.first_name }} 
+						{% else %}
+							{{ member.user.username }}
+						{% endif %}
+						{% if member.user.last_name %}
+							{{ member.user.last_name }}
+						{% endif %}							
 					</a> 
 					{{ member.get_activity_status_display }}
 					<li>
