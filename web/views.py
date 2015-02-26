@@ -22,7 +22,11 @@ def members(request):
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
 def member_page(request,user_id):
-	userprofile = get_object_or_404(UserProfile, pk=user_id)
+	if UserProfile.objects.filter(pk=user_id).exists():
+		userprofile = UserProfile.objects.get(pk=user_id)
+	else:
+		userprofile = None
+
 	return render(request, 'pages/member_page.html', {'userprofile': userprofile})
 
 @login_required
