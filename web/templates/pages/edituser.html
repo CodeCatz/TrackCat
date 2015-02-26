@@ -1,14 +1,18 @@
 {% extends 'base.html' %}
-
 {% load staticfiles %}
 
 {% block title %}Update member{% endblock %}
 
 {% block content%}
 
-	<form enctype="multipart/form-data" method="POST">{% csrf_token %}
-		{{ userprofileform.as_p }}
-		<button type="submit" class="save btn btn-default">Save</button>
-	</form>
+	{% if invalid_userprofile %}
+		<p class="alert alert-warning">This member does not exist.</p>
+		<p>Return to <a href="{% url 'pages-members' %}">Members</a></p>
+	{%  else %}	
+		<form enctype="multipart/form-data" method="POST">{% csrf_token %}
+			{{ userprofileform.as_p }}
+			<button type="submit" class="save btn btn-default">Save</button>
+		</form>
+	{% endif %}	
 
 {% endblock content %}
