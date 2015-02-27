@@ -3,7 +3,7 @@
 {% block title %}All CodeCatz Members{% endblock %}
 
 {% block content%}
-
+<div class container>
 	<header class="row">
 		<div class="col-lg-6 col-sm-7">
 			<h1>Who is who?</h1>
@@ -16,42 +16,47 @@
 		</div>
 	</div>
 	
-
+	</div>
 	<div class="row">
-		<div>
-			<ul class="about_list">
-
+		<div class="col-lg-6 col-sm-7">
+			<h3>Kittens</h3>
+		</div>
+	</div>
+    
+	<div class="kitten-list">
+			<div class="row">
 			{% for member in members_list %}
-				{% if member.user.is_active %}
-					{% if member.activity_status == 'MENTOR' %}
-						<li class="mentor-cat">
-					{% elif member.activity_status == 'ACTIVE' %}
-						<li class="active-cat">
-					{% elif member.activity_status == 'LAZY' %}
-						<li class="lazy-cat">
-					{% elif member.activity_status == 'SLEEPY' %}
-						<li class="sleepy-cat">
-					{% endif %}	
-
+				<div class="col-md-3 col-xs-6">
+					{% if member.user.is_active and member.activity_status == 'ACTIVE' %}
 					<a href="{% url 'pages-member-detail' user_id=member.id %}">
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 						{% endif %}
+						<h3>
 						{% if member.user.first_name %}
-							{{ member.user.first_name }} 
+							{{ member.user.first_name }}
 						{% else %}
 							{{ member.user.username }}
 						{% endif %}
 						{% if member.user.last_name %}
 							{{ member.user.last_name }}
-						{% endif %}							
+						{% endif %}
+						</h3>
 					</a> 
-					{{ member.get_activity_status_display }}
-					<li>
-				{% endif %}	
+					{% endif %}
+				</div>
+			{% if forloop.last %}
+            </div>
+			{% else %}
+				{% if forloop.counter|divisibleby:"4" %}
+				</div>
+				<div class="row">
+				{% endif %}
+			{% endif %}
+			{% empty %}
+				<p> There are currenlty no kittens in the group. </p>
 			{% endfor %}
-			</ul>
-		</div>			
 	</div>
 
+</container>
 {% endblock content%}
