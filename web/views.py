@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, render, get_object_or_404, redi
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
 
-from api.models import UserProfile, Project, Task
+from api.models import UserProfile, Project, Task, Event
 
 from .form import UserProfileForm, ProjectForm, TaskForm
 
@@ -80,7 +80,8 @@ def task_new(request):
 	return render(request, 'pages/task_new.html', {'taskform': taskform})
 
 def events(request):
-	return render(request, 'pages/events.html',{})
+	events_list = Event.objects.all().order_by('start_date')
+	return render(request, 'pages/events.html',{'events_list': events_list})
 
 def gallery(request):
 	return render(request, 'pages/gallery.html',{})
