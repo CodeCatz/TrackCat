@@ -24,6 +24,7 @@
     
 	<div class="row">
 		{% for member in members_list %}
+			{{ forloop.counter }}
 			{% if member.activity_status == 'MENTOR' %}
 				<div class="col-md-3 col-xs-6">
 					<a href="{% url 'pages-member-detail' user_id=member.id %}">
