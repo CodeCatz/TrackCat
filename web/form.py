@@ -3,7 +3,6 @@ from api.models import UserProfile
 from api.models import Project
 from api.models import Task
 
-
 class TaskForm(forms.ModelForm):
 	
 	class Meta:
@@ -29,10 +28,31 @@ class TaskForm(forms.ModelForm):
 		}
 
 class UserProfileForm(forms.ModelForm):
+	first_name = forms.CharField()
+	last_name = forms.CharField()
+
+	RELATED_FIELD_MAP = {
+		'first_name': 'first_name',
+		'last_name': 'last_name',
+		}
+
+	def __init__(self, *args, **kwargs):
+		super(UserProfileForm, self).__init__(*args, **kwargs)
+		if self.instance.id:
+			for field, target_field in self.RELATED_FIELD_MAP.items():
+				self.initial[ field ] = getattr(self.instance.user, target_field )
+
+	def save(self, *args, **kwargs):
+		for field, target_field in self.RELATED_FIELD_MAP.items():
+			setattr(self.instance.user,target_field, self.cleaned_data.get(field))
+		self.instance.user.save()
+		super(UserProfileForm, self).save(*args, **kwargs)
 
 	class Meta:
 		model = UserProfile
 		fields = (
+			'first_name',
+			'last_name',
 			'profile_picture',
 			'website',
 			'bio',
