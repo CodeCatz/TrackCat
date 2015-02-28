@@ -91,9 +91,6 @@ def login(request):
 def links(request):
 	return render(request, 'pages/links.html',{})
 
-def privacy(request):
-	return render(request, 'pages/privacy.html',{})
-
 def project_detail(request, project_id):
 	if Project.objects.filter(pk=project_id).exists():
 		project = Project.objects.get(pk=project_id)

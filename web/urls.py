@@ -18,9 +18,9 @@ urlpatterns = patterns('',
 	url(r'^gallery/$', views.gallery, name='pages-gallery'),
 	url(r'^login/$', views.login, name='pages-login'),
 	url(r'^links/$', views.links, name='pages-links'),
-	url(r'^privacy/$', views.privacy, name='pages-privacy'),
 	url(r'^project/(?P<project_id>[0-9]+)/$',views.project_detail, name='project-detail'),
 	url(r'^project/new/$', views.project_new, name='project-new'),
 	url(r'^project/(?P<project_id>[0-9]+)/edit/$', views.project_edit, name='project-edit'),
 	url(r'^logout/$', views.logout, name='logout'),
 )
+
