@@ -3,7 +3,7 @@ from django.shortcuts import render_to_response, render, get_object_or_404, redi
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
 
-from api.models import UserProfile, Project, Task
+from api.models import UserProfile, Project, Task, Event
 
 from .form import UserProfileForm, ProjectForm, TaskForm
 
@@ -18,23 +18,23 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	members_list = UserProfile.objects.all().order_by('activity_status')
+	members_list = UserProfile.objects.all().filter(user__is_active=True)
 	return render(request, 'pages/members.html',{'members_list': members_list})
 
-def member_page(request,user_id):
+def member_detail(request,user_id):
 	if UserProfile.objects.filter(pk=user_id).exists():
 		userprofile = UserProfile.objects.get(pk=user_id)
 	else:
 		userprofile = None
 
-	return render(request, 'pages/member_page.html', {'userprofile': userprofile})
+	return render(request, 'pages/member_detail.html', {'userprofile': userprofile})
 
 @login_required
-def user_edit(request):
+def member_edit(request):
 	if UserProfile.objects.filter(user=request.user).exists():
 		userprofile = UserProfile.objects.get(user=request.user)
 	else:
-		return render(request, 'pages/edituser.html', {'invalid_userprofile': True})
+		return render(request, 'pages/member_edit.html', {'invalid_userprofile': True})
 
 	if request.method == "POST":
 		userprofileform = UserProfileForm(request.POST, request.FILES, instance=userprofile)
@@ -44,7 +44,7 @@ def user_edit(request):
 	else:
 		userprofileform = UserProfileForm(instance=userprofile)
 
-	return render(request, 'pages/edituser.html', {'userprofileform': userprofileform})	
+	return render(request, 'pages/member_edit.html', {'userprofileform': userprofileform})	
 
 def tasks(request):
 	task_list = Task.objects.all()
@@ -80,7 +80,8 @@ def task_new(request):
 	return render(request, 'pages/task_new.html', {'taskform': taskform})
 
 def events(request):
-	return render(request, 'pages/events.html',{})
+	events_list = Event.objects.all().order_by('start_date')
+	return render(request, 'pages/events.html',{'events_list': events_list})
 
 def gallery(request):
 	return render(request, 'pages/gallery.html',{})

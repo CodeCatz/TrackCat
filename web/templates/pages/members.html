@@ -16,42 +16,82 @@
 		</div>
 	</div>
 	
-
 	<div class="row">
-		<div>
-			<ul class="about_list">
-
-			{% for member in members_list %}
-				{% if member.user.is_active %}
-					{% if member.activity_status == 'MENTOR' %}
-						<li class="mentor-cat">
-					{% elif member.activity_status == 'ACTIVE' %}
-						<li class="active-cat">
-					{% elif member.activity_status == 'LAZY' %}
-						<li class="lazy-cat">
-					{% elif member.activity_status == 'SLEEPY' %}
-						<li class="sleepy-cat">
-					{% endif %}	
-
+		<div class="col-lg-6 col-sm-7">
+			<h3>Mentors</h3>
+		</div>
+	</div>
+    
+	<div class="row">
+		{% for member in members_list %}
+			{% if member.activity_status == 'MENTOR' %}
+				<div class="col-md-3 col-xs-6">
 					<a href="{% url 'pages-member-detail' user_id=member.id %}">
 						{% if member.profile_picture %}
 							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 						{% endif %}
-						{% if member.user.first_name %}
-							{{ member.user.first_name }} 
-						{% else %}
-							{{ member.user.username }}
-						{% endif %}
-						{% if member.user.last_name %}
-							{{ member.user.last_name }}
-						{% endif %}							
+						<h3>
+							{% if member.user.first_name %}
+								{{ member.user.first_name }}
+							{% else %}
+								{{ member.user.username }}
+							{% endif %}
+							{% if member.user.last_name %}
+								{{ member.user.last_name }}
+							{% endif %}
+						</h3>
 					</a> 
-					{{ member.get_activity_status_display }}
-					<li>
-				{% endif %}	
+				</div>
+			{% if forloop.last %}
+				</div><!-- closing row class when there are no more members in the list-->
+			{% else %}
+				{% if forloop.counter|divisibleby:"4" %}
+					</div><!-- closing row class after 4 memember in a row-->
+					<div class="row"><!--adding a new row class for the next line of members-->
+				{% endif %}
+			{% endif %}
+			{% endif %}<!--closing if for activity_status-->
+			{% empty %}
+				<p> There are no members in the group.</p>
 			{% endfor %}
-			</ul>
-		</div>			
+	
+	<div class="row">
+		<div class="col-lg-6 col-sm-7">
+			<h3>Kittens</h3>
+		</div>
 	</div>
+	
+	<div class="row">
+		{% for member in members_list %}
+			{% if member.activity_status == 'ACTIVE' or member.activity_status == 'SLEEPY' or member.activity_status == 'LAZY'%}
+				<div class="col-md-3 col-xs-6">
+					<a href="{% url 'pages-member-detail' user_id=member.id %}">
+						{% if member.profile_picture %}
+							<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
+						{% endif %}
+						<h3>
+							{% if member.user.first_name %}
+								{{ member.user.first_name }}
+							{% else %}
+								{{ member.user.username }}
+							{% endif %}
+							{% if member.user.last_name %}
+								{{ member.user.last_name }}
+							{% endif %}
+						</h3>
+					</a> 
+				</div>
+			{% if forloop.last %}
+				</div><!-- closing row class when there are no more members in the list-->
+			{% else %}
+				{% if forloop.counter|divisibleby:"4" %}
+					</div><!-- closing row class after 4 memember in a row-->
+					<div class="row"><!--adding a new row class for the next line of members-->
+				{% endif %}
+			{% endif %}
+			{% endif %}<!--closing if for activity_status-->
+			{% empty %}
+				<p> There are no members in the group.</p>
+			{% endfor %}
 
 {% endblock content%}

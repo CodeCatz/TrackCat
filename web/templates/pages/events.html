@@ -10,14 +10,44 @@
 		</div>
 	</header>
 
-	<div class= "row">
+	<div class="row">
 		<div class="col-lg-6 col-sm-5">
-			<p>This page will show all our events and photo gallery.</p>
+			<p>This page shows all our events and photo gallery.</p>
 		</div>
 	</div>
-		
-	
+
+	<div class="row">
+	{% for event in events_list %}
+		<div class="col-md-3 col-xs-6">
+			<h3>{{ event.title }}</h3>
+			<p><strong>Start Date:</strong></p>
+			<p>{{ event.start_date }}</p>
+			{% if event.end_date %}
+				<p><strong>End Date:</strong></p>
+				<p>{{ event.end_date }}</p>
+			{% endif %}				
+			{% if event.description %}
+				<p><strong>Description:</strong></p>
+				<p>{{ event.description }}</p>
+			{% endif %}		
+			<p><strong>Location:</strong></p>
+			<p>{{ event.location }}</p>			
+			{% if event.organizer %}
+				<p><strong>Organizer:</strong> {{ event.organizer }}</p>
+			{% endif %}
+		</div>
+		{% if forloop.last %}
+			</div>
+		{% else %}
+			{% if forloop.counter|divisibleby:"4" %}
+				</div>
+				<div class="row">
+			{% endif %}
+		{% endif %}
+	{% empty %}
+		<p>There are currently no events.</p>
+	{% endfor %}
+
 	<h3><a href="/gallery">Gallery</a></h3>
-	
 
 {% endblock content%}
