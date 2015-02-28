@@ -43,17 +43,17 @@
 					</a> 
 				</div>
 			{% if forloop.last %}
-				</div><!-- closing row class when there are no more members in the list-->
+	</div><!-- closing row class when there are no more members in the list-->
 			{% else %}
 				{% if forloop.counter|divisibleby:"4" %}
-					</div><!-- closing row class after 4 memember in a row-->
-					<div class="row"><!--adding a new row class for the next line of members-->
+	</div><!-- closing row class after 4 memember in a row-->
+	<div class="row"><!--adding a new row class for the next line of members-->
 				{% endif %}
 			{% endif %}
 			{% endif %}<!--closing if for activity_status-->
-			{% empty %}
-				<p> There are no members in the group.</p>
-			{% endfor %}
+		{% empty %}
+			<p> There are no members in the group.</p>
+		{% endfor %}
 	
 	<div class="row">
 		<div class="col-lg-6 col-sm-7">
@@ -82,16 +82,16 @@
 					</a> 
 				</div>
 			{% if forloop.last %}
-				</div><!-- closing row class when there are no more members in the list-->
+	</div><!-- closing row class when there are no more members in the list-->
 			{% else %}
 				{% if forloop.counter|divisibleby:"4" %}
-					</div><!-- closing row class after 4 memember in a row-->
-					<div class="row"><!--adding a new row class for the next line of members-->
+	</div><!-- closing row class after 4 memember in a row-->
+	<div class="row"><!--adding a new row class for the next line of members-->
 				{% endif %}
 			{% endif %}
 			{% endif %}<!--closing if for activity_status-->
-			{% empty %}
-				<p> There are no members in the group.</p>
-			{% endfor %}
+		{% empty %}
+			<p> There are no members in the group.</p>
+		{% endfor %}
 
 {% endblock content%}
