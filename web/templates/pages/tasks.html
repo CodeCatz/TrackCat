@@ -10,7 +10,7 @@
 		</div>
 	</header>
 	
-	{%  if perms.api.add_task %}
+	{% if perms.api.add_task %}
 		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add new</span></a>
 	{% endif %}	
 
