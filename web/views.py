@@ -18,8 +18,8 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	mentors_list = UserProfile.objects.all().filter(user__is_active=True).exclude(activity_status= 'SLEEPY').exclude(activity_status= 'LAZY').exclude(activity_status= 'ACTIVE') 
-	kittens_list = UserProfile.objects.all().filter(user__is_active=True).exclude(activity_status= 'MENTOR') 
+	mentors_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('SLEEPY', 'LAZY', 'ACTIVE',)) 
+	kittens_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('MENTOR',)) 
 	return render(request, 'pages/members.html', {'mentors_list': mentors_list, 'kittens_list': kittens_list})
 
 def member_detail(request,user_id):
