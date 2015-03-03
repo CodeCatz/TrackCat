@@ -71,51 +71,53 @@
 		  <!--/.navbar-collapse -->
 			</div>
 		</div>
-		<div id="wrap">
-			<div class="container countdown">	
-				{% block content %}{% endblock content %}
-			</div><!-- /.container for main content -->
-			<div id="push"></div>
-		</div>
 
-		<footer>
-			<div class="container">
-					<div class="col-md-10">
-					<div class="clearfix icon-title">
-						Follow CodeCatz on:
-					</div>
-					<div class="clearfix">
-						<a href="https://www.facebook.com/CodeCatz" class="pull-left">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-square-o fa-stack-2x"></i>
-								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-						<a href="https://github.com/CodeCatz/TrackCat" title="Fork us">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-square-o fa-stack-2x"></i>
-								<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-						</a>
-						<a href="https://twitter.com/codecatz" title="tweet us">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-square-o fa-stack-2x"></i>
-								<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-						</a>
-						</div>
-						</div>
-						<div class="col-md-2" id="address">
-							<p><strong>CodeCatz</strong><br>
-							RAMPA Laboratorij<br>
-							Kersnikova ulica 4, Ljubljana<br>
-							</p>
-					</div>
-			</div><!-- end container -->
-		</footer>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-		{% block custom_js %}{% endblock custom_js %}
-	</body>
+<div id="wrap">
+	<div class="container countdown">	
+		{% block content %}{% endblock content %}
+	</div><!-- /.container for main content -->
+	<div id="push"></div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="col-md-10">
+			<div class="clearfix icon-title">
+				Follow CodeCatz on:
+			</div>
+			<div class="clearfix">
+				<a href="https://www.facebook.com/CodeCatz" class="pull-left">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+				<a href="https://github.com/CodeCatz/TrackCat" title="Fork us">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+				</a>
+				<a href="https://twitter.com/codecatz" title="tweet us">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+				</a>
+			</div>
+		</div>
+		<div class="col-md-2" id="address">
+		<p><strong>CodeCatz</strong><br>
+			RAMPA Laboratorij<br>
+			Kersnikova ulica 4, Ljubljana<br>
+		</p>
+		</div>
+	</div><!-- end container -->
+</footer>
+
+	<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+	<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+	<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
+	<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+	{% block custom_js %}{% endblock custom_js %}
+</body>
 </html>
