@@ -16,7 +16,7 @@
 		</div>
 	</div>
 
-	{% if user.is_authenticated %}
+	{% if perms.api.add_project %}
 		<div class="row">
 			<div class="col-lg-6 col-sm-7">
 				<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"> Add new</span></a>
