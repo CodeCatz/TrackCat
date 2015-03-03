@@ -10,7 +10,7 @@
 		</div>
 	</header>
 	
-	{% if user.is_authenticated %}
+	{% if perms.api.add_task %}
 		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add new</span></a>
 	{% endif %}	
 
@@ -32,7 +32,7 @@
 									none
 								{% endif %}
 							</p>
-							{% if user.is_authenticated %}
+							{%  if perms.api.change_task %}
 								<div>
 									<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}">Edit</a>
 								</div>

@@ -56,7 +56,6 @@ class UserProfileForm(forms.ModelForm):
 			'profile_picture',
 			'website',
 			'bio',
-			'activity_status',
 			)
 
 class ProjectForm(forms.ModelForm):

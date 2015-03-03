@@ -12,7 +12,7 @@
 	
 	<div class="row">
 		<div class="col-lg-6 col-sm-7">
-			<p>This page shows all our active members.</p>
+			<p>This page shows CodeCatz members.</p>
 		</div>
 	</div>
 	
@@ -63,7 +63,7 @@
 	
 	<div class="row">
 		{% for member in members_list %}
-			{% if member.activity_status == 'ACTIVE' or member.activity_status == 'SLEEPY' or member.activity_status == 'LAZY'%}
+			{% if member.activity_status == 'ACTIVE' or member.activity_status == 'SLEEPY' %}
 				<div class="col-md-3 col-xs-6">
 					<a href="{% url 'pages-member-detail' user_id=member.id %}">
 						{% if member.profile_picture %}

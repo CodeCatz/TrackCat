@@ -2,6 +2,7 @@ from django.template import RequestContext
 from django.shortcuts import render_to_response, render, get_object_or_404, redirect
 from django.contrib.auth import logout as auth_logout
 from django.contrib.auth.decorators import login_required
+from django.contrib.auth.decorators import permission_required
 
 from api.models import UserProfile, Project, Task, Event
 
@@ -50,7 +51,7 @@ def tasks(request):
 	task_list = Task.objects.all()
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
 
-@login_required
+@permission_required('api.change_task', login_url='/login/')
 def task_edit(request, task_id):
 	if Task.objects.filter(pk=task_id).exists():
 		task = Task.objects.get(pk=task_id)
@@ -67,7 +68,7 @@ def task_edit(request, task_id):
 
 	return render(request, 'pages/task_edit.html', {'taskform': taskform, 'editing': True})
 
-@login_required
+@permission_required('api.add_task', login_url='/login/')
 def task_new(request):
 	if request.method == "POST":
 		taskform = TaskForm(request.POST)
@@ -100,7 +101,7 @@ def project_detail(request, project_id):
 
 	return render(request, 'pages/project_detail.html', {'project': project})
 
-@login_required
+@permission_required('api.add_project', login_url='/login/')
 def project_new(request):
 	if request.method == "POST":
 		projectform = ProjectForm (request.POST)
@@ -112,7 +113,7 @@ def project_new(request):
 
 	return render(request, 'pages/project_edit.html', {'projectform': projectform})
 
-@login_required
+@permission_required('api.change_project', login_url='/login/')
 def project_edit(request, project_id):
 	if Project.objects.filter(pk=project_id).exists():
 		project = Project.objects.get(pk=project_id)
