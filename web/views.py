@@ -19,7 +19,7 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	mentors_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('SLEEPY', 'KITTEN', 'ACTIVE',)) 
+	mentors_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('SLEEPY', 'ACTIVE',)) 
 	kittens_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('MENTOR',)) 
 	return render(request, 'pages/members.html', {'mentors_list': mentors_list, 'kittens_list': kittens_list})
 
