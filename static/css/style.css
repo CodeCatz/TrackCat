@@ -33,7 +33,8 @@ body {
 	margin-top:110px;
 }
 
-img{
+/* Image definition in members and member-details */
+.members img{
 	width: 100px;
 	height: 100px;
 	margin: 10px;

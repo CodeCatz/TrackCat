@@ -22,9 +22,11 @@
 		</div>
 		<div class="row">
 			<div class="col-md-4 col-xs-6">
+				<div class="members">
 				{% if userprofile.profile_picture %}
 					<img src="{{ MEDIA_URL }}{{ userprofile.profile_picture.url|default_if_none:"" }}" alt="{{ userprofile.user.first_name }}" />
 				{% endif %}
+				</div>
 				{% if userprofile.user.username %}
 					<p><strong>GitHub Link:</strong></p>
 					<p><a href="https://github.com/{{ userprofile.user.username }}">https://github.com/{{ userprofile.user.username }}</a></p>
