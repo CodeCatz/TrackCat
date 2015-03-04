@@ -29,7 +29,7 @@
 			<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
 			<p><strong>Description:</strong></p>
 			<p>{{ project.project_description }}</p>
-			<p><strong>Status:</strong> {{ project.get_status_id_display }}</p>
+			<p><strong>Status:</strong> {{ project.get_status_display }}</p>
 			<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
 
 			{% if project.project_deadline %}
