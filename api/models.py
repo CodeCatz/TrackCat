@@ -49,7 +49,7 @@ class Project(models.Model):
 	project_owner = models.ForeignKey(UserProfile)
 	date_created = models.DateTimeField(auto_now_add=True)
 	date_modified = models.DateTimeField(auto_now=True)
-	user_project = models.ManyToManyField(UserProfile, related_name='user_project')
+	project_members = models.ManyToManyField(UserProfile, related_name='project_members')
 	def __unicode__(self):
 		return self.project_name
 
