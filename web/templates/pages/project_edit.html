@@ -113,6 +113,18 @@
 						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.project_owner.errors }}</span>
 					{% endif %}
 				</div>
+				<div class="form-group {% if projectform.user_project.errors %}has-error{% endif %}">
+					<label for="{{ projectform.user_project.auto_id }}" class="col-sm-3 control-label">
+						{% if projectform.user_project.field.required %}*{% endif %}
+						{{ projectform.user_project.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ projectform.user_project }}
+					</div>
+					{% if projectform.user_project.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ projectform.user_project.errors }}</span>
+					{% endif %}
+				</div>
 			</div>
 
 			<button type="submit" class="save btn btn-default">Save</button>
