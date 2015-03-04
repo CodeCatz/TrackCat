@@ -21,6 +21,6 @@ urlpatterns = patterns('',
 	url(r'^project/(?P<project_id>[0-9]+)/$',views.project_detail, name='project-detail'),
 	url(r'^project/new/$', views.project_new, name='project-new'),
 	url(r'^project/(?P<project_id>[0-9]+)/edit/$', views.project_edit, name='project-edit'),
+	url(r'^project/(?P<project_id>[0-9]+)/delete/$', views.project_delete, name='project-delete'),
 	url(r'^logout/$', views.logout, name='logout'),
 )
-
