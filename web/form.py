@@ -1,6 +1,6 @@
 from django import forms
 from api.models import UserProfile
-from api.models import Project
+from api.models import Project, PROJECT_STATUS_CHOICES
 from api.models import Task
 
 class TaskForm(forms.ModelForm):
@@ -142,3 +142,7 @@ class ProjectForm(forms.ModelForm):
 					'invalid': u'Please check if this is valid',
 				},
 			}
+
+	def __init__(self, *args, **kwargs):
+		self.base_fields['status'].choices = PROJECT_STATUS_CHOICES[:3]
+		super(ProjectForm, self).__init__(*args, **kwargs)	

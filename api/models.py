@@ -35,6 +35,7 @@ PROJECT_STATUS_CHOICES = (
 	('OPENED', 'Opened'),
 	('INPROGRESS', 'In progress'),
 	('CLOSED', 'Closed'),
+	('DELETED', 'Deleted'),
 )
 
 class Project(models.Model):
@@ -59,6 +60,7 @@ STATUS_CHOICES = (
 	('ASSIGNED', 'Assigned'),
 	('WORKINGON', 'Working On'),
 	('COMPLETED', 'Completed'),
+	('DELETED', 'Deleted'),
 )
 
 class Task (models.Model):
