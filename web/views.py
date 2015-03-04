@@ -19,8 +19,9 @@ def about(request):
 	return render(request, 'pages/about.html',{})
 
 def members(request):
-	members_list = UserProfile.objects.all().filter(user__is_active=True)
-	return render(request, 'pages/members.html',{'members_list': members_list})
+	mentors_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('SLEEPY','KITTEN', 'ACTIVE',)) 
+	kittens_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('MENTOR','KITTEN')) 
+	return render(request, 'pages/members.html', {'mentors_list': mentors_list, 'kittens_list': kittens_list})
 
 def member_detail(request,user_id):
 	if UserProfile.objects.filter(pk=user_id).exists():
