@@ -12,7 +12,7 @@ def index(request):
 	return render(request, 'pages/index.html',{})
 
 def projects(request):
-	project_list = Project.objects.all()
+	project_list = Project.objects.all().exclude(status = 'DELETED')
 	return render(request, 'pages/projects.html',{'project_list': project_list})
 
 def about(request):
@@ -95,7 +95,7 @@ def links(request):
 	return render(request, 'pages/links.html',{})
 
 def project_detail(request, project_id):
-	if Project.objects.filter(pk=project_id).exists():
+	if Project.objects.filter(pk=project_id).exclude(status = 'DELETED').exists():
 		project = Project.objects.get(pk=project_id)
 	else:
 		project = None
@@ -131,6 +131,15 @@ def project_edit(request, project_id):
 
 	return render(request, 'pages/project_edit.html', {'projectform': projectform,
 														'editing': True})
+
+@permission_required('api.delete_project', login_url='/login/')
+def project_delete(request, project_id):
+	project = Project.objects.get(pk=project_id)
+		
+	project.status = 'DELETED'
+
+	project.save()
+	return redirect('pages-projects')
 
 def logout(request):
 	auth_logout(request)

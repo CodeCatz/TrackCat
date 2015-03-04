@@ -11,6 +11,9 @@
 				{% if perms.api.change_project %}					
 					<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
 				{% endif %}
+				{% if perms.api.delete_project %}					
+					<a class="btn btn-default" href="{% url 'project-delete' project_id=project.project_id %}"><span class="glyphicon glyphicon-remove"> Delete</span></a>
+				{% endif %}
 			</div>
 		</div>
 		<div class="row">
