@@ -37,6 +37,25 @@
 			<div class="col-md-6 col-xs-6">
 				<p><strong>Project members:</strong></p>
 				<!-- <p><img src="http://placekitten.com/550/550" alt="" class="img-responsive"></p> -->
+					<div class="row">
+						{% for member in member_list %}
+							<div class="col-md-4 col-xs-4">
+								{% if member.profile_picture %}
+									<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
+								{% endif %}
+								<p><a href="{% url 'pages-member-detail' user_id=member.id %}">{{ member.user.first_name }} {{ member.user.last_name }}</a></p>
+							</div>
+							{% if forloop.last %}
+					</div>
+							{% else %}
+								{% if forloop.counter|divisibleby:"3" %}
+					</div>
+					<div class="row">
+								{% endif %}
+							{% endif %}
+
+						{% endfor %}
+					</div>
 			</div>
 		</div>
 		{% if task_list %}
