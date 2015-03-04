@@ -69,7 +69,9 @@ class ProjectForm(forms.ModelForm):
 				'repository_link',
 				'website_production',
 				'website_test',
-				'project_owner',)
+				'project_owner',
+				'project_members',
+		)
 
 		widgets = {
 				'project_name': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter the project name'}),
@@ -81,6 +83,7 @@ class ProjectForm(forms.ModelForm):
 				'website_production': forms.TextInput(attrs={'class':'form-control','placeholder':'Your test site'}),
 				'website_test': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your production site'}),
 				'project_owner': forms.Select(attrs={'class':'form-control'}),
+				'project_members': forms.SelectMultiple(attrs={'class':'form-control'}),
 		}
 		
 		labels = {
@@ -92,10 +95,12 @@ class ProjectForm(forms.ModelForm):
 				'website_production': 'Production site',
 				'website_test': 'Test site',
 				'project_owner': 'Owner',
+				'project_members' : 'Project members',
 		}
 
 		help_texts = {
-			'project_deadline': "Example: YYYY/MM/DD h:m"
+			'project_deadline': "Example: YYYY/MM/DD h:m",
+			'project_members' : "Select multiple users with ctrl/com key",
 		}
 
 		error_messages = {
@@ -127,18 +132,8 @@ class ProjectForm(forms.ModelForm):
 					'required': u'Please select a project owner.',
 					'invalid': u'Please check if this is valid',
 				},
-				'repository_link': {
-					'required': u'Please enter a repository url for your project.',
-					'invalid': u'Please check if this is a valid url',
-				},
-				'website_production': {
-					'invalid': u'Please check if this is a valid url',
-				},
-				'website_test': {
-					'invalid': u'Please check if this is a valid url',
-				},
-				'project_owner': {
-					'required': u'Please select a project owner.',
-					'invalid': u'Please check if this is valid',
+				'project_members': {
+					'required': u'Please select at least on member for your project.',
+					'invalid': u'Please check if there is a member selected',
 				},
 			}
