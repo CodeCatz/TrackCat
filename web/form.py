@@ -1,7 +1,7 @@
 from django import forms
 from api.models import UserProfile
 from api.models import Project, PROJECT_STATUS_CHOICES
-from api.models import Task
+from api.models import Task, STATUS_CHOICES
 
 class TaskForm(forms.ModelForm):
 	
@@ -26,6 +26,11 @@ class TaskForm(forms.ModelForm):
 			'autocomplete': 'off', 'placeholder': 'When is the project deadline?'}),
 			'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget'}),
 		}
+
+	def __init__(self, *args, **kwargs):
+		self.base_fields['status'].choices = STATUS_CHOICES[:3]
+		super(TaskForm, self).__init__(*args, **kwargs)	
+
 
 class UserProfileForm(forms.ModelForm):
 	first_name = forms.CharField()

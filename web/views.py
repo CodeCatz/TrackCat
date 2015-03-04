@@ -49,7 +49,7 @@ def member_edit(request):
 	return render(request, 'pages/member_edit.html', {'userprofileform': userprofileform})	
 
 def tasks(request):
-	task_list = Task.objects.all()
+	task_list = Task.objects.all().exclude(status = 'DELETED')
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
 
 @permission_required('api.change_task', login_url='/login/')
@@ -144,6 +144,15 @@ def project_delete(request, project_id):
 
 	project.save()
 	return redirect('pages-projects')
+
+@permission_required('api.delete_task', login_url='/login/')
+def task_delete(request, task_id):
+	task = Task.objects.get(pk=task_id)
+		
+	task.status = 'DELETED'
+
+	task.save()
+	return redirect('pages-tasks')	
 
 def logout(request):
 	auth_logout(request)

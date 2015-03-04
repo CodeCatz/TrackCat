@@ -31,6 +31,7 @@ body {
 
 #wrap {
 	margin-top:110px;
+	min-height:100%;
 }
 
 /* Image definition in members and member-details */
