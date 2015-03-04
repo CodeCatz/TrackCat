@@ -4,121 +4,120 @@
 {% load current from navigation %}
 
 <html>
-	<head>
-		<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
-		<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
-		<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
-		<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
-		<link rel="stylesheet" href="{% static 'css/style.css' %}">
-		{% block custom_css %}{% endblock %}
-	</head>
+<head>
+	<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
+	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
+	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
+	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+	<link rel="stylesheet" href="{% static 'css/style.css' %}">
+	{% block custom_css %}{% endblock %}
+</head>
 
-	<body data-spy="scroll" data-target="#topnav">
-		<div class="navbar navbar-inverse navbar-default" id="topnav">
-			<div class="container">
-				<div class="navbar-header">
-					<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-						<span class="icon-bar"></span>
-					</button>
-					<a class="navbar-brand" href="{% url 'pages-index' %}"><img class="CClogo" alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}" height="17px" /></a>
-				</div>
-				<div class="navbar-collapse collapse">
-					<div id="gbCountdown">&nbsp;</div>
-					<ul class="nav navbar-nav">
-						<li><a href="{% url 'pages-index' %}">Home</a></li>
-						<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
-						<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
-						<li class="{% current 'pages-tasks' %}"><a href="{% url 'pages-tasks' %}">Tasks</a></li>
-						<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
-						<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
-						<li class="{% current 'pages-links' %}"><a href="{% url 'pages-links' %}">Help</a></li>
-					</ul>
-					<ul class="nav navbar-nav navbar-right">
-						<li class="dropdown" id="menuLogin">
-							{% if user.is_authenticated %}
-								<a href="#" class="dropdown-toggle" data-toggle="dropdown">
-									Hi, 
-									{% if user.first_name %}
-										{{ user.first_name }}
-									{% else %}
-										{{ user.username }}
-									{% endif %}
-									<b class="caret"></b>
-								</a>
-								<ul class="dropdown-menu">
-								<li><a href="{% url 'pages-member-edit' %}">Edit profile</a></li>
-									<li class="divider"></li>
-									<li>
-										<a href="{% url 'logout' %}?next={% firstof request.path '/' %}">
-											<i class="fa fa-sign-out fa-stack-1x fa-inverse"></i> Sign out
-										</a>
-									</li>
-								</ul>
-							{% else %}
-							<div class="login-body">
+<body data-spy="scroll" data-target="#topnav">
+	<div class="navbar navbar-inverse navbar-default" id="topnav">
+		<div class="container">
+			<div class="navbar-header">
+				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+					<span class="icon-bar"></span>
+				</button>
+				<a class="navbar-brand" href="{% url 'pages-index' %}"><img class="CClogo" alt="CodeCatz" src="{% static 'img/CodeCatz.jpg' %}" height="17px" /></a>
+			</div>
+			<div class="navbar-collapse collapse">
+				<div id="gbCountdown">&nbsp;</div>
+				<ul class="nav navbar-nav">
+					<li><a href="{% url 'pages-index' %}">Home</a></li>
+					<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
+					<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
+					<li class="{% current 'pages-tasks' %}"><a href="{% url 'pages-tasks' %}">Tasks</a></li>
+					<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
+					<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
+					<li class="{% current 'pages-links' %}"><a href="{% url 'pages-links' %}">Help</a></li>
+				</ul>
+				<ul class="nav navbar-nav navbar-right">
+					<li class="dropdown" id="menuLogin">
+						{% if user.is_authenticated %}
+							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
+								Hi, 
+								{% if user.first_name %}
+									{{ user.first_name }}
+								{% else %}
+									{{ user.username }}
+								{% endif %}
+								<b class="caret"></b>
+							</a>
+							<ul class="dropdown-menu">
+							<li><a href="{% url 'pages-member-edit' %}">Edit profile</a></li>
+								<li class="divider"></li>
 								<li>
-									<a href="{% url 'pages-login' %}"
-										<i class="fa fa-sign-in fa-stack-1x fa-inverse"></i> Sign in</a>
+									<a href="{% url 'logout' %}?next={% firstof request.path '/' %}">
+										<i class="fa fa-sign-out fa-stack-1x fa-inverse"></i> Sign out
+									</a>
 								</li>
-							</div>
-							{% endif %}
+							</ul>
+						{% else %}
+						<div class="login-body">
+							<li>
+								<a href="{% url 'pages-login' %}"
+									<i class="fa fa-sign-in fa-stack-1x fa-inverse"></i> Sign in</a>
+							</li>
+						</div>
+						{% endif %}
 					</li>
 				</ul>
-				</div>
-		  <!--/.navbar-collapse -->
+			</div><!--/navbar-collapse -->
+		</div><!--/container -->
+	</div> <!--/topnav-->
+
+<div id="wrap">
+	<div class="container countdown">	
+		{% block content %}{% endblock content %}
+	</div><!-- /.container for main content -->
+	<div id="push"></div>
+</div>
+
+<footer>
+	<div class="container">
+		<div class="col-md-10">
+			<div class="clearfix icon-title">
+				Follow CodeCatz on:
+			</div>
+			<div class="clearfix">
+				<a href="https://www.facebook.com/CodeCatz" class="pull-left">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
+					</span>
+				</a>
+				<a href="https://github.com/CodeCatz/TrackCat" title="Fork us">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-github fa-stack-1x fa-inverse"></i>
+				</a>
+				<a href="https://twitter.com/codecatz" title="tweet us">
+					<span class="fa-stack fa-lg">
+						<i class="fa fa-square-o fa-stack-2x"></i>
+						<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
+				</a>
 			</div>
 		</div>
-		<div id="wrap">
-			<div class="container countdown">	
-				{% block content %}{% endblock content %}
-			</div><!-- /.container for main content -->
-			<div id="push"></div>
+		<div class="col-md-2" id="address">
+		<p><strong>CodeCatz</strong><br>
+			RAMPA Laboratorij<br>
+			Kersnikova ulica 4, Ljubljana<br>
+		</p>
 		</div>
+	</div><!-- /container -->
+</footer>
 
-		<footer>
-			<div class="container">
-					<div class="col-md-4">
-					<div class="clearfix icon-title">
-						Follow CodeCatz on:
-					</div>
-					<div class="clearfix">
-						<a href="https://www.facebook.com/CodeCatz" class="pull-left">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-square-o fa-stack-2x"></i>
-								<i class="fa fa-facebook fa-stack-1x fa-inverse"></i>
-							</span>
-						</a>
-						<a href="https://github.com/CodeCatz/TrackCat" title="Fork us">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-square-o fa-stack-2x"></i>
-								<i class="fa fa-github fa-stack-1x fa-inverse"></i>
-						</a>
-						<a href="https://twitter.com/codecatz" title="tweet us">
-							<span class="fa-stack fa-lg">
-								<i class="fa fa-square-o fa-stack-2x"></i>
-								<i class="fa fa-twitter fa-stack-1x fa-inverse"></i>
-						</a>
-						</div>
-						</div>
-						<div class="col-md-4">
-							<a href="{% url 'pages-index' %}"><img src="{% static "img/CodeCatz.jpg" %}"/></a>
-						</div> <!-- end col-md-4 -->
-						<div class="col-md-4" id="address">
-							<p><strong>CodeCatz</strong><br>
-							RAMPA Laboratorij<br>
-							Kersnikova ulica 4, Ljubljana<br>
-							</p>
-					</div>
-			</div><!-- end container -->
-		</footer>
-		<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
-		<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
-		<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
-		<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
-		{% block custom_js %}{% endblock custom_js %}
-	</body>
+<script src="//ajax.googleapis.com/ajax/libs/jquery/1.11.1/jquery.min.js"></script>
+<script type="text/javascript" src="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+<script type="text/javascript" src="{% static 'js/countdown.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/jquery.datetimepicker.js' %}"></script>
+<script type="text/javascript" src="{% static 'js/script.js' %}"></script>
+{% block custom_js %}{% endblock custom_js %}
+
+</body>
 </html>
