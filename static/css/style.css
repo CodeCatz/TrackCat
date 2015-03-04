@@ -1,59 +1,5 @@
-/* Sticky footer styles
--------------------------------------------------------------- */
-
-html,
-body {
-	height: 100%;
-
-	/* The html and body elements cannot have any padding or margin. */
-}
-
-#wrap {
-	margin-top:110px;
-}
-
-/* Set the fixed height of the footer here */
-footer {
-	margin: 20px -5px 10px 0;
-	padding-top: 15px;
-	font-size: 12px;
-	border-top: 10px solid #aecc52;
-	display: block;
-	background-color: #101010;
-}
-
-.deadline {
-	color: #FF0000;
-}
-
-.footer-links {
-	list-style-type: none;
-	padding: 0px;
-	margin: 0px;
-}
-
-.footer-links li {
-	list-style-type: none;
-	margin-right: 200px;
-	text-align: auto;
-}
-
-#address {
-	color: #FFFFFF
-}
-
-/* Lastly, apply responsive CSS fixes as necessary */
-.CClogo {
-	height: 40px;
-	width: 40px;
-	margin: 0 30px 0 10px;
-	padding-top: 5px;
-	padding-bottom: 5px;
-}
-
 /* Custom page CSS
 -------------------------------------------------- */
-/* Not required for template or sticky footer method. */
 
 .login {
 	float:left;
@@ -61,17 +7,6 @@ footer {
 
 .logged-in {
 	padding-top: 50px;
-}
-
-
-#frontpage_title {
-	font-family: 'Open Sans', sans-serif;
-	font-size: 80px;
-	color: #000000;
-	text-align: left;
-	width: 350px;
-	position: absolute;
-	margin: 145px 0px 15px 0px;
 }
 
 .container .credit {
@@ -88,6 +23,48 @@ footer {
 
 code {
 	font-size: 80%;
+}
+html,
+body {
+	height: 100%;
+}
+
+#wrap {
+	margin-top:110px;
+}
+
+/* Image definition in members and member-details */
+.members img{
+	width: 100px;
+	height: 100px;
+	margin: 10px;
+}
+
+/* Footer: Set the fixed height of the footer here */
+footer {
+	margin: 20px -5px 10px 0;
+	padding-top: 15px;
+	font-size: 12px;
+	border-top: 10px solid #aecc52;
+	display: block;
+	background-color: #101010;
+}
+
+.deadline {
+	color: #FF0000;
+}
+
+#address {
+	color: #FFFFFF
+}
+
+/* CClogo in navbar */
+.CClogo {
+	height: 40px;
+	width: 40px;
+	margin: 0 30px 0 10px;
+	padding-top: 5px;
+	padding-bottom: 5px;
 }
 
 /* Fit CodeCatz image in navbar-brand. */
@@ -117,12 +94,7 @@ h4 {
 }
 
 
-img{
-	width: 100px;
-	height: 100px;
-	margin: 10px;
-}
-
+/* about page */
 .about_list {
 	list-style-type: none;
 	font-size: 20px;
@@ -140,7 +112,7 @@ img{
 	font-size: 12px;
 }
 
-/* headding */
+/* index page */
 
 #frontpage{
 	height: 250px;
@@ -150,21 +122,13 @@ img{
 	position: relative;
 }
 
-.jumbotron p {
-	text-align:justify;
-	margin: 0 10px 10px;
-	font-size: 12px;
+#frontpage_title {
+	font-family: 'Open Sans', sans-serif;
+	font-size: 80px;
+	color: #000000;
+	text-align: left;
+	width: 350px;
+	position: absolute;
+	margin: 145px 0px 15px 0px;
 }
 
-/* end of about page */
-
-/* member */
-
-.sleepy_cat,
-.lazy_cat,
-.active_cat,
-.mentor_cat{
-	font-size: 12px;
-}
-
-/* end of member page */
