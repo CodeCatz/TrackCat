@@ -29,6 +29,7 @@ class TaskForm(forms.ModelForm):
 
 	def __init__(self, *args, **kwargs):
 		self.base_fields['status'].choices = STATUS_CHOICES[:3]
+		self.base_fields['project_id'].queryset = Project.objects.all().exclude(status= 'DELETED')
 		super(TaskForm, self).__init__(*args, **kwargs)	
 
 
