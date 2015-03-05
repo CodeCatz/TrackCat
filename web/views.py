@@ -95,11 +95,13 @@ def project_detail(request, project_id):
 	if Project.objects.filter(pk=project_id).exclude(status = 'DELETED').exists():
 		project = Project.objects.get(pk=project_id)
 		task_list = Task.objects.filter(project_id=project_id).exclude(status = 'DELETED')
+		member_list = project.project_members.all()
 	else:
 		project = None
 
 	return render(request, 'pages/project_detail.html', {'project': project,
-														'task_list' : task_list})
+														'task_list' : task_list,
+														'member_list' : member_list})
 
 @permission_required('api.add_project', login_url='/login/')
 def project_new(request):
