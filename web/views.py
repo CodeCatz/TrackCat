@@ -11,12 +11,15 @@ from .form import UserProfileForm, ProjectForm, TaskForm
 def index(request):
 	return render(request, 'pages/index.html',{})
 
-def projects(request):
-	project_list = Project.objects.all().exclude(status = 'DELETED')
-	return render(request, 'pages/projects.html',{'project_list': project_list})
-
 def about(request):
 	return render(request, 'pages/about.html',{})
+
+def events(request):
+	events_list = Event.objects.all().order_by('start_date')
+	return render(request, 'pages/events.html',{'events_list': events_list})
+
+def login(request):
+	return render(request, 'pages/login.html',{})
 
 def members(request):
 	mentors_list = UserProfile.objects.filter(user__is_active=True).exclude(activity_status__in=('SLEEPY','KITTEN', 'ACTIVE',)) 
@@ -48,48 +51,9 @@ def member_edit(request):
 
 	return render(request, 'pages/member_edit.html', {'userprofileform': userprofileform})	
 
-def tasks(request):
-	task_list = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).exclude(status = 'DELETED')
-	return render(request, 'pages/tasks.html', {'task_list': task_list})
-
-@permission_required('api.change_task', login_url='/login/')
-def task_edit(request, task_id):
-	if Task.objects.filter(pk=task_id).filter(project_id__in=Project.objects.exclude(status='DELETED')).exists():
-		task = Task.objects.get(pk=task_id)
-	else:
-		return render(request, 'pages/task_edit.html', {'invalid_task_id': True})
-
-	if request.method == "POST":
-		taskform = TaskForm(request.POST, instance=task)
-		if taskform.is_valid():
-			task = taskform.save()
-			return redirect('pages-tasks')
-	else:
-		taskform = TaskForm(instance=task)
-
-	return render(request, 'pages/task_edit.html', {'taskform': taskform, 'editing': True})
-
-@permission_required('api.add_task', login_url='/login/')
-def task_new(request):
-	if request.method == "POST":
-		taskform = TaskForm(request.POST)
-		if taskform.is_valid():
-			task = taskform.save()
-			return redirect('pages-tasks')
-	else:
-		taskform = TaskForm()
-
-	return render(request, 'pages/task_new.html', {'taskform': taskform})
-
-def events(request):
-	events_list = Event.objects.all().order_by('start_date')
-	return render(request, 'pages/events.html',{'events_list': events_list})
-
-def login(request):
-	return render(request, 'pages/login.html',{})
-
-def links(request):
-	return render(request, 'pages/links.html',{})
+def projects(request):
+	project_list = Project.objects.all().exclude(status = 'DELETED')
+	return render(request, 'pages/projects.html',{'project_list': project_list})
 
 def project_detail(request, project_id):
 	if Project.objects.filter(pk=project_id).exclude(status = 'DELETED').exists():
@@ -142,6 +106,39 @@ def project_delete(request, project_id):
 
 	project.save()
 	return redirect('pages-projects')
+
+def tasks(request):
+	task_list = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).exclude(status = 'DELETED')
+	return render(request, 'pages/tasks.html', {'task_list': task_list})
+
+@permission_required('api.change_task', login_url='/login/')
+def task_edit(request, task_id):
+	if Task.objects.filter(pk=task_id).filter(project_id__in=Project.objects.exclude(status='DELETED')).exists():
+		task = Task.objects.get(pk=task_id)
+	else:
+		return render(request, 'pages/task_edit.html', {'invalid_task_id': True})
+
+	if request.method == "POST":
+		taskform = TaskForm(request.POST, instance=task)
+		if taskform.is_valid():
+			task = taskform.save()
+			return redirect('pages-tasks')
+	else:
+		taskform = TaskForm(instance=task)
+
+	return render(request, 'pages/task_edit.html', {'taskform': taskform, 'editing': True})
+
+@permission_required('api.add_task', login_url='/login/')
+def task_new(request):
+	if request.method == "POST":
+		taskform = TaskForm(request.POST)
+		if taskform.is_valid():
+			task = taskform.save()
+			return redirect('pages-tasks')
+	else:
+		taskform = TaskForm()
+
+	return render(request, 'pages/task_new.html', {'taskform': taskform})
 
 @permission_required('api.delete_task', login_url='/login/')
 def task_delete(request, task_id):
