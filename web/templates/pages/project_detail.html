@@ -18,7 +18,7 @@
 		</div>
 	<div class='container'>
 		<div class="row">
-			<div class="col-md-6 col-xs-6">
+			<div class="col-md-6 col-sm-6">
 				<p><strong>Description:</strong></p>
 				<p>{{ project.project_description }}</p>
 				<p><strong>Project launch date:</strong> {{ project.date_created|date:"d.m.Y" }}</p>
@@ -34,14 +34,14 @@
 					<p><strong>Test site:</strong> <a href="{{ project.website_test }}">{{ project.website_test }}</a></p>
 				{% endif %}
 			</div>
-			<div class="col-md-6 col-xs-6">
+			<div class="col-md-6 col-sm-6">
 				<p><strong>Project members:</strong></p>
 				<!-- <p><img src="http://placekitten.com/550/550" alt="" class="img-responsive"></p> -->
 					<div class="row">
 						{% for member in member_list %}
 							<div class="col-md-4 col-xs-4">
 								{% if member.profile_picture %}
-									<img src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
+									<img class="avatar" src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 								{% endif %}
 								<p><a href="{% url 'pages-member-detail' user_id=member.id %}">{{ member.user.first_name }} {{ member.user.last_name }}</a></p>
 							</div>
