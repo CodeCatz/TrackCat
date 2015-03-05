@@ -100,6 +100,7 @@ def project_detail(request, project_id):
 		task_list = Task.objects.filter(project_id=project_id).exclude(status = 'DELETED')
 	else:
 		project = None
+		task_list = None
 
 	return render(request, 'pages/project_detail.html', {'project': project,
 														'task_list' : task_list})
