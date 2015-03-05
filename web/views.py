@@ -49,12 +49,12 @@ def member_edit(request):
 	return render(request, 'pages/member_edit.html', {'userprofileform': userprofileform})	
 
 def tasks(request):
-	task_list = Task.objects.all().exclude(status = 'DELETED')
+	task_list = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).exclude(status = 'DELETED')
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
 
 @permission_required('api.change_task', login_url='/login/')
 def task_edit(request, task_id):
-	if Task.objects.filter(pk=task_id).exists():
+	if Task.objects.filter(pk=task_id).filter(project_id__in=Project.objects.exclude(status='DELETED')).exists():
 		task = Task.objects.get(pk=task_id)
 	else:
 		return render(request, 'pages/task_edit.html', {'invalid_task_id': True})
