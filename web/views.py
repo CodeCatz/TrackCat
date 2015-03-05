@@ -85,9 +85,6 @@ def events(request):
 	events_list = Event.objects.all().order_by('start_date')
 	return render(request, 'pages/events.html',{'events_list': events_list})
 
-def gallery(request):
-	return render(request, 'pages/gallery.html',{})
-
 def login(request):
 	return render(request, 'pages/login.html',{})
 
