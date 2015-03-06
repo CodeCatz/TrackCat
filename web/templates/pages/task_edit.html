@@ -93,13 +93,14 @@
 						{% if taskform.deadline.field.required %}*{% endif %}
 						{{ taskform.deadline.label }}
 					</label>
-					<div class="col-sm-9">
+					<div class="col-sm-9 input-group">
+						<span class="input-group-addon"><i class="fa fa-calendar"></i></span>
 						{{ taskform.deadline }}
 					</div>
 					{% if taskform.deadline.errors %}
 						<span class="help-block col-sm-9 col-sm-offset-3">{{ taskform.deadline.errors }}</span>
 					{% endif %}
-				</div>	
+				</div>				
 			</div>
 
 			<button type="submit" class="save btn btn-default">Save</button>
