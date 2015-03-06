@@ -38,12 +38,6 @@
 								none
 							{% endif %}
 						</p>
-						{% if perms.api.change_task %}
-							<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
-						{% endif %}
-						{% if perms.api.delete_task %}
-							<a class="btn btn-default" href="{% url 'task-delete' task_id=task.id %}"><span class="glyphicon glyphicon-remove"> Delete</span></a>
-						{% endif %}
 					</div>
 					{% if forloop.last %}
 						  </div>
