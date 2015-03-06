@@ -138,7 +138,7 @@ def task_new(request):
 	else:
 		taskform = TaskForm()
 
-	return render(request, 'pages/task_new.html', {'taskform': taskform})
+	return render(request, 'pages/task_edit.html', {'taskform': taskform})
 
 @permission_required('api.delete_task', login_url='/login/')
 def task_delete(request, task_id):
