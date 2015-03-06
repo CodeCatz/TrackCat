@@ -11,7 +11,7 @@
 	</header>
 	
 	{% if perms.api.add_task %}
-		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add new</span></a>
+		<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add new task</span></a>
 	{% endif %}	
 
 	{% if task_list %}
@@ -19,27 +19,25 @@
 			{% for task in task_list %}	
 				
 					<div class="col-md-3 col-xs-6">
-						<h3><strong>{{ task.title }}</strong></h3>
-							<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
-							<p><strong>Project status:<strong> {{ task.get_status_display }} </p>
-							<p><strong>Part of project:</strong> <a href="{% url 'web.views.project_detail' project_id=task.project_id.project_id %}"> {{ task.project_id.project_name }}</a></p>
-							<br />
-							<p><strong>Description:</strong> {{ task.description }}</p>
-							<p class="deadline"><strong>Deadline:</strong>
-								{% if task.deadline %}
-									{{ task.deadline|date:"d. M Y"|lower }}
-								{% else %}
-									none
-								{% endif %}
-							</p>
-							{%  if perms.api.change_task %}
-								<div>
-									<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}">Edit</a>
-								</div>
+						<h1><strong>{{ task.title }}</strong></h1>
+						<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
+						<p><strong>Project status:</strong> {{ task.get_status_display }} </p>
+						<p><strong>Part of project:</strong> <a href="{% url 'web.views.project_detail' project_id=task.project_id.project_id %}"> {{ task.project_id.project_name }}</a></p>
+						<br />
+						<p><strong>Description:</strong> {{ task.description }}</p>
+						<p class="deadline"><strong>Deadline:</strong>
+							{% if task.deadline %}
+								{{ task.deadline|date:"d. M Y"|lower }}
+							{% else %}
+								none
 							{% endif %}
-							{% if perms.api.delete_task %}					
-									<a class="btn btn-default" href="{% url 'task-delete' task_id=task.id %}"><span class="glyphicon glyphicon-remove"> Delete</span></a>
-							{% endif %}	
+						</p>
+						{% if perms.api.change_task %}
+							<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
+						{% endif %}
+						{% if perms.api.delete_task %}
+							<a class="btn btn-default" href="{% url 'task-delete' task_id=task.id %}"><span class="glyphicon glyphicon-remove"> Delete</span></a>
+						{% endif %}
 					</div>
 					{% if forloop.last %}
 						  </div>
