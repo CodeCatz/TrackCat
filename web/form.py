@@ -9,23 +9,60 @@ class TaskForm(forms.ModelForm):
 		model= Task
 		fields = (
 			'title',
+			'description',			
 			'status',
 			'owner_id',
 			'project_id',
-			'description',
 			'deadline',
 			)
 
 		widgets = {
 			'title': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter the task name'}),
+			'description': forms.Textarea(attrs={'class':'form-control', 'rows':'6','placeholder':'Tell a bit more about the task.'}),
 			'status': forms.Select(attrs={'class':'form-control '}),
 			'owner_id': forms.Select(attrs={'class':'form-control'}),
 			'project_id': forms.Select(attrs={'class':'form-control'}),
-			'description': forms.Textarea(attrs={'class':'form-control', 'rows':'6','placeholder':'Tell a bit more about the task.'}),
-			'project_deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget',
-			'autocomplete': 'off', 'placeholder': 'When is the project deadline?'}),
-			'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget'}),
+			'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget',
+							'autocomplete': 'off', 'placeholder': 'When is the task deadline?'}),
+
 		}
+
+		labels = {
+				'title': 'Title', 
+				'description': 'Description',
+				'status': 'Status',
+				'owner_id': 'Owner',
+				'project_id' :'Project',
+				'deadline': 'Deadline',
+		}
+
+		help_texts = {
+			'deadline': "Example: YYYY/MM/DD h:m",
+		}
+
+		error_messages = {
+				'title': {
+					'required': u'Please enter a title of your task.',
+					'invalid': u'Please check if this is a valid title',
+				},
+				'description': {
+					'invalid': u'Please check if this is a valid description',
+				},
+				'status':{
+					'invalid': u'Please check if this is a valid status',
+				},
+				'owner_id': {
+					'required': u'Please select an owner of the task.',
+					'invalid': u'Please check if this is a valid owner',
+				},
+				'project_id':{
+					'required': u'Please select a project for this task.',
+					'invalid': u'Please check if this is a valid project',
+				},
+				'deadline': {
+					'invalid': u'Please check if this is a valid date',
+				},
+			}
 
 	def __init__(self, *args, **kwargs):
 		self.base_fields['status'].choices = STATUS_CHOICES[:3]
