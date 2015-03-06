@@ -14,7 +14,7 @@
 	<div class="clearfix">
 		<h1 class="pull-left">{% if editing %}Edit{% else %}Add{% endif %} your task</h1>
 	</div>
-		<form enctype="multipart/form-data" method="post" id="project" role="form" class="form-horizontal clearfix">{% csrf_token %}
+		<form enctype="multipart/form-data" method="post" id="task" role="form" class="form-horizontal clearfix">{% csrf_token %}
 			<div>
 				<div class="form-group {% if taskform.title.errors %}has-error{% endif %}">
 					<label for="{{ taskform.title.auto_id }}" class="col-sm-3 control-label">
