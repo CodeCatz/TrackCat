@@ -39,7 +39,16 @@
 								{% if member.profile_picture %}
 									<img class="avatar" src="{{ MEDIA_URL }}{{ member.profile_picture.url|default_if_none:"" }}" alt="{{ member.user.first_name }}" />
 								{% endif %}
-								<p><a href="{% url 'pages-member-detail' user_id=member.id %}">{{ member.user.first_name }} {{ member.user.last_name }}</a></p>
+								<p><a href="{% url 'pages-member-detail' user_id=member.id %}">
+									{% if member.user.first_name %}
+										{{ member.user.first_name }}
+									{% else %}
+										{{ member.user.username }}
+									{% endif %}
+									{% if member.user.last_name %}
+										{{ member.user.last_name }}
+									{% endif %}
+								</a></p>
 							</div>
 							{% if forloop.last %}
 					</div>
@@ -64,7 +73,7 @@
 			<div class="row container">
 				{% for task in task_list %}
 					<div class="col-md-8 col-xs-6">
-						<p>{{ task.title }}</p>
+						<p>{{ task.title }}, Assigned to: {{ task.assigned_id }}</p>
 					</div>
 				{% endfor %}
 			</div>
