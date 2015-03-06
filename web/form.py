@@ -12,6 +12,7 @@ class TaskForm(forms.ModelForm):
 			'description',			
 			'status',
 			'owner_id',
+			'assigned_id',
 			'project_id',
 			'deadline',
 			)
@@ -21,6 +22,7 @@ class TaskForm(forms.ModelForm):
 			'description': forms.Textarea(attrs={'class':'form-control', 'rows':'6','placeholder':'Tell a bit more about the task.'}),
 			'status': forms.Select(attrs={'class':'form-control '}),
 			'owner_id': forms.Select(attrs={'class':'form-control'}),
+			'assigned_id': forms.Select(attrs={'class':'form-control'}),
 			'project_id': forms.Select(attrs={'class':'form-control'}),
 			'deadline': forms.TextInput(attrs={'id': 'id_datepicker', 'class': 'form-control datetime-widget',
 							'autocomplete': 'off', 'placeholder': 'When is the task deadline?'}),

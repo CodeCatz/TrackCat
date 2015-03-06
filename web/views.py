@@ -63,6 +63,7 @@ def project_detail(request, project_id):
 	else:
 		project = None
 		task_list = None
+		member_list = None
 
 	return render(request, 'pages/project_detail.html', {'project': project,
 														'task_list' : task_list,
@@ -107,6 +108,7 @@ def project_delete(request, project_id):
 	project.save()
 	return redirect('pages-projects')
 
+@login_required
 def tasks(request):
 	task_list = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).exclude(status = 'DELETED')
 	return render(request, 'pages/tasks.html', {'task_list': task_list})
