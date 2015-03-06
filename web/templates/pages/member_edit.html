@@ -1,7 +1,7 @@
 {% extends 'base.html' %}
 {% load staticfiles %}
 
-{% block title %}Update member{% endblock %}
+{% block title %}Update profile{% endblock %}
 
 {% block content%}
 
@@ -9,8 +9,73 @@
 		<p class="alert alert-warning">This member does not exist.</p>
 		<p>Return to <a href="{% url 'pages-members' %}">Members</a></p>
 	{%  else %}	
-		<form enctype="multipart/form-data" method="POST">{% csrf_token %}
-			{{ userprofileform.as_p }}
+	<div class="clearfix">
+		<h1 class="pull-left">Edit your profile</h1>
+	</div>
+		<form enctype="multipart/form-data" method="post" id="userprofile" role="form" class="form-horizontal clearfix">{% csrf_token %}
+			<div>
+				<div class="form-group {% if userprofileform.first_name.errors %}has-error{% endif %}">
+					<label for="{{ userprofileform.first_name.auto_id }}" class="col-sm-3 control-label">
+						{% if userprofileform.first_name.field.required %}*{% endif %}
+						{{ userprofileform.first_name.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ userprofileform.first_name }}
+					</div>
+					{% if userprofileform.first_name.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ userprofileform.first_name.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if userprofileform.last_name.errors %}has-error{% endif %}">
+					<label for="{{ userprofileform.last_name.auto_id }}" class="col-sm-3 control-label">
+						{% if userprofileform.last_name.field.required %}*{% endif %}
+						{{ userprofileform.last_name.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ userprofileform.last_name }}
+					</div>
+					{% if userprofileform.last_name.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ userprofileform.last_name.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if userprofileform.profile_picture.errors %}has-error{% endif %}">
+					<label for="{{ userprofileform.profile_picture.auto_id }}" class="col-sm-3 control-label">
+						{% if userprofileform.profile_picture.field.required %}*{% endif %}
+						{{ userprofileform.profile_picture.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ userprofileform.profile_picture }}
+					</div>
+					{% if userprofileform.profile_picture.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ userprofileform.profile_picture.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if userprofileform.website.errors %}has-error{% endif %}">
+					<label for="{{ userprofileform.website.auto_id }}" class="col-sm-3 control-label">
+						{% if userprofileform.website.field.required %}*{% endif %}
+						{{ userprofileform.website.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ userprofileform.website }}
+					</div>
+					{% if userprofileform.website.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ userprofileform.website.errors }}</span>
+					{% endif %}
+				</div>
+				<div class="form-group {% if userprofileform.bio.errors %}has-error{% endif %}">
+					<label for="{{ userprofileform.bio.auto_id }}" class="col-sm-3 control-label">
+						{% if userprofileform.bio.field.required %}*{% endif %}
+						{{ userprofileform.bio.label }}
+					</label>
+					<div class="col-sm-9">
+						{{ userprofileform.bio }}
+					</div>
+					{% if userprofileform.bio.errors %}
+						<span class="help-block col-sm-9 col-sm-offset-3">{{ userprofileform.bio.errors }}</span>
+					{% endif %}
+				</div>
+			</div>
+
 			<button type="submit" class="save btn btn-default">Save</button>
 		</form>
 	{% endif %}	

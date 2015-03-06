@@ -79,6 +79,51 @@ class UserProfileForm(forms.ModelForm):
 		'last_name': 'last_name',
 		}
 
+	class Meta:
+		model = UserProfile
+		fields = (
+			'first_name',
+			'last_name',
+			'profile_picture',
+			'website',
+			'bio',
+			)
+
+		widgets = {
+				'first_name': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter your first name'}),
+				'last_name': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Enter your last name'}),
+				'website': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Where is your website?'}),
+				'bio': forms.Textarea(attrs={'class':'form-control', 'rows':'6', 'placeholder':'Tell a bit more about yourself'}),
+		}
+		
+		labels = {
+				'first_name': 'First Name', 
+				'last_name': 'Last Name',
+				'profile_picture': 'Profile Picture',
+				'website': 'Website',
+				'bio' :'Bio',
+				}
+
+		error_messages = {
+				'first_name': {
+					'required': u'Please enter your first name.',
+					'invalid': u'Please check if this is a valid name',
+				},
+				'last_name': {
+					'required': u'Please enter your last name.',
+					'invalid': u'Please check if this is a valid name',
+				},
+				'profile_picture': {
+					'invalid': u'Please check if this is a valid picture',
+				},
+				'website': {
+					'invalid': u'Please check if this is a valid website',
+				},
+				'bio':{
+					'invalid': u'Please check if this is a valid bio',
+				},
+			}
+
 	def __init__(self, *args, **kwargs):
 		super(UserProfileForm, self).__init__(*args, **kwargs)
 		if self.instance.id:
@@ -91,15 +136,6 @@ class UserProfileForm(forms.ModelForm):
 		self.instance.user.save()
 		super(UserProfileForm, self).save(*args, **kwargs)
 
-	class Meta:
-		model = UserProfile
-		fields = (
-			'first_name',
-			'last_name',
-			'profile_picture',
-			'website',
-			'bio',
-			)
 
 class ProjectForm(forms.ModelForm):
 
