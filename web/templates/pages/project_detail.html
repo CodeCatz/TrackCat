@@ -4,7 +4,7 @@
 	{% if project %}
 		<div class="row">
 			<div class="col-md-8 col-xs-6">
-				<h1><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h1>
+				<h1>{{ project.project_name }}</h1>
 				{% if perms.api.change_project %}					
 					<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
 				{% endif %}
