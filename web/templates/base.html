@@ -50,7 +50,9 @@
 								<b class="caret"></b>
 							</a>
 							<ul class="dropdown-menu">
-							<li><a href="{% url 'pages-member-edit' %}">Edit profile</a></li>
+								<li><a href="{% url 'pages-member-edit' %}">Edit profile</a></li>
+								<li class="divider"></li>
+								<li><a href="{% url 'pages-tasks' %}">My Tasks</a></li>
 								<li class="divider"></li>
 								<li>
 									<a href="{% url 'logout' %}?next={% firstof request.path '/' %}">
