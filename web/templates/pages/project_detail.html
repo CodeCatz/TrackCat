@@ -70,7 +70,7 @@
 			</div>
 		{% endif %}
 
-		{% if not user.is_authenticated %}
+		{% else %}
 			<div class="row">
 				<div class="col-md-8 col-xs-6">	
 					<p><strong> For update the project you must be logged in. <a href="{% url 'pages-login' %}">Login</a></strong></p>
