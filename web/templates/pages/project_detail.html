@@ -5,9 +5,6 @@
 		<div class="row">
 			<div class="col-md-8 col-xs-6">
 				<h1><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h1>
-				{% if perms.api.add_project %}
-					<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"> Add new</span></a>
-				{% endif %}					
 				{% if perms.api.change_project %}					
 					<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
 				{% endif %}
@@ -36,7 +33,6 @@
 			</div>
 			<div class="col-md-6 col-sm-6">
 				<p><strong>Project members:</strong></p>
-				<!-- <p><img src="http://placekitten.com/550/550" alt="" class="img-responsive"></p> -->
 					<div class="row">
 						{% for member in member_list %}
 							<div class="col-md-4 col-xs-4">
@@ -60,6 +56,11 @@
 		</div>
 		{% if task_list %}
 			<p><strong>Tasks:</strong></p>
+			<p>
+			{% if perms.api.add_project %}
+					<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add task</span></a>
+				{% endif %}
+			</p>
 			<div class="row container">
 				{% for task in task_list %}
 					<div class="col-md-8 col-xs-6">
