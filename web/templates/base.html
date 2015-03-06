@@ -31,11 +31,13 @@
 					<li><a href="{% url 'pages-index' %}">Home</a></li>
 					<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
 					<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
-					<li class="{% current 'pages-tasks' %}"><a href="{% url 'pages-tasks' %}">Tasks</a></li>
 					<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
 					<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
+					{% if user.is_authenticated %}
+						<li><a href="{% url 'pages-tasks' %}">My Tasks</a></li>
+					{% endif %}
 					<li class="dropdown" id="menuLogin">
 						{% if user.is_authenticated %}
 							<a href="#" class="dropdown-toggle" data-toggle="dropdown">
