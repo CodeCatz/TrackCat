@@ -6,7 +6,7 @@
 
 	<header class="row">
 		<div class="col-lg-6 col-sm-7">
-			<h1>My Tasks</h1>
+			<h1>Tasks</h1>
 		</div>
 	</header>
 	
@@ -21,10 +21,10 @@
 					<div class="col-md-3 col-xs-6">
 						<h1><strong>{{ task.title }}</strong></h1>
 						{% if perms.api.change_task %}
-							<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
+							<a class="btn btn-default" href="{% url 'task-edit' task_id=task.id %}"><span class="glyphicon glyphicon-pencil"> Edit task</span></a>
 						{% endif %}
 						{% if perms.api.delete_task %}
-							<a class="btn btn-default" href="{% url 'task-delete' task_id=task.id %}"><span class="glyphicon glyphicon-remove"> Delete</span></a>
+							<a class="btn btn-default" href="{% url 'task-delete' task_id=task.id %}"><span class="glyphicon glyphicon-remove"> Delete task</span></a>
 						{% endif %}
 						<p><strong>Assigned to:</strong> {{ task.assigned_id }}</p>
 						<p><strong>Project status:</strong> {{ task.get_status_display }} </p>
