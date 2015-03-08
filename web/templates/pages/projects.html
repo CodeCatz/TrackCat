@@ -19,7 +19,7 @@
 	{% if perms.api.add_project %}
 		<div class="row">
 			<div class="col-lg-6 col-sm-7">
-				<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"> Add new</span></a>
+				<a class="btn btn-default" href="{% url 'project-new' %}" class="top-menu"><span class="glyphicon glyphicon-plus"> Add new project</span></a>
 			</div>
 		</div>
 	{% endif %}
@@ -46,7 +46,10 @@
 			{% endif %}
 		{% endif %}
 	{% empty %}
-		<p>There are currently no projects in your projects list.</p>
+	<br></br>
+	<div class="col-lg-6 col-sm-7 alert alert-info">	
+		<p>There are currently no projects in the projects list.</p>
+	</div>
 	</div>
 	{% endfor %}
 {% endblock content %}

@@ -6,14 +6,14 @@
 			<div class="col-md-8 col-xs-6">
 				<h1>{{ project.project_name }}</h1>
 				{% if perms.api.change_project %}					
-					<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"> Edit</span></a>
+					<a class="btn btn-default" href="{% url 'project-edit' project_id=project.project_id %}"><span class="glyphicon glyphicon-pencil"> Edit project</span></a>
 				{% endif %}
 				{% if perms.api.delete_project %}					
-					<a class="btn btn-default" href="{% url 'project-delete' project_id=project.project_id %}"><span class="glyphicon glyphicon-remove"> Delete</span></a>
+					<a class="btn btn-default" href="{% url 'project-delete' project_id=project.project_id %}"><span class="glyphicon glyphicon-remove"> Delete project</span></a>
 				{% endif %}
 			</div>
 		</div>
-	<div class='container'>
+		<div class='container'>
 		<div class="row">
 			<div class="col-md-6 col-sm-6">
 				<p><strong>Description:</strong></p>
@@ -63,13 +63,13 @@
 					</div>
 			</div>
 		</div>
-		{% if task_list %}
-			<p><strong>Tasks:</strong></p>
 			<p>
 			{% if perms.api.add_project %}
-					<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add task</span></a>
-				{% endif %}
+					<a class="btn btn-default" href="{% url 'task-new' %}"><span class="glyphicon glyphicon-plus"> Add new task</span></a>
+			{% endif %}
 			</p>
+		{% if task_list %}
+			<p><strong>Tasks:</strong></p>
 			<div class="row container">
 				{% for task in task_list %}
 					<div class="col-md-8 col-xs-6">
