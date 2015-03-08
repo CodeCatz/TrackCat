@@ -110,8 +110,9 @@ def project_delete(request, project_id):
 
 @login_required
 def tasks(request):
-	task_list = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(owner_id=request.user).exclude(status = 'DELETED')
-	return render(request, 'pages/tasks.html', {'task_list': task_list})
+	task_owned = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(owner_id=request.user).exclude(status = 'DELETED')
+	task_assigned = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(assigned_id=request.user).exclude(status = 'DELETED')
+	return render(request, 'pages/tasks.html', {'task_owned': task_owned, 'task_assigned': task_assigned})
 
 @permission_required('api.change_task', login_url='/login/')
 def task_edit(request, task_id):
