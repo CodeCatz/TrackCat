@@ -1,2 +1,2 @@
-web: gunicorn trackcat.wsgi
+web: gunicorn web.wsgi
 
