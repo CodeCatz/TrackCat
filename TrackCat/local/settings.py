@@ -1,0 +1,1 @@
+/home/asustic/TrackCat/TrackCat/settings.py

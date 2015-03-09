@@ -68,3 +68,6 @@ Thumbs.db
 media/*
 !media/.gitkeep
 
+env
+db.sqlite3
+
