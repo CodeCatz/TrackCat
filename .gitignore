@@ -58,7 +58,6 @@ target/
 *.sqlite3
 
 settings_local.py
-staticfiles/
 .DS_Store
 
 # Windows junk
