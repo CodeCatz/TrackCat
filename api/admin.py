@@ -30,7 +30,7 @@ class TaskAdmin(admin.ModelAdmin):
 class EventAdmin(admin.ModelAdmin):
 	fieldsets = [
 		(None,				{'fields': ['title', 'description', 'organizer']}),
-		('Time and place',	{'fields': ['start_date', 'end_date', 'location' ]}),
+		('Time and place',	{'fields': ['start_date', 'end_date', 'website', 'location' ]}),
 		]
 	list_display = ('title', 'start_date', 'end_date','location')
 

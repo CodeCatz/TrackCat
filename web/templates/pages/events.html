@@ -30,6 +30,10 @@
 				<p><strong>Description:</strong></p>
 				<p>{{ event.description }}</p>
 			{% endif %}		
+			{% if event.website %}
+				<p><strong>WebSite:</strong></p>
+				<p><a href="{{ event.website }}">{{ event.website }}</a></p>
+			{% endif %}		
 			<p><strong>Location:</strong></p>
 			<p>{{ event.location }}</p>			
 			{% if event.organizer %}
