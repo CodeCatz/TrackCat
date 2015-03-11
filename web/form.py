@@ -161,8 +161,8 @@ class ProjectForm(forms.ModelForm):
 							'autocomplete': 'off', 'placeholder': 'When is the project deadline?'}),
 				'status': forms.Select(attrs={'class':'form-control '}),
 				'repository_link': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Where is your repository?'}),
-				'website_production': forms.TextInput(attrs={'class':'form-control','placeholder':'Your test site'}),
-				'website_test': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your production site'}),
+				'website_production': forms.TextInput(attrs={'class':'form-control','placeholder':'Your production site'}),
+				'website_test': forms.TextInput(attrs={'class':'form-control', 'placeholder':'Your test site'}),
 				'project_owner': forms.Select(attrs={'class':'form-control'}),
 				'project_members': forms.SelectMultiple(attrs={'class':'form-control'}),
 		}
