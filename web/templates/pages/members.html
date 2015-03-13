@@ -9,19 +9,12 @@
 			<h1>Who is who?</h1>
 		</div>
 	</header>
-	
-	<div class="row">
-		<div class="col-lg-6 col-sm-7">
-			<p>This page shows CodeCatz members.</p>
-		</div>
-	</div>
-	
 	<div class="row">
 		<div class="col-lg-6 col-sm-7">
 			<h3>Mentors</h3>
 		</div>
 	</div>
-<div class="members">    
+<div class="members">
 	<div class="row">
 		{% for member in mentors_list %}
 				<div class="col-md-3 col-xs-6">
@@ -55,13 +48,13 @@
 			</div>
 	</div>
 			{% endfor %}
-	
+
 		<div class="row">
 			<div class="col-lg-6 col-sm-7">
 				<h3>Kittens</h3>
 			</div>
 		</div>
-		
+
 		<div class="row">
 			{% for member in kittens_list %}
 					<div class="col-md-3 col-xs-6">
@@ -79,7 +72,7 @@
 									{{ member.user.last_name }}
 								{% endif %}
 							</h3>
-						</a> 
+						</a>
 					</div>
 				{% if forloop.last %}
 		</div><!-- closing row class when there are no more members in the list-->
