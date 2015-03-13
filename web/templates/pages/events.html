@@ -9,13 +9,6 @@
 			<h1>All CodeCatz Events</h1>
 		</div>
 	</header>
-
-	<div class="row">
-		<div class="col-lg-6 col-sm-5">
-			<p>This page shows all our events.</p>
-		</div>
-	</div>
-
 	<div class="row">
 	{% for event in events_list %}
 		<div class="col-md-3 col-xs-6">
@@ -35,7 +28,7 @@
 				<p><a href="{{ event.website }}">{{ event.website }}</a></p>
 			{% endif %}		
 			<p><strong>Location:</strong></p>
-			<p>{{ event.location }}</p>			
+			<p>{{ event.location }}</p>
 			{% if event.organizer %}
 				<p><strong>Organizer:</strong> {{ event.organizer }}</p>
 			{% endif %}
@@ -49,7 +42,7 @@
 			{% endif %}
 		{% endif %}
 	{% empty %}
-	<div class="col-lg-6 col-sm-7 alert alert-info">	
+	<div class="col-lg-6 col-sm-7 alert alert-info">
 		<p>There are currently no events.</p>
 	</div>
 	</div>

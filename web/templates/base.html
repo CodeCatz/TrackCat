@@ -6,7 +6,7 @@
 <html>
 <head>
 	<title>TrackCat - {% block title %}TrackCat{% endblock %}</title>
-	<link rel="stylesheet" type="text/css" href="http://fonts.googleapis.com/css?family=Open+Sans:400,600,300">
+	<link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=Open+Sans:400,600,300">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css">
 	<link rel="stylesheet" href="//maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap-theme.min.css">
 	<link href="//maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
@@ -15,8 +15,8 @@
 </head>
 
 <body data-spy="scroll" data-target="#topnav">
-	<div class="navbar navbar-inverse navbar-default" id="topnav">
-		<div class="container">
+	<div class="navbar navbar-default" id="topnav">
+		<div class="nav-container">
 			<div class="navbar-header">
 				<button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
 					<span class="icon-bar"></span>
@@ -27,11 +27,11 @@
 			</div>
 			<div class="navbar-collapse collapse">
 				<ul class="nav navbar-nav">
-					<li><a href="{% url 'pages-index' %}">Home</a></li>
-					<li class="{% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
-					<li class="{% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
-					<li class="{% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
-					<li class="{% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
+					<li class="nav-tab"><a href="{% url 'pages-index' %}">Home</a></li>
+					<li class="nav-tab {% current 'pages-about' %}"><a href="{% url 'pages-about' %}">About</a></li>
+					<li class="nav-tab {% current 'pages-projects' %}"><a href="{% url 'pages-projects' %}">Projects</a></li>
+					<li class="nav-tab {% current 'pages-members' %}"><a href="{% url 'pages-members' %}">Members</a></li>
+					<li class="nav-tab {% current 'pages-events' %}"><a href="{% url 'pages-events' %}">Events</a></li>
 				</ul>
 				<ul class="nav navbar-nav navbar-right">
 					{% if user.is_authenticated %}
