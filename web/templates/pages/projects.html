@@ -25,22 +25,23 @@
 	{% endif %}
 	<div class="row">
 	{% for project in project_list %}
-		<div class="col-md-3 col-xs-6">
-			<h3><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
-			<p><strong>Description:</strong></p>
-			<p>{{ project.project_description }}</p>
-			<p><strong>Status:</strong> {{ project.get_status_display }}</p>
-			<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
+		<div class="col-sm-4">
+			<div class="tcframe">
+				<h3 class="tcname"><a href="{% url 'project-detail' project_id=project.project_id %}">{{ project.project_name }}</a></h3>
+				<p><strong>Description:</strong></p>
+				<p>{{ project.project_description }}</p>
+				<p><strong>Status:</strong> {{ project.get_status_display }}</p>
+				<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
 
-			{% if project.project_deadline %}
-				<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
-			{% endif %}
-
+				{% if project.project_deadline %}
+					<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
+				{% endif %}
+			</div>
 		</div>
 		{% if forloop.last %}
 			</div>
 		{% else %}
-			{% if forloop.counter|divisibleby:"4" %}
+			{% if forloop.counter|divisibleby:"3" %}
 				</div>
 				<div class="row">
 			{% endif %}
