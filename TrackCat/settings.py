@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 	# defined apps
 	'web',
 	'api',
+	'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -149,4 +150,11 @@ DEBUG = False
 SOCIAL_AUTH_GITHUB_KEY = '77dd707652a6541bf8a4'
 SOCIAL_AUTH_GITHUB_SECRET = '8b1d9b2b5265a5ae55c60c1766afd5babadcd69b'
 
+if not DEBUG;
+	AWS_QUERYSTRING_AUTH = False
+	AWS_ACCESS_KEY_ID = os.environ['AWS_ACCESS_KEY_ID']
+	AWS_SECRET_ACCESS_KEY = os.environ['AWS_SECRET_ACCESS_KEY']
+	AWS_STORAGE_BUCKET_NAME = os.environ['S3_BUCKET_NAME']
+	MEDIA_URL = 'http://%s.s3.amazonaws.com/trackcat/' % AWS_STORAGE_BUCKET_NAME
+	DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 
