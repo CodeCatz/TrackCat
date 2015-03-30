@@ -2,10 +2,13 @@ Django==1.7.1
 Pillow==2.7.0
 PyJWT==0.4.1
 argparse==1.2.1
+boto==2.36.0
 dj-database-url==0.3.0
 dj-static==0.0.6
+django-storages==1.1.8
 gunicorn==19.3.0
 oauthlib==0.7.2
+psycopg2==2.6
 python-openid==2.2.5
 python-social-auth==0.2.1
 requests==2.5.1
@@ -14,5 +17,3 @@ six==1.9.0
 static3==0.5.1
 whitenoise==1.0.6
 wsgiref==0.1.2
-psycopg2==2.5.4
-
