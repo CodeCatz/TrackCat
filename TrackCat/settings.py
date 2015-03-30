@@ -132,7 +132,7 @@ except ImportError as e:
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = normpath(join(BASE_DIR, 'media'))
 # URL that handles the media served from MEDIA_ROOT.
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/'
 MEDIA_UPLOAD_FOLDER = 'profile_picture'
 ########## END MEDIA CONFIGURATION
 
@@ -166,3 +166,6 @@ AWS_SECRET_ACCESS_KEY = '61bFT+iP5WSyk4qGjQlWSnIrWv//Scj681ylcS5A'
 # This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
 # We also use it in the next setting.
 AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
