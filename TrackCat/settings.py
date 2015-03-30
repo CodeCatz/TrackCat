@@ -157,3 +157,12 @@ SOCIAL_AUTH_GITHUB_SECRET = '8b1d9b2b5265a5ae55c60c1766afd5babadcd69b'
 #MEDIA_URL = 'http://%s.s3.amazonaws.com/trackcat/' % AWS_STORAGE_BUCKET_NAME
 #DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
 
+AWS_STORAGE_BUCKET_NAME = 'trackcat'
+AWS_ACCESS_KEY_ID = 'AKIAJPRR4EHF4SVSL4XA'
+AWS_SECRET_ACCESS_KEY = '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'
+
+# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+# it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+# This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+# We also use it in the next setting.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
