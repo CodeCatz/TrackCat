@@ -132,7 +132,7 @@ except ImportError as e:
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = normpath(join(BASE_DIR, 'media'))
 # URL that handles the media served from MEDIA_ROOT.
-#MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/' -> this was used when running app locally
 MEDIA_UPLOAD_FOLDER = 'profile_picture'
 ########## END MEDIA CONFIGURATION
 
@@ -150,12 +150,7 @@ DEBUG = False
 SOCIAL_AUTH_GITHUB_KEY = '77dd707652a6541bf8a4'
 SOCIAL_AUTH_GITHUB_SECRET = '8b1d9b2b5265a5ae55c60c1766afd5babadcd69b'
 
-#AWS_QUERYSTRING_AUTH = False
-#AWS_ACCESS_KEY_ID = os.environ.get('AWS_ACCESS_KEY_ID')
-#AWS_SECRET_ACCESS_KEY = os.environ.get('AWS_SECRET_ACCESS_KEY')
-#AWS_STORAGE_BUCKET_NAME = 'trackcat'
-#MEDIA_URL = 'http://%s.s3.amazonaws.com/trackcat/' % AWS_STORAGE_BUCKET_NAME
-#DEFAULT_FILE_STORAGE = "storages.backends.s3boto.S3BotoStorage"
+################### AMAZON S3 TO STORE MEDIA FILES CONFIGURATION
 
 AWS_STORAGE_BUCKET_NAME = 'trackcat'
 AWS_ACCESS_KEY_ID = 'AKIAJPRR4EHF4SVSL4XA'
@@ -169,3 +164,5 @@ AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
 
 MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
 DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+################## END OF AMAZON S3 CONFIGURATION
+
