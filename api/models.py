@@ -1,6 +1,6 @@
 from django.db import models
 from django.utils import timezone
-from django.contrib.auth.models import User
+from django.contrib.auth.models import User, Group
 from django.conf import settings
 from django.dispatch import receiver
 from django.db.models.signals import post_save
@@ -30,6 +30,20 @@ class UserProfile(models.Model):
 	def create_profile_for_user(sender, instance=None, created=False, **kwargs):
 		if created:
 			UserProfile.objects.get_or_create(user=instance)
+
+	@receiver(post_save)
+	def change_group_for_user(sender, instance, **kwargs):
+		try:
+			if instance.activity_status == 'ACTIVE':
+					instance.user.groups.clear()
+					instance.user.groups.add(Group.objects.get(name='ActiveCat'))
+			elif instance.activity_status == 'MENTOR':
+					instance.user.groups.clear()				
+					instance.user.groups.add(Group.objects.get(name='MentorCat'))
+			else:
+					instance.user.groups.clear()
+		except AttributeError:
+			pass
 
 PROJECT_STATUS_CHOICES = (
 	('OPENED', 'Opened'),
