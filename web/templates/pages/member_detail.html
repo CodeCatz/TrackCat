@@ -29,11 +29,11 @@
 				</div>
 				{% if userprofile.user.username %}
 					<p><strong>GitHub Link:</strong></p>
-					<p><a href="https://github.com/{{ userprofile.user.username }}">https://github.com/{{ userprofile.user.username }}</a></p>
+					<p><a href="https://github.com/{{ userprofile.user.username }}" target="_blank">https://github.com/{{ userprofile.user.username }}</a></p>
 				{% endif %}
 				{% if userprofile.website %}
 					<p><strong>Web Site:</strong></p>
-					<p><a href="{{ userprofile.website }}">{{ userprofile.website }}</a></p></p>
+					<p><a href="{{ userprofile.website }}" target="_blank">{{ userprofile.website }}</a></p></p>
 				{% endif %}
 			</div>
 			<div class="col-md-8 col-xs-6">
