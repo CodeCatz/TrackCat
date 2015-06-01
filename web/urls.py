@@ -19,7 +19,7 @@ urlpatterns = patterns('',
 	url(r'^project/(?P<project_id>[0-9]+)/edit/$', views.project_edit, name='project-edit'),
 	url(r'^project/(?P<project_id>[0-9]+)/delete/$', views.project_delete, name='project-delete'),
 	url(r'^tasks/$', views.tasks, name='pages-tasks'),
-	url(r'^tasks/new/$', views.task_new, name='task-new'),
+	url(r'^tasks/new/(?P<project_id>[0-9]+)/$', views.task_new, name='task-new'),
 	url(r'^tasks/(?P<task_id>[0-9]+)/edit/$', views.task_edit, name='task-edit'),
 	url(r'^tasks/(?P<task_id>[0-9]+)/delete/$', views.task_delete, name='task-delete'),
 )
