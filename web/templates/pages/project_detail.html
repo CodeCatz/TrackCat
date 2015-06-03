@@ -64,7 +64,7 @@
 			</div>
 		</div>
 			<p>
-			{% if perms.api.add_project %}
+			{% if perms.api.add_task %}
 					<a class="btn btn-default" href="{% url 'task-new' project_id=project.project_id %}"><span class="glyphicon glyphicon-plus"> Add new task</span></a>
 			{% endif %}
 			</p>
