@@ -53,6 +53,7 @@ def member_edit(request):
 
 def projects(request):
 	project_list = Project.objects.all().exclude(status = 'DELETED')
+	
 	return render(request, 'pages/projects.html',{'project_list': project_list})
 
 def project_detail(request, project_id):
@@ -110,9 +111,9 @@ def project_delete(request, project_id):
 
 @login_required
 def tasks(request):
-	task_owned = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(owner_id=request.user).exclude(status = 'DELETED')
-	task_assigned = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(assigned_id=request.user).exclude(status = 'DELETED')
-	return render(request, 'pages/tasks.html', {'task_owned': task_owned, 'task_assigned': task_assigned})
+	task_owned = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(owner_id=request.user.userprofile).exclude(status = 'DELETED')
+	task_assigned = Task.objects.filter(project_id__in=Project.objects.exclude(status='DELETED')).filter(assigned_id=request.user.userprofile).exclude(status = 'DELETED')
+	return render(request, 'pages/tasks.html', {'task_owned': task_owned , 'task_assigned': task_assigned})
 
 @permission_required('api.change_task', login_url='/login/')
 def task_edit(request, task_id):
@@ -139,7 +140,7 @@ def task_new(request, project_id = None):
 			task = taskform.save()
 			return redirect('pages-tasks')
 	else:
-		taskform = TaskForm(initial={'project_id':project_id})
+		taskform = TaskForm(initial={'project_id':project_id, 'owner_id':request.user.userprofile})
 
 	return render(request, 'pages/task_edit.html', {'taskform': taskform})
 
