@@ -78,7 +78,7 @@ def project_new(request):
 			project = projectform.save()
 			return redirect('project-detail', project_id=project.project_id)
 	else:
-		projectform = ProjectForm()
+		projectform = ProjectForm(initial={'project_owner':request.user.userprofile})
 
 	return render(request, 'pages/project_edit.html', {'projectform': projectform})
 
