@@ -32,7 +32,7 @@
 				<p>{{ project.project_description }}</p>
 				<p><strong>Status:</strong> {{ project.get_status_display }}</p>
 				<p><strong>Project launch:</strong> {{ project.date_created|date:"m. Y" }}</p>
-
+				<p><strong>Owner:</strong> {{ project.project_owner }}</p>
 				{% if project.project_deadline %}
 					<p><strong>Project deadline:</strong> {{ project.project_deadline|date:"d.m.Y" }}</p>
 				{% endif %}
