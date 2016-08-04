@@ -46,6 +46,7 @@ INSTALLED_APPS = (
 	# defined apps
 	'web',
 	'api',
+	'storages',
 )
 
 MIDDLEWARE_CLASSES = (
@@ -131,7 +132,37 @@ except ImportError as e:
 # Absolute filesystem path to the directory that will hold user-uploaded files.
 MEDIA_ROOT = normpath(join(BASE_DIR, 'media'))
 # URL that handles the media served from MEDIA_ROOT.
-MEDIA_URL = '/media/'
+#MEDIA_URL = '/media/' -> this was used when running app locally
 MEDIA_UPLOAD_FOLDER = 'profile_picture'
 ########## END MEDIA CONFIGURATION
+
+import dj_database_url
+DATABASES['default'] =  dj_database_url.config()
+
+SECURE_PROXY_SSL_HEADER = ('HTTP_X_FORWARDED_PROTO', 'https')
+
+ALLOWED_HOSTS = ['*']
+
+STATIC_ROOT = 'staticfiles'
+
+DEBUG = False
+
+SOCIAL_AUTH_GITHUB_KEY = '77dd707652a6541bf8a4'
+SOCIAL_AUTH_GITHUB_SECRET = '8b1d9b2b5265a5ae55c60c1766afd5babadcd69b'
+
+################### AMAZON S3 TO STORE MEDIA FILES CONFIGURATION
+
+AWS_STORAGE_BUCKET_NAME = 'trackcat'
+AWS_ACCESS_KEY_ID = 'AKIAJPRR4EHF4SVSL4XA'
+AWS_SECRET_ACCESS_KEY = '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'
+
+# Tell django-storages that when coming up with the URL for an item in S3 storage, keep
+# it simple - just use this domain plus the path. (If this isn't set, things get complicated).
+# This controls how the `static` template tag from `staticfiles` gets expanded, if you're using it.
+# We also use it in the next setting.
+AWS_S3_CUSTOM_DOMAIN = '%s.s3.amazonaws.com' % AWS_STORAGE_BUCKET_NAME
+
+MEDIA_URL = "https://%s/" % AWS_S3_CUSTOM_DOMAIN
+DEFAULT_FILE_STORAGE = 'storages.backends.s3boto.S3BotoStorage'
+################## END OF AMAZON S3 CONFIGURATION
 
